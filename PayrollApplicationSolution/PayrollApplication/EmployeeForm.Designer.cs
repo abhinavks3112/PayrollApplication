@@ -30,44 +30,49 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.grpEmployeeInformation = new System.Windows.Forms.GroupBox();
-            this.grpEmployeeContactDetails = new System.Windows.Forms.GroupBox();
-            this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.grpGender = new System.Windows.Forms.GroupBox();
-            this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.rdbFemale = new System.Windows.Forms.RadioButton();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.txtNationalInsuranceNumber = new System.Windows.Forms.TextBox();
-            this.lblNationalInsuranceNumber = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.chkIsMember = new System.Windows.Forms.CheckBox();
+            this.lblUnionMembership = new System.Windows.Forms.Label();
             this.grpMaritalStatus = new System.Windows.Forms.GroupBox();
             this.rdbSingle = new System.Windows.Forms.RadioButton();
             this.rdbMarried = new System.Windows.Forms.RadioButton();
-            this.lblUnionMembership = new System.Windows.Forms.Label();
-            this.chkIsMember = new System.Windows.Forms.CheckBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.txtPostCode = new System.Windows.Forms.TextBox();
-            this.lblPostCode = new System.Windows.Forms.Label();
-            this.lblCountry = new System.Windows.Forms.Label();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.lblEmailAddress = new System.Windows.Forms.Label();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.txtNationalInsuranceNumber = new System.Windows.Forms.TextBox();
+            this.lblNationalInsuranceNumber = new System.Windows.Forms.Label();
+            this.grpGender = new System.Windows.Forms.GroupBox();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
+            this.lblEmployeeID = new System.Windows.Forms.Label();
+            this.grpEmployeeContactDetails = new System.Windows.Forms.GroupBox();
+            this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.cmbCountry = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lblEmailAddress = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.txtPostCode = new System.Windows.Forms.TextBox();
+            this.lblPostCode = new System.Windows.Forms.Label();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.btnUpdateEmployee = new System.Windows.Forms.Button();
+            this.btnDeleteEmployee = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.grpEmployeeInformation.SuspendLayout();
-            this.grpEmployeeContactDetails.SuspendLayout();
-            this.grpGender.SuspendLayout();
             this.grpMaritalStatus.SuspendLayout();
+            this.grpGender.SuspendLayout();
+            this.grpEmployeeContactDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEmployeeInformation
@@ -88,164 +93,30 @@
             this.grpEmployeeInformation.Controls.Add(this.lblEmployeeID);
             this.grpEmployeeInformation.Location = new System.Drawing.Point(46, 40);
             this.grpEmployeeInformation.Name = "grpEmployeeInformation";
-            this.grpEmployeeInformation.Size = new System.Drawing.Size(328, 451);
+            this.grpEmployeeInformation.Size = new System.Drawing.Size(346, 451);
             this.grpEmployeeInformation.TabIndex = 0;
             this.grpEmployeeInformation.TabStop = false;
             this.grpEmployeeInformation.Text = "Employee Information";
             this.grpEmployeeInformation.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // grpEmployeeContactDetails
+            // chkIsMember
             // 
-            this.grpEmployeeContactDetails.Controls.Add(this.cmbCountry);
-            this.grpEmployeeContactDetails.Controls.Add(this.txtNotes);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblNotes);
-            this.grpEmployeeContactDetails.Controls.Add(this.textBox6);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblEmailAddress);
-            this.grpEmployeeContactDetails.Controls.Add(this.txtPhoneNumber);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblPhoneNumber);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblCountry);
-            this.grpEmployeeContactDetails.Controls.Add(this.txtPostCode);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblPostCode);
-            this.grpEmployeeContactDetails.Controls.Add(this.txtCity);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblCity);
-            this.grpEmployeeContactDetails.Controls.Add(this.txtAddress);
-            this.grpEmployeeContactDetails.Controls.Add(this.lblAddress);
-            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(417, 40);
-            this.grpEmployeeContactDetails.Name = "grpEmployeeContactDetails";
-            this.grpEmployeeContactDetails.Size = new System.Drawing.Size(328, 451);
-            this.grpEmployeeContactDetails.TabIndex = 1;
-            this.grpEmployeeContactDetails.TabStop = false;
-            this.grpEmployeeContactDetails.Text = "Employee Contact Details";
+            this.chkIsMember.AutoSize = true;
+            this.chkIsMember.Location = new System.Drawing.Point(176, 406);
+            this.chkIsMember.Name = "chkIsMember";
+            this.chkIsMember.Size = new System.Drawing.Size(75, 17);
+            this.chkIsMember.TabIndex = 14;
+            this.chkIsMember.Text = "Is Member";
+            this.chkIsMember.UseVisualStyleBackColor = true;
             // 
-            // lblEmployeeID
+            // lblUnionMembership
             // 
-            this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(50, 45);
-            this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(64, 13);
-            this.lblEmployeeID.TabIndex = 0;
-            this.lblEmployeeID.Text = "EmployeeID";
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(176, 42);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(100, 20);
-            this.txtEmployeeID.TabIndex = 1;
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(176, 84);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 3;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(50, 87);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(54, 13);
-            this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "FirstName";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(176, 124);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 5;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(50, 127);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 4;
-            this.lblLastName.Text = "Last Name";
-            // 
-            // grpGender
-            // 
-            this.grpGender.Controls.Add(this.rdbFemale);
-            this.grpGender.Controls.Add(this.rdbMale);
-            this.grpGender.Location = new System.Drawing.Point(53, 166);
-            this.grpGender.Name = "grpGender";
-            this.grpGender.Size = new System.Drawing.Size(223, 59);
-            this.grpGender.TabIndex = 6;
-            this.grpGender.TabStop = false;
-            this.grpGender.Text = "Gender";
-            this.grpGender.Enter += new System.EventHandler(this.groupBox1_Enter_1);
-            // 
-            // rdbMale
-            // 
-            this.rdbMale.AutoSize = true;
-            this.rdbMale.Location = new System.Drawing.Point(48, 28);
-            this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(48, 17);
-            this.rdbMale.TabIndex = 0;
-            this.rdbMale.TabStop = true;
-            this.rdbMale.Text = "Male";
-            this.rdbMale.UseVisualStyleBackColor = true;
-            // 
-            // rdbFemale
-            // 
-            this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(123, 28);
-            this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdbFemale.TabIndex = 1;
-            this.rdbFemale.TabStop = true;
-            this.rdbFemale.Text = "Female";
-            this.rdbFemale.UseVisualStyleBackColor = true;
-            this.rdbFemale.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // btnExit
-            // 
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExit.Location = new System.Drawing.Point(670, 525);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "E&xit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtNationalInsuranceNumber
-            // 
-            this.txtNationalInsuranceNumber.Location = new System.Drawing.Point(176, 250);
-            this.txtNationalInsuranceNumber.Name = "txtNationalInsuranceNumber";
-            this.txtNationalInsuranceNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtNationalInsuranceNumber.TabIndex = 8;
-            this.txtNationalInsuranceNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // lblNationalInsuranceNumber
-            // 
-            this.lblNationalInsuranceNumber.AutoSize = true;
-            this.lblNationalInsuranceNumber.Location = new System.Drawing.Point(50, 253);
-            this.lblNationalInsuranceNumber.Name = "lblNationalInsuranceNumber";
-            this.lblNationalInsuranceNumber.Size = new System.Drawing.Size(116, 13);
-            this.lblNationalInsuranceNumber.TabIndex = 7;
-            this.lblNationalInsuranceNumber.Text = "National Insurance No.";
-            this.lblNationalInsuranceNumber.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(50, 285);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(68, 13);
-            this.lblDateOfBirth.TabIndex = 9;
-            this.lblDateOfBirth.Text = "Date Of Birth";
-            this.lblDateOfBirth.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // dtpDateOfBirth
-            // 
-            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(176, 285);
-            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(100, 20);
-            this.dtpDateOfBirth.TabIndex = 11;
+            this.lblUnionMembership.AutoSize = true;
+            this.lblUnionMembership.Location = new System.Drawing.Point(50, 407);
+            this.lblUnionMembership.Name = "lblUnionMembership";
+            this.lblUnionMembership.Size = new System.Drawing.Size(95, 13);
+            this.lblUnionMembership.TabIndex = 12;
+            this.lblUnionMembership.Text = "Union Membership";
             // 
             // grpMaritalStatus
             // 
@@ -280,130 +151,147 @@
             this.rdbMarried.Text = "Married";
             this.rdbMarried.UseVisualStyleBackColor = true;
             // 
-            // lblUnionMembership
+            // dtpDateOfBirth
             // 
-            this.lblUnionMembership.AutoSize = true;
-            this.lblUnionMembership.Location = new System.Drawing.Point(50, 407);
-            this.lblUnionMembership.Name = "lblUnionMembership";
-            this.lblUnionMembership.Size = new System.Drawing.Size(95, 13);
-            this.lblUnionMembership.TabIndex = 12;
-            this.lblUnionMembership.Text = "Union Membership";
+            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(176, 285);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(100, 20);
+            this.dtpDateOfBirth.TabIndex = 11;
             // 
-            // chkIsMember
+            // lblDateOfBirth
             // 
-            this.chkIsMember.AutoSize = true;
-            this.chkIsMember.Location = new System.Drawing.Point(176, 406);
-            this.chkIsMember.Name = "chkIsMember";
-            this.chkIsMember.Size = new System.Drawing.Size(75, 17);
-            this.chkIsMember.TabIndex = 14;
-            this.chkIsMember.Text = "Is Member";
-            this.chkIsMember.UseVisualStyleBackColor = true;
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(50, 285);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(68, 13);
+            this.lblDateOfBirth.TabIndex = 9;
+            this.lblDateOfBirth.Text = "Date Of Birth";
+            this.lblDateOfBirth.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // txtAddress
+            // txtNationalInsuranceNumber
             // 
-            this.txtAddress.Location = new System.Drawing.Point(177, 45);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress.TabIndex = 3;
+            this.txtNationalInsuranceNumber.Location = new System.Drawing.Point(176, 250);
+            this.txtNationalInsuranceNumber.Name = "txtNationalInsuranceNumber";
+            this.txtNationalInsuranceNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtNationalInsuranceNumber.TabIndex = 8;
+            this.txtNationalInsuranceNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // lblAddress
+            // lblNationalInsuranceNumber
             // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(51, 48);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(45, 13);
-            this.lblAddress.TabIndex = 2;
-            this.lblAddress.Text = "Address";
+            this.lblNationalInsuranceNumber.AutoSize = true;
+            this.lblNationalInsuranceNumber.Location = new System.Drawing.Point(50, 253);
+            this.lblNationalInsuranceNumber.Name = "lblNationalInsuranceNumber";
+            this.lblNationalInsuranceNumber.Size = new System.Drawing.Size(116, 13);
+            this.lblNationalInsuranceNumber.TabIndex = 7;
+            this.lblNationalInsuranceNumber.Text = "National Insurance No.";
+            this.lblNationalInsuranceNumber.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtCity
+            // grpGender
             // 
-            this.txtCity.Location = new System.Drawing.Point(177, 87);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 20);
-            this.txtCity.TabIndex = 5;
+            this.grpGender.Controls.Add(this.rdbFemale);
+            this.grpGender.Controls.Add(this.rdbMale);
+            this.grpGender.Location = new System.Drawing.Point(53, 166);
+            this.grpGender.Name = "grpGender";
+            this.grpGender.Size = new System.Drawing.Size(223, 59);
+            this.grpGender.TabIndex = 6;
+            this.grpGender.TabStop = false;
+            this.grpGender.Text = "Gender";
+            this.grpGender.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
-            // lblCity
+            // rdbFemale
             // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(51, 90);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(24, 13);
-            this.lblCity.TabIndex = 4;
-            this.lblCity.Text = "City";
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(123, 28);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.TabStop = true;
+            this.rdbFemale.Text = "Female";
+            this.rdbFemale.UseVisualStyleBackColor = true;
+            this.rdbFemale.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // txtPostCode
+            // rdbMale
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(177, 127);
-            this.txtPostCode.Name = "txtPostCode";
-            this.txtPostCode.Size = new System.Drawing.Size(100, 20);
-            this.txtPostCode.TabIndex = 7;
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Location = new System.Drawing.Point(48, 28);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(48, 17);
+            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Male";
+            this.rdbMale.UseVisualStyleBackColor = true;
             // 
-            // lblPostCode
+            // txtLastName
             // 
-            this.lblPostCode.AutoSize = true;
-            this.lblPostCode.Location = new System.Drawing.Point(51, 130);
-            this.lblPostCode.Name = "lblPostCode";
-            this.lblPostCode.Size = new System.Drawing.Size(53, 13);
-            this.lblPostCode.TabIndex = 6;
-            this.lblPostCode.Text = "PostCode";
+            this.txtLastName.Location = new System.Drawing.Point(176, 124);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.TabIndex = 5;
             // 
-            // lblCountry
+            // lblLastName
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(51, 174);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(43, 13);
-            this.lblCountry.TabIndex = 8;
-            this.lblCountry.Text = "Country";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(50, 127);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.TabIndex = 4;
+            this.lblLastName.Text = "Last Name";
             // 
-            // txtPhoneNumber
+            // txtFirstName
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(177, 217);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNumber.TabIndex = 11;
+            this.txtFirstName.Location = new System.Drawing.Point(176, 84);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.TabIndex = 3;
             // 
-            // lblPhoneNumber
+            // lblFirstName
             // 
-            this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(51, 220);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
-            this.lblPhoneNumber.TabIndex = 10;
-            this.lblPhoneNumber.Text = "Phone Number";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(50, 87);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(54, 13);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "FirstName";
             // 
-            // textBox6
+            // txtEmployeeID
             // 
-            this.textBox6.Location = new System.Drawing.Point(177, 253);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtEmployeeID.Location = new System.Drawing.Point(176, 42);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(100, 20);
+            this.txtEmployeeID.TabIndex = 1;
             // 
-            // lblEmailAddress
+            // lblEmployeeID
             // 
-            this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(51, 256);
-            this.lblEmailAddress.Name = "lblEmailAddress";
-            this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
-            this.lblEmailAddress.TabIndex = 12;
-            this.lblEmailAddress.Text = "Email Address";
+            this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.Location = new System.Drawing.Point(50, 45);
+            this.lblEmployeeID.Name = "lblEmployeeID";
+            this.lblEmployeeID.Size = new System.Drawing.Size(64, 13);
+            this.lblEmployeeID.TabIndex = 0;
+            this.lblEmployeeID.Text = "EmployeeID";
             // 
-            // txtNotes
+            // grpEmployeeContactDetails
             // 
-            this.txtNotes.Location = new System.Drawing.Point(177, 288);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(100, 131);
-            this.txtNotes.TabIndex = 15;
-            // 
-            // lblNotes
-            // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(51, 291);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(35, 13);
-            this.lblNotes.TabIndex = 14;
-            this.lblNotes.Text = "Notes";
+            this.grpEmployeeContactDetails.Controls.Add(this.cmbCountry);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtNotes);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblNotes);
+            this.grpEmployeeContactDetails.Controls.Add(this.textBox6);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblEmailAddress);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtPhoneNumber);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblPhoneNumber);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblCountry);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtPostCode);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblPostCode);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtCity);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblCity);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtAddress);
+            this.grpEmployeeContactDetails.Controls.Add(this.lblAddress);
+            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(417, 40);
+            this.grpEmployeeContactDetails.Name = "grpEmployeeContactDetails";
+            this.grpEmployeeContactDetails.Size = new System.Drawing.Size(362, 451);
+            this.grpEmployeeContactDetails.TabIndex = 1;
+            this.grpEmployeeContactDetails.TabStop = false;
+            this.grpEmployeeContactDetails.Text = "Employee Contact Details";
             // 
             // cmbCountry
             // 
@@ -611,27 +499,230 @@
             this.cmbCountry.Size = new System.Drawing.Size(100, 21);
             this.cmbCountry.TabIndex = 16;
             // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(177, 288);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(100, 131);
+            this.txtNotes.TabIndex = 15;
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(51, 291);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(35, 13);
+            this.lblNotes.TabIndex = 14;
+            this.lblNotes.Text = "Notes";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(177, 253);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 13;
+            // 
+            // lblEmailAddress
+            // 
+            this.lblEmailAddress.AutoSize = true;
+            this.lblEmailAddress.Location = new System.Drawing.Point(51, 256);
+            this.lblEmailAddress.Name = "lblEmailAddress";
+            this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
+            this.lblEmailAddress.TabIndex = 12;
+            this.lblEmailAddress.Text = "Email Address";
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(177, 217);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNumber.TabIndex = 11;
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(51, 220);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
+            this.lblPhoneNumber.TabIndex = 10;
+            this.lblPhoneNumber.Text = "Phone Number";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Location = new System.Drawing.Point(51, 174);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(43, 13);
+            this.lblCountry.TabIndex = 8;
+            this.lblCountry.Text = "Country";
+            // 
+            // txtPostCode
+            // 
+            this.txtPostCode.Location = new System.Drawing.Point(177, 127);
+            this.txtPostCode.Name = "txtPostCode";
+            this.txtPostCode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostCode.TabIndex = 7;
+            // 
+            // lblPostCode
+            // 
+            this.lblPostCode.AutoSize = true;
+            this.lblPostCode.Location = new System.Drawing.Point(51, 130);
+            this.lblPostCode.Name = "lblPostCode";
+            this.lblPostCode.Size = new System.Drawing.Size(53, 13);
+            this.lblPostCode.TabIndex = 6;
+            this.lblPostCode.Text = "PostCode";
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(177, 87);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.TabIndex = 5;
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(51, 90);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(24, 13);
+            this.lblCity.TabIndex = 4;
+            this.lblCity.Text = "City";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(177, 45);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtAddress.TabIndex = 3;
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(51, 48);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(45, 13);
+            this.lblAddress.TabIndex = 2;
+            this.lblAddress.Text = "Address";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(680, 515);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnExit.Size = new System.Drawing.Size(135, 39);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "E&xit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
+            this.btnAddEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddEmployee.Location = new System.Drawing.Point(12, 515);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnAddEmployee.Size = new System.Drawing.Size(118, 39);
+            this.btnAddEmployee.TabIndex = 3;
+            this.btnAddEmployee.Text = "&Add Employee";
+            this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdateEmployee
+            // 
+            this.btnUpdateEmployee.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnUpdateEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateEmployee.Image")));
+            this.btnUpdateEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(136, 515);
+            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(127, 39);
+            this.btnUpdateEmployee.TabIndex = 4;
+            this.btnUpdateEmployee.Text = "&Update Employee";
+            this.btnUpdateEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateEmployee.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteEmployee
+            // 
+            this.btnDeleteEmployee.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDeleteEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmployee.Image")));
+            this.btnDeleteEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(269, 515);
+            this.btnDeleteEmployee.Name = "btnDeleteEmployee";
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(123, 39);
+            this.btnDeleteEmployee.TabIndex = 5;
+            this.btnDeleteEmployee.Text = "&Delete Employee";
+            this.btnDeleteEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteEmployee.UseVisualStyleBackColor = false;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(398, 515);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnReset.Size = new System.Drawing.Size(135, 39);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "&Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreview.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
+            this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPreview.Location = new System.Drawing.Point(539, 515);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPreview.Size = new System.Drawing.Size(135, 39);
+            this.btnPreview.TabIndex = 7;
+            this.btnPreview.Text = "&Preview";
+            this.btnPreview.UseVisualStyleBackColor = false;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(811, 578);
+            this.ClientSize = new System.Drawing.Size(843, 579);
+            this.Controls.Add(this.btnPreview);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnDeleteEmployee);
+            this.Controls.Add(this.btnUpdateEmployee);
+            this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.grpEmployeeContactDetails);
             this.Controls.Add(this.grpEmployeeInformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeForm";
-            this.Text = "Form1";
+            this.Text = "Manage Employees";
             this.grpEmployeeInformation.ResumeLayout(false);
             this.grpEmployeeInformation.PerformLayout();
-            this.grpEmployeeContactDetails.ResumeLayout(false);
-            this.grpEmployeeContactDetails.PerformLayout();
-            this.grpGender.ResumeLayout(false);
-            this.grpGender.PerformLayout();
             this.grpMaritalStatus.ResumeLayout(false);
             this.grpMaritalStatus.PerformLayout();
+            this.grpGender.ResumeLayout(false);
+            this.grpGender.PerformLayout();
+            this.grpEmployeeContactDetails.ResumeLayout(false);
+            this.grpEmployeeContactDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -673,6 +764,11 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.ComboBox cmbCountry;
+        private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.Button btnUpdateEmployee;
+        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnPreview;
     }
 }
 
