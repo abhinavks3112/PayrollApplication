@@ -134,6 +134,26 @@ namespace PayrollApplication
             return isValid;
         }
 
+        private void FormReset()
+        {
+            txtEmployeeID.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            rdbMale.Checked = false;
+            rdbFemale.Checked = false;
+            txtNationalInsuranceNumber.Clear();
+            dtpDateOfBirth.Value = new DateTime(1990, 12, 31);
+            rdbMarried.Checked = false;
+            rdbSingle.Checked = false;
+            chkIsMember.Checked = false;
+            txtAddress.Clear();
+            txtCity.Clear();
+            txtPostCode.Clear();
+            cmbCountry.SelectedIndex = 0;
+            txtPhoneNumber.Clear();
+            txtEmailAddress.Clear();
+            txtNotes.Clear();
+        }
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
 
@@ -187,7 +207,7 @@ namespace PayrollApplication
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Control Reset");
+            FormReset();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
