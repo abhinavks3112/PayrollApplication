@@ -52,7 +52,7 @@
             this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.lblEmailAddress = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
@@ -91,13 +91,13 @@
             this.grpEmployeeInformation.Controls.Add(this.lblFirstName);
             this.grpEmployeeInformation.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeInformation.Controls.Add(this.lblEmployeeID);
-            this.grpEmployeeInformation.Location = new System.Drawing.Point(46, 40);
+            this.grpEmployeeInformation.Location = new System.Drawing.Point(53, 40);
             this.grpEmployeeInformation.Name = "grpEmployeeInformation";
             this.grpEmployeeInformation.Size = new System.Drawing.Size(346, 451);
             this.grpEmployeeInformation.TabIndex = 0;
             this.grpEmployeeInformation.TabStop = false;
             this.grpEmployeeInformation.Text = "Employee Information";
-            this.grpEmployeeInformation.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.grpEmployeeInformation.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // chkIsMember
             // 
@@ -105,7 +105,7 @@
             this.chkIsMember.Location = new System.Drawing.Point(176, 406);
             this.chkIsMember.Name = "chkIsMember";
             this.chkIsMember.Size = new System.Drawing.Size(75, 17);
-            this.chkIsMember.TabIndex = 14;
+            this.chkIsMember.TabIndex = 11;
             this.chkIsMember.Text = "Is Member";
             this.chkIsMember.UseVisualStyleBackColor = true;
             // 
@@ -125,7 +125,7 @@
             this.grpMaritalStatus.Location = new System.Drawing.Point(53, 325);
             this.grpMaritalStatus.Name = "grpMaritalStatus";
             this.grpMaritalStatus.Size = new System.Drawing.Size(223, 59);
-            this.grpMaritalStatus.TabIndex = 7;
+            this.grpMaritalStatus.TabIndex = 8;
             this.grpMaritalStatus.TabStop = false;
             this.grpMaritalStatus.Text = "Marital Status";
             // 
@@ -135,7 +135,7 @@
             this.rdbSingle.Location = new System.Drawing.Point(123, 28);
             this.rdbSingle.Name = "rdbSingle";
             this.rdbSingle.Size = new System.Drawing.Size(54, 17);
-            this.rdbSingle.TabIndex = 1;
+            this.rdbSingle.TabIndex = 10;
             this.rdbSingle.TabStop = true;
             this.rdbSingle.Text = "Single";
             this.rdbSingle.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.rdbMarried.Location = new System.Drawing.Point(48, 28);
             this.rdbMarried.Name = "rdbMarried";
             this.rdbMarried.Size = new System.Drawing.Size(60, 17);
-            this.rdbMarried.TabIndex = 0;
+            this.rdbMarried.TabIndex = 9;
             this.rdbMarried.TabStop = true;
             this.rdbMarried.Text = "Married";
             this.rdbMarried.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             this.dtpDateOfBirth.Location = new System.Drawing.Point(176, 285);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(100, 20);
-            this.dtpDateOfBirth.TabIndex = 11;
+            this.dtpDateOfBirth.TabIndex = 7;
             // 
             // lblDateOfBirth
             // 
@@ -171,10 +171,11 @@
             // 
             // txtNationalInsuranceNumber
             // 
+            this.txtNationalInsuranceNumber.AccessibleName = "National Insurance Number";
             this.txtNationalInsuranceNumber.Location = new System.Drawing.Point(176, 250);
             this.txtNationalInsuranceNumber.Name = "txtNationalInsuranceNumber";
             this.txtNationalInsuranceNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtNationalInsuranceNumber.TabIndex = 8;
+            this.txtNationalInsuranceNumber.TabIndex = 6;
             this.txtNationalInsuranceNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblNationalInsuranceNumber
@@ -194,7 +195,7 @@
             this.grpGender.Location = new System.Drawing.Point(53, 166);
             this.grpGender.Name = "grpGender";
             this.grpGender.Size = new System.Drawing.Size(223, 59);
-            this.grpGender.TabIndex = 6;
+            this.grpGender.TabIndex = 3;
             this.grpGender.TabStop = false;
             this.grpGender.Text = "Gender";
             this.grpGender.Enter += new System.EventHandler(this.groupBox1_Enter_1);
@@ -205,7 +206,7 @@
             this.rdbFemale.Location = new System.Drawing.Point(123, 28);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.TabIndex = 5;
             this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
@@ -217,17 +218,18 @@
             this.rdbMale.Location = new System.Drawing.Point(48, 28);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(48, 17);
-            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabIndex = 4;
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
             // 
             // txtLastName
             // 
+            this.txtLastName.AccessibleName = "Last Name";
             this.txtLastName.Location = new System.Drawing.Point(176, 124);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 5;
+            this.txtLastName.TabIndex = 2;
             // 
             // lblLastName
             // 
@@ -240,10 +242,11 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.AccessibleName = "First Name";
             this.txtFirstName.Location = new System.Drawing.Point(176, 84);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 3;
+            this.txtFirstName.TabIndex = 1;
             // 
             // lblFirstName
             // 
@@ -256,10 +259,12 @@
             // 
             // txtEmployeeID
             // 
+            this.txtEmployeeID.AccessibleName = "Employee ID";
             this.txtEmployeeID.Location = new System.Drawing.Point(176, 42);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(100, 20);
-            this.txtEmployeeID.TabIndex = 1;
+            this.txtEmployeeID.TabIndex = 0;
+            this.txtEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmployeeID_KeyPress);
             // 
             // lblEmployeeID
             // 
@@ -275,7 +280,7 @@
             this.grpEmployeeContactDetails.Controls.Add(this.cmbCountry);
             this.grpEmployeeContactDetails.Controls.Add(this.txtNotes);
             this.grpEmployeeContactDetails.Controls.Add(this.lblNotes);
-            this.grpEmployeeContactDetails.Controls.Add(this.textBox6);
+            this.grpEmployeeContactDetails.Controls.Add(this.txtEmailAddress);
             this.grpEmployeeContactDetails.Controls.Add(this.lblEmailAddress);
             this.grpEmployeeContactDetails.Controls.Add(this.txtPhoneNumber);
             this.grpEmployeeContactDetails.Controls.Add(this.lblPhoneNumber);
@@ -286,7 +291,7 @@
             this.grpEmployeeContactDetails.Controls.Add(this.lblCity);
             this.grpEmployeeContactDetails.Controls.Add(this.txtAddress);
             this.grpEmployeeContactDetails.Controls.Add(this.lblAddress);
-            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(417, 40);
+            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(424, 40);
             this.grpEmployeeContactDetails.Name = "grpEmployeeContactDetails";
             this.grpEmployeeContactDetails.Size = new System.Drawing.Size(362, 451);
             this.grpEmployeeContactDetails.TabIndex = 1;
@@ -494,39 +499,40 @@
             "Yemen",
             "Zambia",
             "Zimbabwe"});
-            this.cmbCountry.Location = new System.Drawing.Point(177, 171);
+            this.cmbCountry.Location = new System.Drawing.Point(190, 171);
             this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(100, 21);
-            this.cmbCountry.TabIndex = 16;
+            this.cmbCountry.Size = new System.Drawing.Size(121, 21);
+            this.cmbCountry.TabIndex = 15;
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(177, 288);
+            this.txtNotes.Location = new System.Drawing.Point(190, 288);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(100, 131);
-            this.txtNotes.TabIndex = 15;
+            this.txtNotes.Size = new System.Drawing.Size(121, 82);
+            this.txtNotes.TabIndex = 18;
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(51, 291);
+            this.lblNotes.Location = new System.Drawing.Point(64, 291);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(35, 13);
             this.lblNotes.TabIndex = 14;
             this.lblNotes.Text = "Notes";
             // 
-            // textBox6
+            // txtEmailAddress
             // 
-            this.textBox6.Location = new System.Drawing.Point(177, 253);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.txtEmailAddress.AccessibleName = "Email Address";
+            this.txtEmailAddress.Location = new System.Drawing.Point(190, 253);
+            this.txtEmailAddress.Name = "txtEmailAddress";
+            this.txtEmailAddress.Size = new System.Drawing.Size(121, 20);
+            this.txtEmailAddress.TabIndex = 17;
             // 
             // lblEmailAddress
             // 
             this.lblEmailAddress.AutoSize = true;
-            this.lblEmailAddress.Location = new System.Drawing.Point(51, 256);
+            this.lblEmailAddress.Location = new System.Drawing.Point(64, 256);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(73, 13);
             this.lblEmailAddress.TabIndex = 12;
@@ -534,15 +540,17 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(177, 217);
+            this.txtPhoneNumber.AccessibleName = "Phone Number";
+            this.txtPhoneNumber.Location = new System.Drawing.Point(190, 217);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtPhoneNumber.TabIndex = 11;
+            this.txtPhoneNumber.Size = new System.Drawing.Size(121, 20);
+            this.txtPhoneNumber.TabIndex = 16;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(51, 220);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(64, 220);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
             this.lblPhoneNumber.TabIndex = 10;
@@ -551,7 +559,7 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(51, 174);
+            this.lblCountry.Location = new System.Drawing.Point(64, 174);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(43, 13);
             this.lblCountry.TabIndex = 8;
@@ -559,15 +567,16 @@
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(177, 127);
+            this.txtPostCode.AccessibleName = "Post Code";
+            this.txtPostCode.Location = new System.Drawing.Point(190, 127);
             this.txtPostCode.Name = "txtPostCode";
-            this.txtPostCode.Size = new System.Drawing.Size(100, 20);
-            this.txtPostCode.TabIndex = 7;
+            this.txtPostCode.Size = new System.Drawing.Size(121, 20);
+            this.txtPostCode.TabIndex = 14;
             // 
             // lblPostCode
             // 
             this.lblPostCode.AutoSize = true;
-            this.lblPostCode.Location = new System.Drawing.Point(51, 130);
+            this.lblPostCode.Location = new System.Drawing.Point(64, 130);
             this.lblPostCode.Name = "lblPostCode";
             this.lblPostCode.Size = new System.Drawing.Size(53, 13);
             this.lblPostCode.TabIndex = 6;
@@ -575,15 +584,16 @@
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(177, 87);
+            this.txtCity.AccessibleName = "City";
+            this.txtCity.Location = new System.Drawing.Point(190, 87);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 20);
-            this.txtCity.TabIndex = 5;
+            this.txtCity.Size = new System.Drawing.Size(121, 20);
+            this.txtCity.TabIndex = 13;
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(51, 90);
+            this.lblCity.Location = new System.Drawing.Point(64, 90);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 4;
@@ -591,15 +601,16 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(177, 45);
+            this.txtAddress.AccessibleName = "Address";
+            this.txtAddress.Location = new System.Drawing.Point(190, 45);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(100, 20);
-            this.txtAddress.TabIndex = 3;
+            this.txtAddress.Size = new System.Drawing.Size(121, 20);
+            this.txtAddress.TabIndex = 12;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(51, 48);
+            this.lblAddress.Location = new System.Drawing.Point(64, 48);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 2;
@@ -612,7 +623,7 @@
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(680, 515);
+            this.btnExit.Location = new System.Drawing.Point(687, 515);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(135, 39);
@@ -628,7 +639,7 @@
             this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
             this.btnAddEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEmployee.Location = new System.Drawing.Point(12, 515);
+            this.btnAddEmployee.Location = new System.Drawing.Point(19, 515);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnAddEmployee.Size = new System.Drawing.Size(118, 39);
@@ -636,6 +647,7 @@
             this.btnAddEmployee.Text = "&Add Employee";
             this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnUpdateEmployee
             // 
@@ -644,13 +656,14 @@
             this.btnUpdateEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdateEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateEmployee.Image")));
             this.btnUpdateEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(136, 515);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(143, 515);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(127, 39);
             this.btnUpdateEmployee.TabIndex = 4;
             this.btnUpdateEmployee.Text = "&Update Employee";
             this.btnUpdateEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdateEmployee.UseVisualStyleBackColor = false;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
             // btnDeleteEmployee
             // 
@@ -659,13 +672,14 @@
             this.btnDeleteEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDeleteEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmployee.Image")));
             this.btnDeleteEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(269, 515);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(276, 515);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
             this.btnDeleteEmployee.Size = new System.Drawing.Size(123, 39);
             this.btnDeleteEmployee.TabIndex = 5;
             this.btnDeleteEmployee.Text = "&Delete Employee";
             this.btnDeleteEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteEmployee.UseVisualStyleBackColor = false;
+            this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
             // 
             // btnReset
             // 
@@ -674,13 +688,14 @@
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(398, 515);
+            this.btnReset.Location = new System.Drawing.Point(405, 515);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnReset.Size = new System.Drawing.Size(135, 39);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "&Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnPreview
             // 
@@ -689,13 +704,14 @@
             this.btnPreview.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
             this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPreview.Location = new System.Drawing.Point(539, 515);
+            this.btnPreview.Location = new System.Drawing.Point(546, 515);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnPreview.Size = new System.Drawing.Size(135, 39);
             this.btnPreview.TabIndex = 7;
             this.btnPreview.Text = "&Preview";
             this.btnPreview.UseVisualStyleBackColor = false;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // EmployeeForm
             // 
@@ -714,6 +730,7 @@
             this.Controls.Add(this.grpEmployeeInformation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Employees";
             this.grpEmployeeInformation.ResumeLayout(false);
             this.grpEmployeeInformation.PerformLayout();
@@ -752,7 +769,7 @@
         private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtEmailAddress;
         private System.Windows.Forms.Label lblEmailAddress;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
