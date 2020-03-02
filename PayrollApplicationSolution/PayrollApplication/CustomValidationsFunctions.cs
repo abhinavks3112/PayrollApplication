@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PayrollApplication.Enums;
@@ -98,5 +100,71 @@ namespace PayrollApplication
             }
             HighlightDataEntryErrorValidation(control, false, String.Empty, String.Empty);
         }
+    
+        /// <summary>
+        /// Check employee form details against specific regular expression or patterns
+        /// </summary>
+        /// <param name="ControlsList"></param>
+        /// <returns></returns>
+        public bool IsEmployeeDetailValid(Dictionary<Control, FieldsToValidateForRegex> ControlsList)
+        {
+            Regex regex;
+            Control control;
+            bool areAllControlsValid = true;
+            bool isControlValid;
+
+            foreach (var FormControl in ControlsList)
+            {
+                control = (Control)FormControl.Key;
+                switch (FormControl.Value)
+                {
+                    case FieldsToValidateForRegex.EMPLOYEE_ID:
+                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_ID);                        
+                        break;
+
+                    case FieldsToValidateForRegex.EMPLOYEE_FIRST_LAST_NAME:
+                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_FIRST_LAST_NAME);
+                        break;
+
+                    case FieldsToValidateForRegex.EMPLOYEE_NINO:
+                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_NINO);
+                        break;
+
+                    case FieldsToValidateForRegex.EMPLOYEE_EMAIL_ADDRESS:
+                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_EMAIL_ADDRESS);
+                        try
+                        {
+                            MailAddress objMail = new MailAddress(control.Text);
+                        }
+                        catch (Exception ex)
+                        {
+                            isControlValid = false;
+                            // Highlight control with validation error, if any
+                            HighlightDataEntryErrorValidation(control, !isControlValid, Constants.MSG_ERROR + ex.Message, Constants.MSG_INVALID_DATA_FORMAT_ERROR);
+                            return false;
+                        }
+                        break;
+
+                    default: return true;
+                }
+
+                if (!regex.IsMatch(control.Text))
+                    isControlValid = false;
+                else
+                    isControlValid = true;
+
+                // Highlight control with validation error, if any
+                HighlightDataEntryErrorValidation(control, !isControlValid, Constants.MSG_PLEASE_ENTER_VALID + control.AccessibleName, Constants.MSG_INVALID_DATA_FORMAT_ERROR);
+
+                // Form Validity
+                areAllControlsValid = areAllControlsValid && isControlValid;
+
+                if (areAllControlsValid == false)
+                    return false;
+
+            }
+            return areAllControlsValid;
+        }
+    
     }
 }

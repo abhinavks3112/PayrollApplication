@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PayrollApplication.Enums;
@@ -21,8 +22,9 @@ namespace PayrollApplication
 
         private bool IsControlsDataValid()
         {
-            bool isValid = false;
+            bool isValid = true;
 
+            // Validate field to check if  it filled or not
             Dictionary<Control, TextBoxEntryCheck> controlsToValidate = new Dictionary<Control, TextBoxEntryCheck>();
             controlsToValidate.Add(txtEmployeeID, TextBoxEntryCheck.CHECK_IF_ANY_NUMBER_ENTERED);
             controlsToValidate.Add(txtFirstName, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
@@ -34,10 +36,23 @@ namespace PayrollApplication
             controlsToValidate.Add(txtPhoneNumber, TextBoxEntryCheck.CHECK_IF_ANY_NUMBER_ENTERED);
             controlsToValidate.Add(txtEmailAddress, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
 
-            isValid = cvf.IsFormControlNullOrEmptyValidation(controlsToValidate);
+            if (cvf.IsFormControlNullOrEmptyValidation(controlsToValidate) == false)
+            {
+                return false;
+            }
 
-            if (isValid == false)
-                return isValid;
+            // Validate field for regular expression
+            Dictionary<Control, FieldsToValidateForRegex> controlsToValidateRegex = new Dictionary<Control, FieldsToValidateForRegex>();
+            controlsToValidateRegex.Add(txtEmployeeID, FieldsToValidateForRegex.EMPLOYEE_ID);
+            controlsToValidateRegex.Add(txtFirstName, FieldsToValidateForRegex.EMPLOYEE_FIRST_LAST_NAME);
+            controlsToValidateRegex.Add(txtLastName, FieldsToValidateForRegex.EMPLOYEE_FIRST_LAST_NAME);
+            controlsToValidateRegex.Add(txtNationalInsuranceNumber, FieldsToValidateForRegex.EMPLOYEE_NINO);
+            controlsToValidateRegex.Add(txtEmailAddress, FieldsToValidateForRegex.EMPLOYEE_EMAIL_ADDRESS);
+
+            if (cvf.IsEmployeeDetailValid(controlsToValidateRegex) == false)
+            {
+                return false;
+            }
 
             // Gender Validation
             if (rdbMale.Checked == false && rdbFemale.Checked == false)
