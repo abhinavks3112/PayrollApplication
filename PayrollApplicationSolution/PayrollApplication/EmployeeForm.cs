@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using static PayrollApplication.Enums;
 
 namespace PayrollApplication
@@ -198,8 +200,53 @@ namespace PayrollApplication
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            if(IsControlsDataValid())
-                MessageBox.Show("Employee Added");
+            if (IsControlsDataValid())
+            {
+                CheckedItems();
+
+                // Fetch connection string
+                string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+
+                //Instantiate the sql connection object with connection string
+                SqlConnection sqlConnection = new SqlConnection(cs);
+                try
+                {
+                    // Open connection
+                    sqlConnection.Open();
+
+                    // Prepare Insert Command
+                    string InsertCommand = "INSERT INTO tblEmployee(EmployeeID, FirstName," +
+                        "LastName, Gender, NINumber, DateOfBirth, MaritalStatus, IsMember, Address, City, " +
+                        "PostCode, Country, PhoneNumber, Email, Notes) VALUES (" + Convert.ToInt32(txtEmployeeID.Text) 
+                        + ", '"+ txtFirstName.Text+"', '"+ txtLastName.Text+"', '"+ gender +"', '"
+                        + txtNationalInsuranceNumber.Text+"','"+ dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
+                        +"', '"+ maritalStatus+"', '"+ isMember +"', '"+ txtAddress.Text+"', '"+ txtCity.Text 
+                        +"', '"+ txtPostCode.Text +"', '"+ cmbCountry.SelectedItem.ToString()+"', '"
+                        + txtPhoneNumber.Text +"', '"+ txtEmailAddress.Text +"', '"+ txtNotes.Text +"' )";
+
+                    // Instantiate sql command object with command string and sql connection object
+                    SqlCommand sqlCommand = new SqlCommand(InsertCommand, sqlConnection);
+
+                    // Execute the sql command object
+                    sqlCommand.ExecuteNonQuery();
+
+                    // Insert into data table
+                    this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+                    // Display success message
+                    MessageBox.Show("EMPLOYEE WITH ID " + txtEmployeeID.Text + " HAS BEEN ADDED SUCCESSFULLY!!", Constants.MSG_EMPLOYEE_ADD_SUCCESS, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                { 
+                    // Close connection
+                    sqlConnection.Close();
+                }
+            }
         }
 
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
@@ -289,5 +336,12 @@ namespace PayrollApplication
             cvf.IsNumberOrBackspaceValidation(txtPhoneNumber, e);            
         }
         #endregion
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet.tblEmployee' table. You can move, or remove it, as needed.
+            this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+        }
     }
 }

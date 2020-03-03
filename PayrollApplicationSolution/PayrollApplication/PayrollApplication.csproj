@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +57,11 @@
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
+    <Compile Include="PayrollSystemDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollSystemDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PayrollSystemDBDataSet.xsc">
+      <DependentUpon>PayrollSystemDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollSystemDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayrollSystemDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PayrollSystemDBDataSet.xss">
+      <DependentUpon>PayrollSystemDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
