@@ -253,9 +253,9 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Location = new System.Drawing.Point(50, 87);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(54, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 2;
-            this.lblFirstName.Text = "FirstName";
+            this.lblFirstName.Text = "First Name";
             // 
             // txtEmployeeID
             // 
@@ -271,9 +271,9 @@
             this.lblEmployeeID.AutoSize = true;
             this.lblEmployeeID.Location = new System.Drawing.Point(50, 45);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(64, 13);
+            this.lblEmployeeID.Size = new System.Drawing.Size(67, 13);
             this.lblEmployeeID.TabIndex = 0;
-            this.lblEmployeeID.Text = "EmployeeID";
+            this.lblEmployeeID.Text = "Employee ID";
             // 
             // grpEmployeeContactDetails
             // 
@@ -728,6 +728,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.grpEmployeeContactDetails);
             this.Controls.Add(this.grpEmployeeInformation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

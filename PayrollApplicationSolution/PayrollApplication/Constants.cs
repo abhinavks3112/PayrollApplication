@@ -12,13 +12,23 @@ namespace PayrollApplication
         public const string MSG_INVALID_CHARACTERS_ERROR = "INVALID CHARACTERS ENTERED!!";
         public const string MSG_EMPTY_FIELD_ERROR = "FIELD IS EMPTY!!";
         public const string MSG_INVALID_DATA_FORMAT_ERROR = "INVALID DATA FORMAT!!";
+        public const string MSG_NO_SELECTION_ERROR = "NO OPTION SELECTED!!";
         public const string MSG_ENTER_NUMBERS_ONLY = "PLEASE ENTER NUMBERS ONLY!!";
+        public const string MSG_SELECT_GENDER = "PLEASE SELECT YOUR GENDER!!";
+        public const string MSG_SELECT_MARITAL_STATUS = "PLEASE SELECT YOUR MARITAL STATUS!!";
+        public const string MSG_SELECT_COUNTRY = "PLEASE SELECT YOUR COUNTRY FROM THE DROP DOWN LIST!!";
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
         public const string MSG_ERROR = "ERROR: ";
 
         public const int INDEX_ZERO = 0;
         public const int INDEX_MINUS_ONE_OR_DEFAULT_INDEX = -1;
+
+        public const string GENDER_MALE = "Male";
+        public const string GENDER_FEMALE = "Female";
+        public const string MARITAL_STATUS_MARRIED = "Married";
+        public const string MARITAL_STATUS_SINGLE = "Single";
+
         public const int NOTES_FIELD_SIZE_CONSTRAINT = 30;
 
         // EmployeeID: 

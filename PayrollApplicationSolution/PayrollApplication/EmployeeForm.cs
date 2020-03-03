@@ -15,6 +15,9 @@ namespace PayrollApplication
     public partial class EmployeeForm : Form
     {
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
+        string gender;
+        string maritalStatus;
+        bool isMember;
         public EmployeeForm()
         {
             InitializeComponent();
@@ -57,7 +60,7 @@ namespace PayrollApplication
             // Gender Validation
             if (rdbMale.Checked == false && rdbFemale.Checked == false)
             {
-                MessageBox.Show("Please Select either Male or Female Gender", "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.MSG_SELECT_GENDER, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
                 rdbMale.BackColor = Color.Silver;
                 rdbFemale.BackColor = Color.Silver;
@@ -74,23 +77,7 @@ namespace PayrollApplication
             // Marital Status Validation
             if (rdbMarried.Checked == false && rdbSingle.Checked == false)
             {
-                MessageBox.Show("Please Select either Married or Single", "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                grpGender.Focus();
-                rdbMarried.BackColor = Color.Silver;
-                rdbSingle.BackColor = Color.Silver;
-                isValid = false;
-                return isValid;
-            }
-            else
-            {
-                rdbMarried.BackColor = Color.White;
-                rdbSingle.BackColor = Color.White;
-            }
-
-            // Marital Status Validation
-            if (rdbMarried.Checked == false && rdbSingle.Checked == false)
-            {
-                MessageBox.Show("Please Select either Married or Single", "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.MSG_SELECT_MARITAL_STATUS, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
                 rdbMarried.BackColor = Color.Silver;
                 rdbSingle.BackColor = Color.Silver;
@@ -106,7 +93,7 @@ namespace PayrollApplication
             // Country Validation
             if (cmbCountry.SelectedIndex == Constants.INDEX_ZERO || cmbCountry.SelectedIndex == Constants.INDEX_MINUS_ONE_OR_DEFAULT_INDEX)
             {
-                MessageBox.Show("Please Select a Country From the list", "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.MSG_SELECT_COUNTRY, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmbCountry.Focus();
                 cmbCountry.BackColor = Color.Silver;
                 isValid = false;
@@ -117,21 +104,41 @@ namespace PayrollApplication
                 cmbCountry.BackColor = Color.White;
             }
 
-            // Country Validation
-            if (Convert.ToInt32(txtNotes.Text.Length) > Constants.NOTES_FIELD_SIZE_CONSTRAINT)
+            return isValid;
+        }
+
+        private void CheckedItems()
+        {
+            // Check Employee Gender
+            if(rdbMale.Checked)
             {
-                MessageBox.Show("Too much Text! Please enter fewer text", "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNotes.Focus();
-                txtNotes.BackColor = Color.Silver;
-                isValid = false;
-                return isValid;
+                gender = Constants.GENDER_MALE;
             }
-            else
+            else if(rdbFemale.Checked)
             {
-                txtNotes.BackColor = Color.White;
+                gender = Constants.GENDER_FEMALE;
+            }            
+
+            // Check Employee Marital Status
+            if (rdbMarried.Checked)
+            {
+                maritalStatus = Constants.MARITAL_STATUS_MARRIED;
+            }
+            else if(rdbSingle.Checked)
+            {
+                maritalStatus = Constants.MARITAL_STATUS_SINGLE;
             }
 
-            return isValid;
+            // Check if Employee is a Union Member
+            if (chkIsMember.Checked)
+            {
+                isMember = true;
+            }
+            else if(chkIsMember.Checked == false)
+            {
+                isMember = false;
+            }
+
         }
 
         private void FormReset()
@@ -212,7 +219,24 @@ namespace PayrollApplication
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Preview");
+            CheckedItems();
+            string Country;
+            if (cmbCountry.SelectedIndex == Constants.INDEX_ZERO || cmbCountry.SelectedIndex == Constants.INDEX_MINUS_ONE_OR_DEFAULT_INDEX)
+            {
+                Country = String.Empty;
+            }
+            else
+            {
+                Country = cmbCountry.SelectedItem.ToString();
+            }
+            PreviewForm previewForm = new PreviewForm();
+            previewForm.PreviewEmployeeData(txtEmployeeID.Text, txtFirstName.Text, txtLastName.Text, gender,
+                txtNationalInsuranceNumber.Text, dtpDateOfBirth.Text, maritalStatus, isMember, txtAddress.Text,
+                txtCity.Text, txtPostCode.Text, Country,
+                txtPhoneNumber.Text, txtEmailAddress.Text, txtNotes.Text);
+
+            // To Display the form
+            previewForm.ShowDialog();
         }
 
         #region KeyPressEventValidation
