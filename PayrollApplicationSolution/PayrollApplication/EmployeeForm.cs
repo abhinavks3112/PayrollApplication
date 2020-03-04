@@ -203,55 +203,110 @@ namespace PayrollApplication
             if (IsControlsDataValid())
             {
                 CheckedItems();
-
-                // Fetch connection string
-                string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
-
-                //Instantiate the sql connection object with connection string
-                SqlConnection sqlConnection = new SqlConnection(cs);
-                try
-                {
-                    // Open connection
-                    sqlConnection.Open();
-
-                    // Prepare Insert Command
-                    string InsertCommand = "INSERT INTO tblEmployee(EmployeeID, FirstName," +
-                        "LastName, Gender, NINumber, DateOfBirth, MaritalStatus, IsMember, Address, City, " +
-                        "PostCode, Country, PhoneNumber, Email, Notes) VALUES (" + Convert.ToInt32(txtEmployeeID.Text) 
-                        + ", '"+ txtFirstName.Text+"', '"+ txtLastName.Text+"', '"+ gender +"', '"
-                        + txtNationalInsuranceNumber.Text+"','"+ dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
-                        +"', '"+ maritalStatus+"', '"+ isMember +"', '"+ txtAddress.Text+"', '"+ txtCity.Text 
-                        +"', '"+ txtPostCode.Text +"', '"+ cmbCountry.SelectedItem.ToString()+"', '"
-                        + txtPhoneNumber.Text +"', '"+ txtEmailAddress.Text +"', '"+ txtNotes.Text +"' )";
-
-                    // Instantiate sql command object with command string and sql connection object
-                    SqlCommand sqlCommand = new SqlCommand(InsertCommand, sqlConnection);
-
-                    // Execute the sql command object
-                    sqlCommand.ExecuteNonQuery();
-
-                    // Insert into data table
-                    this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
-
-                    // Display success message
-                    MessageBox.Show("EMPLOYEE WITH ID " + txtEmployeeID.Text + " HAS BEEN ADDED SUCCESSFULLY!!", Constants.MSG_EMPLOYEE_ADD_SUCCESS, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                { 
-                    // Close connection
-                    sqlConnection.Close();
-                }
+                AddEmployee();
             }
         }
 
+        private void AddEmployee()
+        {
+            // Fetch connection string
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+
+            //Instantiate the sql connection object with connection string
+            SqlConnection sqlConnection = new SqlConnection(cs);
+            try
+            {
+                // Open connection
+                sqlConnection.Open();
+
+                // Prepare Insert Command
+                string InsertCommand = "INSERT INTO tblEmployee(EmployeeID, FirstName," +
+                    "LastName, Gender, NINumber, DateOfBirth, MaritalStatus, IsMember, Address, City, " +
+                    "PostCode, Country, PhoneNumber, Email, Notes) VALUES (" + Convert.ToInt32(txtEmployeeID.Text)
+                    + ", '" + txtFirstName.Text + "', '" + txtLastName.Text + "', '" + gender + "', '"
+                    + txtNationalInsuranceNumber.Text + "','" + dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
+                    + "', '" + maritalStatus + "', '" + isMember + "', '" + txtAddress.Text + "', '" + txtCity.Text
+                    + "', '" + txtPostCode.Text + "', '" + cmbCountry.SelectedItem.ToString() + "', '"
+                    + txtPhoneNumber.Text + "', '" + txtEmailAddress.Text + "', '" + txtNotes.Text + "' )";
+
+                // Instantiate sql command object with command string and sql connection object
+                SqlCommand sqlCommand = new SqlCommand(InsertCommand, sqlConnection);
+
+                // Execute the sql command object
+                sqlCommand.ExecuteNonQuery();
+
+                // Insert into data table
+                this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+                // Display success message
+                MessageBox.Show("EMPLOYEE WITH ID " + txtEmployeeID.Text + " HAS BEEN ADDED SUCCESSFULLY!!", Constants.MSG_EMPLOYEE_ADD_SUCCESS, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close connection
+                sqlConnection.Close();
+                FormReset();
+            }
+        }
+
+        private void UpdateEmployee()
+        {
+            // Fetch connection string
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+
+            //Instantiate the sql connection object with connection string
+            SqlConnection sqlConnection = new SqlConnection(cs);
+            try
+            {
+                // Open connection
+                sqlConnection.Open();
+
+                // Prepare Insert Command
+                string UpdateCommand = "UPDATE tblEmployee SET FirstName = '" + this.txtFirstName.Text 
+                    + "', LastName = '" + this.txtLastName.Text + "', Gender = '" + this.gender + "', NINumber = '"
+                    + this.txtNationalInsuranceNumber.Text + "', DateOfBirth = '" + this.dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
+                    + "', MaritalStatus = '" + this.maritalStatus + "', IsMember = '" + this.isMember + "', Address = '" + this.txtAddress.Text 
+                    + "', City = '" + this.txtCity.Text + "', PostCode = '" + this.txtPostCode.Text 
+                    + "', Country = '" + this.cmbCountry.SelectedItem.ToString() + "', PhoneNumber = '"+ this.txtPhoneNumber.Text 
+                    + "', Email = '" + this.txtEmailAddress.Text + "', Notes = '" + this.txtNotes.Text 
+                    + "' WHERE EmployeeID = " + Convert.ToInt32(this.txtEmployeeID.Text) + "";
+
+                // Instantiate sql command object with command string and sql connection object
+                SqlCommand sqlCommand = new SqlCommand(UpdateCommand, sqlConnection);
+
+                // Execute the sql command object
+                sqlCommand.ExecuteNonQuery();
+
+                // Insert into data table
+                this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+                // Display success message
+                MessageBox.Show("EMPLOYEE WITH ID " + txtEmployeeID.Text + " HAS BEEN UPDATED SUCCESSFULLY!!", Constants.MSG_EMPLOYEE_UPDATE_SUCCESS, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close connection
+                sqlConnection.Close();
+                FormReset();
+            }
+        }
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Updated");
+            if (IsControlsDataValid())
+            {
+                CheckedItems();
+                UpdateEmployee();
+            }
         }
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)

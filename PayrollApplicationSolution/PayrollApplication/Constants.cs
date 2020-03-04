@@ -21,6 +21,7 @@ namespace PayrollApplication
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
         public const string MSG_ERROR = "ERROR: ";
         public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE ADDED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE UPDATED SUCCESSFULLY!!";
 
         public const int INDEX_ZERO = 0;
         public const int INDEX_MINUS_ONE_OR_DEFAULT_INDEX = -1;
