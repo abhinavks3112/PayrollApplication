@@ -343,5 +343,43 @@ namespace PayrollApplication
             this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Reset any previous values first
+            FormReset();
+
+            // Populating the form by selecting row in data grid
+            txtEmployeeID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+            txtFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+            txtLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+
+            gender = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+            if (gender == Constants.GENDER_MALE)
+                rdbMale.Checked = true;
+            else if (gender == Constants.GENDER_FEMALE)
+                rdbFemale.Checked = true;
+
+            txtNationalInsuranceNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+            dtpDateOfBirth.Text = dataGridView1.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+
+            maritalStatus = dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+            if (maritalStatus == Constants.MARITAL_STATUS_MARRIED)
+                rdbMarried.Checked = true;
+            else if (maritalStatus == Constants.MARITAL_STATUS_SINGLE)
+                rdbSingle.Checked = true;
+
+            isMember = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[7].FormattedValue.ToString());
+            if (isMember)
+                chkIsMember.Checked = true;
+
+            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+            txtCity.Text = dataGridView1.Rows[e.RowIndex].Cells[9].FormattedValue.ToString();
+            txtPostCode.Text = dataGridView1.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+            cmbCountry.Text = dataGridView1.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
+            txtPhoneNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[12].FormattedValue.ToString();
+            txtEmailAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[13].FormattedValue.ToString();
+            txtNotes.Text = dataGridView1.Rows[e.RowIndex].Cells[14].FormattedValue.ToString();
+        }
     }
 }
