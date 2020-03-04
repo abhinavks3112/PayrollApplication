@@ -9,6 +9,8 @@ namespace PayrollApplication
     public class Constants
     {
         public const string MSG_DATA_ENTRY_ERROR = "DATA ENTRY ERROR!!";
+        public const string MSG_DATA_UPDATION_ERROR = "DATA UPDATION ERROR!!";
+        public const string MSG_DATA_DELETION_ERROR = "DATA DELETION ERROR!!";
         public const string MSG_INVALID_CHARACTERS_ERROR = "INVALID CHARACTERS ENTERED!!";
         public const string MSG_EMPTY_FIELD_ERROR = "FIELD IS EMPTY!!";
         public const string MSG_INVALID_DATA_FORMAT_ERROR = "INVALID DATA FORMAT!!";
@@ -20,8 +22,11 @@ namespace PayrollApplication
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
         public const string MSG_ERROR = "ERROR: ";
-        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE ADDED SUCCESSFULLY!!";
-        public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE UPDATED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_DELETE_SUCCESS = "EMPLOYEE RECORD HAS BEEN DELETED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS EMPLOYEE'S RECORD?";
+        public const string MSG_CONFIRM_EMPLOYEE_DELETION = "CONFIRM EMPLOYEE DELETION";
 
         public const int INDEX_ZERO = 0;
         public const int INDEX_MINUS_ONE_OR_DEFAULT_INDEX = -1;

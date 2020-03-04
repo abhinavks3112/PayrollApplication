@@ -266,7 +266,7 @@ namespace PayrollApplication
                 // Open connection
                 sqlConnection.Open();
 
-                // Prepare Insert Command
+                // Prepare Update Command
                 string UpdateCommand = "UPDATE tblEmployee SET FirstName = '" + this.txtFirstName.Text 
                     + "', LastName = '" + this.txtLastName.Text + "', Gender = '" + this.gender + "', NINumber = '"
                     + this.txtNationalInsuranceNumber.Text + "', DateOfBirth = '" + this.dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
@@ -291,7 +291,7 @@ namespace PayrollApplication
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_UPDATION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -300,6 +300,47 @@ namespace PayrollApplication
                 FormReset();
             }
         }
+
+        private void DeleteEmployee()
+        {
+            // Fetch connection string
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+
+            //Instantiate the sql connection object with connection string
+            SqlConnection sqlConnection = new SqlConnection(cs);
+            try
+            {
+                // Open connection
+                sqlConnection.Open();
+
+                // Prepare Delete Command
+                string DeleteCommand = "DELETE FROM tblEmployee WHERE EmployeeID = " + Convert.ToInt32(this.txtEmployeeID.Text) + "";
+
+                // Instantiate sql command object with command string and sql connection object
+                SqlCommand sqlCommand = new SqlCommand(DeleteCommand, sqlConnection);
+
+                // Execute the sql command object
+                sqlCommand.ExecuteNonQuery();
+
+                // Insert into data table
+                this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+                // Display success message
+                MessageBox.Show("EMPLOYEE WITH ID " + txtEmployeeID.Text + " HAS BEEN DELETED SUCCESSFULLY!!", Constants.MSG_EMPLOYEE_DELETE_SUCCESS, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_DELETION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close connection
+                sqlConnection.Close();
+                FormReset();
+            }
+        }
+
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
             if (IsControlsDataValid())
@@ -311,7 +352,12 @@ namespace PayrollApplication
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Deleted");
+            DialogResult dialogResult = MessageBox.Show(Constants.MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION, Constants.MSG_CONFIRM_EMPLOYEE_DELETION, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dialogResult == DialogResult.Yes)
+            {
+                CheckedItems();
+                DeleteEmployee();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
