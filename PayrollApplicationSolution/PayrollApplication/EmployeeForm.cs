@@ -17,6 +17,7 @@ namespace PayrollApplication
     public partial class EmployeeForm : Form
     {
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
+        Colors colors = new Colors();
         string gender;
         string maritalStatus;
         bool isMember;
@@ -64,15 +65,15 @@ namespace PayrollApplication
             {
                 MessageBox.Show(Constants.MSG_SELECT_GENDER, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
-                rdbMale.BackColor = Color.Silver;
-                rdbFemale.BackColor = Color.Silver;
+                rdbMale.BackColor = colors.VALIDATION_ERROR;
+                rdbFemale.BackColor = colors.VALIDATION_ERROR;
                 isValid = false;
                 return isValid;
             }
             else
             {
-                rdbMale.BackColor = Color.White;
-                rdbFemale.BackColor = Color.White;
+                rdbMale.BackColor = colors.NORMAL_RADIOBUTTON_COLOR;
+                rdbFemale.BackColor = colors.NORMAL_RADIOBUTTON_COLOR;
             }
 
 
@@ -81,15 +82,15 @@ namespace PayrollApplication
             {
                 MessageBox.Show(Constants.MSG_SELECT_MARITAL_STATUS, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
-                rdbMarried.BackColor = Color.Silver;
-                rdbSingle.BackColor = Color.Silver;
+                rdbMarried.BackColor = colors.VALIDATION_ERROR;
+                rdbSingle.BackColor = colors.VALIDATION_ERROR;
                 isValid = false;
                 return isValid;
             }
             else
             {
-                rdbMarried.BackColor = Color.White;
-                rdbSingle.BackColor = Color.White;
+                rdbMarried.BackColor = colors.NORMAL_RADIOBUTTON_COLOR;
+                rdbSingle.BackColor = colors.NORMAL_RADIOBUTTON_COLOR;
             }
 
             // Country Validation
@@ -97,13 +98,13 @@ namespace PayrollApplication
             {
                 MessageBox.Show(Constants.MSG_SELECT_COUNTRY, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmbCountry.Focus();
-                cmbCountry.BackColor = Color.Silver;
+                cmbCountry.BackColor = colors.VALIDATION_ERROR;
                 isValid = false;
                 return isValid;
             }
             else
             {
-                cmbCountry.BackColor = Color.White;
+                cmbCountry.BackColor = colors.NORMAL_COLOR;
             }
 
             return isValid;

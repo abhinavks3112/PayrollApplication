@@ -90,6 +90,7 @@
             this.tblEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.payrollSystemDBDataSet = new PayrollApplication.PayrollSystemDBDataSet();
             this.tblEmployeeTableAdapter = new PayrollApplication.PayrollSystemDBDataSetTableAdapters.tblEmployeeTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grpEmployeeInformation.SuspendLayout();
             this.grpMaritalStatus.SuspendLayout();
             this.grpGender.SuspendLayout();
@@ -97,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmployeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEmployeeInformation
@@ -115,7 +117,7 @@
             this.grpEmployeeInformation.Controls.Add(this.lblFirstName);
             this.grpEmployeeInformation.Controls.Add(this.txtEmployeeID);
             this.grpEmployeeInformation.Controls.Add(this.lblEmployeeID);
-            this.grpEmployeeInformation.Location = new System.Drawing.Point(53, 40);
+            this.grpEmployeeInformation.Location = new System.Drawing.Point(70, 40);
             this.grpEmployeeInformation.Name = "grpEmployeeInformation";
             this.grpEmployeeInformation.Size = new System.Drawing.Size(346, 451);
             this.grpEmployeeInformation.TabIndex = 0;
@@ -315,7 +317,7 @@
             this.grpEmployeeContactDetails.Controls.Add(this.lblCity);
             this.grpEmployeeContactDetails.Controls.Add(this.txtAddress);
             this.grpEmployeeContactDetails.Controls.Add(this.lblAddress);
-            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(424, 40);
+            this.grpEmployeeContactDetails.Location = new System.Drawing.Point(468, 40);
             this.grpEmployeeContactDetails.Name = "grpEmployeeContactDetails";
             this.grpEmployeeContactDetails.Size = new System.Drawing.Size(362, 451);
             this.grpEmployeeContactDetails.TabIndex = 1;
@@ -642,15 +644,16 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(687, 515);
+            this.btnExit.Location = new System.Drawing.Point(706, 38);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(135, 39);
+            this.btnExit.Size = new System.Drawing.Size(125, 47);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -659,30 +662,31 @@
             // btnAddEmployee
             // 
             this.btnAddEmployee.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Image")));
             this.btnAddEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEmployee.Location = new System.Drawing.Point(19, 515);
+            this.btnAddEmployee.Location = new System.Drawing.Point(6, 38);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnAddEmployee.Size = new System.Drawing.Size(118, 39);
+            this.btnAddEmployee.Size = new System.Drawing.Size(125, 47);
             this.btnAddEmployee.TabIndex = 3;
-            this.btnAddEmployee.Text = "&Add Employee";
+            this.btnAddEmployee.Text = "&Add\r\nEmployee";
             this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddEmployee.UseVisualStyleBackColor = false;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // btnUpdateEmployee
             // 
-            this.btnUpdateEmployee.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdateEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdateEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateEmployee.Image")));
             this.btnUpdateEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(143, 515);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(146, 38);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
-            this.btnUpdateEmployee.Size = new System.Drawing.Size(127, 39);
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(125, 47);
             this.btnUpdateEmployee.TabIndex = 4;
             this.btnUpdateEmployee.Text = "&Update Employee";
             this.btnUpdateEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -691,14 +695,15 @@
             // 
             // btnDeleteEmployee
             // 
-            this.btnDeleteEmployee.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteEmployee.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDeleteEmployee.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteEmployee.Image")));
             this.btnDeleteEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(276, 515);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(286, 38);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(123, 39);
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(125, 47);
             this.btnDeleteEmployee.TabIndex = 5;
             this.btnDeleteEmployee.Text = "&Delete Employee";
             this.btnDeleteEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -707,15 +712,16 @@
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(405, 515);
+            this.btnReset.Location = new System.Drawing.Point(426, 38);
             this.btnReset.Name = "btnReset";
             this.btnReset.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnReset.Size = new System.Drawing.Size(135, 39);
+            this.btnReset.Size = new System.Drawing.Size(125, 47);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "&Reset";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -723,15 +729,16 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreview.BackColor = System.Drawing.Color.Transparent;
+            this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreview.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.Image")));
             this.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPreview.Location = new System.Drawing.Point(546, 515);
+            this.btnPreview.Location = new System.Drawing.Point(566, 38);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnPreview.Size = new System.Drawing.Size(135, 39);
+            this.btnPreview.Size = new System.Drawing.Size(125, 47);
             this.btnPreview.TabIndex = 7;
             this.btnPreview.Text = "&Preview";
             this.btnPreview.UseVisualStyleBackColor = false;
@@ -765,11 +772,11 @@
             this.notesDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tblEmployeeBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 554);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 604);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 152);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -892,20 +899,29 @@
             // 
             this.tblEmployeeTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAddEmployee);
+            this.groupBox1.Controls.Add(this.btnUpdateEmployee);
+            this.groupBox1.Controls.Add(this.btnExit);
+            this.groupBox1.Controls.Add(this.btnPreview);
+            this.groupBox1.Controls.Add(this.btnDeleteEmployee);
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Location = new System.Drawing.Point(28, 497);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(845, 107);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(843, 631);
+            this.ClientSize = new System.Drawing.Size(927, 751);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnPreview);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnDeleteEmployee);
-            this.Controls.Add(this.btnUpdateEmployee);
-            this.Controls.Add(this.btnAddEmployee);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.grpEmployeeContactDetails);
             this.Controls.Add(this.grpEmployeeInformation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -926,6 +942,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmployeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -991,6 +1008,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
