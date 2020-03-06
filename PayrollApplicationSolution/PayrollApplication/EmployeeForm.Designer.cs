@@ -123,7 +123,6 @@
             this.grpEmployeeInformation.TabIndex = 0;
             this.grpEmployeeInformation.TabStop = false;
             this.grpEmployeeInformation.Text = "Employee Information";
-            this.grpEmployeeInformation.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // chkIsMember
             // 
@@ -193,7 +192,6 @@
             this.lblDateOfBirth.Size = new System.Drawing.Size(68, 13);
             this.lblDateOfBirth.TabIndex = 9;
             this.lblDateOfBirth.Text = "Date Of Birth";
-            this.lblDateOfBirth.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // txtNationalInsuranceNumber
             // 
@@ -202,7 +200,6 @@
             this.txtNationalInsuranceNumber.Name = "txtNationalInsuranceNumber";
             this.txtNationalInsuranceNumber.Size = new System.Drawing.Size(100, 20);
             this.txtNationalInsuranceNumber.TabIndex = 6;
-            this.txtNationalInsuranceNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblNationalInsuranceNumber
             // 
@@ -212,7 +209,6 @@
             this.lblNationalInsuranceNumber.Size = new System.Drawing.Size(116, 13);
             this.lblNationalInsuranceNumber.TabIndex = 7;
             this.lblNationalInsuranceNumber.Text = "National Insurance No.";
-            this.lblNationalInsuranceNumber.Click += new System.EventHandler(this.label1_Click);
             // 
             // grpGender
             // 
@@ -224,7 +220,6 @@
             this.grpGender.TabIndex = 3;
             this.grpGender.TabStop = false;
             this.grpGender.Text = "Gender";
-            this.grpGender.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // rdbFemale
             // 
@@ -236,7 +231,6 @@
             this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
-            this.rdbFemale.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // rdbMale
             // 

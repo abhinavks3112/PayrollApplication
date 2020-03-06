@@ -16,6 +16,7 @@ namespace PayrollApplication
 {
     public partial class EmployeeForm : Form
     {
+        // Global Variables
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
         Colors colors = new Colors();
         string gender;
@@ -164,39 +165,10 @@ namespace PayrollApplication
             txtEmailAddress.Clear();
             txtNotes.Clear();
         }
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)

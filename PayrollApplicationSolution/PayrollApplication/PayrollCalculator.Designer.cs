@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -334,6 +334,7 @@
             // 
             this.txtNetPay.Location = new System.Drawing.Point(611, 651);
             this.txtNetPay.Name = "txtNetPay";
+            this.txtNetPay.ReadOnly = true;
             this.txtNetPay.Size = new System.Drawing.Size(153, 20);
             this.txtNetPay.TabIndex = 2;
             // 
@@ -341,11 +342,10 @@
             // 
             this.lblEmployeeFullName.AutoSize = true;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(15, 16);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(307, 21);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
-            this.lblEmployeeFullName.Size = new System.Drawing.Size(120, 25);
+            this.lblEmployeeFullName.Size = new System.Drawing.Size(0, 25);
             this.lblEmployeeFullName.TabIndex = 2;
-            this.lblEmployeeFullName.Text = "FULL NAME";
             // 
             // grpDates
             // 
@@ -1208,6 +1208,7 @@
             // 
             this.txtTotalDeductions.Location = new System.Drawing.Point(123, 130);
             this.txtTotalDeductions.Name = "txtTotalDeductions";
+            this.txtTotalDeductions.ReadOnly = true;
             this.txtTotalDeductions.Size = new System.Drawing.Size(153, 20);
             this.txtTotalDeductions.TabIndex = 2;
             // 
@@ -1269,6 +1270,7 @@
             // 
             this.txtNIContribution.Location = new System.Drawing.Point(88, 80);
             this.txtNIContribution.Name = "txtNIContribution";
+            this.txtNIContribution.ReadOnly = true;
             this.txtNIContribution.Size = new System.Drawing.Size(74, 20);
             this.txtNIContribution.TabIndex = 2;
             // 
@@ -1276,6 +1278,7 @@
             // 
             this.txtSLC.Location = new System.Drawing.Point(214, 80);
             this.txtSLC.Name = "txtSLC";
+            this.txtSLC.ReadOnly = true;
             this.txtSLC.Size = new System.Drawing.Size(62, 20);
             this.txtSLC.TabIndex = 2;
             // 
@@ -1283,6 +1286,7 @@
             // 
             this.txtUnion.Location = new System.Drawing.Point(214, 57);
             this.txtUnion.Name = "txtUnion";
+            this.txtUnion.ReadOnly = true;
             this.txtUnion.Size = new System.Drawing.Size(62, 20);
             this.txtUnion.TabIndex = 2;
             // 
@@ -1290,6 +1294,7 @@
             // 
             this.txtTaxAmount.Location = new System.Drawing.Point(88, 56);
             this.txtTaxAmount.Name = "txtTaxAmount";
+            this.txtTaxAmount.ReadOnly = true;
             this.txtTaxAmount.Size = new System.Drawing.Size(74, 20);
             this.txtTaxAmount.TabIndex = 2;
             // 
@@ -1297,6 +1302,7 @@
             // 
             this.txtTaxCode.Location = new System.Drawing.Point(214, 13);
             this.txtTaxCode.Name = "txtTaxCode";
+            this.txtTaxCode.ReadOnly = true;
             this.txtTaxCode.Size = new System.Drawing.Size(62, 20);
             this.txtTaxCode.TabIndex = 2;
             this.txtTaxCode.Text = "1250L";
@@ -1341,6 +1347,7 @@
             // 
             this.txtTotalEarnings.Location = new System.Drawing.Point(98, 101);
             this.txtTotalEarnings.Name = "txtTotalEarnings";
+            this.txtTotalEarnings.ReadOnly = true;
             this.txtTotalEarnings.Size = new System.Drawing.Size(93, 20);
             this.txtTotalEarnings.TabIndex = 2;
             // 
@@ -1357,6 +1364,7 @@
             // 
             this.txtContractualEarnings.Location = new System.Drawing.Point(117, 24);
             this.txtContractualEarnings.Name = "txtContractualEarnings";
+            this.txtContractualEarnings.ReadOnly = true;
             this.txtContractualEarnings.Size = new System.Drawing.Size(74, 20);
             this.txtContractualEarnings.TabIndex = 2;
             // 
@@ -1373,6 +1381,7 @@
             // 
             this.txtOvertimeEarnings.Location = new System.Drawing.Point(117, 53);
             this.txtOvertimeEarnings.Name = "txtOvertimeEarnings";
+            this.txtOvertimeEarnings.ReadOnly = true;
             this.txtOvertimeEarnings.Size = new System.Drawing.Size(74, 20);
             this.txtOvertimeEarnings.TabIndex = 2;
             // 
@@ -1407,6 +1416,7 @@
             // 
             this.txtTotalHoursWorked.Location = new System.Drawing.Point(137, 101);
             this.txtTotalHoursWorked.Name = "txtTotalHoursWorked";
+            this.txtTotalHoursWorked.ReadOnly = true;
             this.txtTotalHoursWorked.Size = new System.Drawing.Size(75, 20);
             this.txtTotalHoursWorked.TabIndex = 2;
             // 
@@ -1414,6 +1424,7 @@
             // 
             this.txtOvertimeRate.Location = new System.Drawing.Point(112, 75);
             this.txtOvertimeRate.Name = "txtOvertimeRate";
+            this.txtOvertimeRate.ReadOnly = true;
             this.txtOvertimeRate.Size = new System.Drawing.Size(100, 20);
             this.txtOvertimeRate.TabIndex = 2;
             // 
@@ -1421,6 +1432,7 @@
             // 
             this.txtOvertimeHours.Location = new System.Drawing.Point(112, 51);
             this.txtOvertimeHours.Name = "txtOvertimeHours";
+            this.txtOvertimeHours.ReadOnly = true;
             this.txtOvertimeHours.Size = new System.Drawing.Size(100, 20);
             this.txtOvertimeHours.TabIndex = 2;
             // 
@@ -1428,6 +1440,7 @@
             // 
             this.txtContractualHours.Location = new System.Drawing.Point(112, 27);
             this.txtContractualHours.Name = "txtContractualHours";
+            this.txtContractualHours.ReadOnly = true;
             this.txtContractualHours.Size = new System.Drawing.Size(100, 20);
             this.txtContractualHours.TabIndex = 2;
             // 
@@ -1488,6 +1501,7 @@
             this.btnGet.TabIndex = 3;
             this.btnGet.Text = "Get";
             this.btnGet.UseVisualStyleBackColor = true;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
             // txtNINumber
             // 
@@ -1821,8 +1835,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 849);
@@ -1841,6 +1855,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PayrollCalculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PayrollCalculator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
