@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -141,7 +141,6 @@
             this.lblSearchPayMonth = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblSearchPayDate = new System.Windows.Forms.Label();
-            this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.txtSearchNINumber = new System.Windows.Forms.TextBox();
             this.txtSearchFullName = new System.Windows.Forms.TextBox();
             this.txtSearchEmployeeID = new System.Windows.Forms.TextBox();
@@ -151,7 +150,7 @@
             this.lblSearchFullName = new System.Windows.Forms.Label();
             this.lblSearchPaymentID = new System.Windows.Forms.Label();
             this.grpConvertTimeToDecimals = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTimeToDecimalConvertor = new System.Windows.Forms.Button();
             this.lblDecimal = new System.Windows.Forms.Label();
             this.txtDecimalHours = new System.Windows.Forms.TextBox();
             this.txtMinutes = new System.Windows.Forms.TextBox();
@@ -184,6 +183,7 @@
             this.sLCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDeductionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netPayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtpSearchPayDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.grpDates.SuspendLayout();
             this.grpTimeSheet.SuspendLayout();
@@ -1630,11 +1630,11 @@
             // grpSearchPayments
             // 
             this.grpSearchPayments.Controls.Add(this.cmbSearchPayMonth);
+            this.grpSearchPayments.Controls.Add(this.dtpSearchPayDate);
             this.grpSearchPayments.Controls.Add(this.btnSearch);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayMonth);
             this.grpSearchPayments.Controls.Add(this.btnClear);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayDate);
-            this.grpSearchPayments.Controls.Add(this.txtSearchPayDate);
             this.grpSearchPayments.Controls.Add(this.txtSearchNINumber);
             this.grpSearchPayments.Controls.Add(this.txtSearchFullName);
             this.grpSearchPayments.Controls.Add(this.txtSearchEmployeeID);
@@ -1708,13 +1708,6 @@
             this.lblSearchPayDate.TabIndex = 4;
             this.lblSearchPayDate.Text = "Pay Date";
             // 
-            // txtSearchPayDate
-            // 
-            this.txtSearchPayDate.Location = new System.Drawing.Point(185, 223);
-            this.txtSearchPayDate.Name = "txtSearchPayDate";
-            this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
-            this.txtSearchPayDate.TabIndex = 2;
-            // 
             // txtSearchNINumber
             // 
             this.txtSearchNINumber.Location = new System.Drawing.Point(185, 182);
@@ -1735,6 +1728,7 @@
             this.txtSearchEmployeeID.Name = "txtSearchEmployeeID";
             this.txtSearchEmployeeID.Size = new System.Drawing.Size(128, 20);
             this.txtSearchEmployeeID.TabIndex = 2;
+            this.txtSearchEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchEmployeeID_KeyPress);
             // 
             // txtSearchPaymentID
             // 
@@ -1742,6 +1736,7 @@
             this.txtSearchPaymentID.Name = "txtSearchPaymentID";
             this.txtSearchPaymentID.Size = new System.Drawing.Size(128, 20);
             this.txtSearchPaymentID.TabIndex = 2;
+            this.txtSearchPaymentID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchPaymentID_KeyPress);
             // 
             // lblSearchNINumber
             // 
@@ -1781,7 +1776,7 @@
             // 
             // grpConvertTimeToDecimals
             // 
-            this.grpConvertTimeToDecimals.Controls.Add(this.button1);
+            this.grpConvertTimeToDecimals.Controls.Add(this.btnTimeToDecimalConvertor);
             this.grpConvertTimeToDecimals.Controls.Add(this.lblDecimal);
             this.grpConvertTimeToDecimals.Controls.Add(this.txtDecimalHours);
             this.grpConvertTimeToDecimals.Controls.Add(this.txtMinutes);
@@ -1796,22 +1791,23 @@
             this.grpConvertTimeToDecimals.TabStop = false;
             this.grpConvertTimeToDecimals.Text = "Convert Time To Decimals";
             // 
-            // button1
+            // btnTimeToDecimalConvertor
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(205, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 39);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "=";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTimeToDecimalConvertor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimeToDecimalConvertor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeToDecimalConvertor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnTimeToDecimalConvertor.Location = new System.Drawing.Point(207, 43);
+            this.btnTimeToDecimalConvertor.Name = "btnTimeToDecimalConvertor";
+            this.btnTimeToDecimalConvertor.Size = new System.Drawing.Size(39, 39);
+            this.btnTimeToDecimalConvertor.TabIndex = 3;
+            this.btnTimeToDecimalConvertor.Text = "=";
+            this.btnTimeToDecimalConvertor.UseVisualStyleBackColor = true;
+            this.btnTimeToDecimalConvertor.Click += new System.EventHandler(this.btnTimeToDecimalConvertor_Click);
             // 
             // lblDecimal
             // 
             this.lblDecimal.AutoSize = true;
-            this.lblDecimal.Location = new System.Drawing.Point(247, 27);
+            this.lblDecimal.Location = new System.Drawing.Point(256, 27);
             this.lblDecimal.Name = "lblDecimal";
             this.lblDecimal.Size = new System.Drawing.Size(45, 13);
             this.lblDecimal.TabIndex = 0;
@@ -1819,24 +1815,29 @@
             // 
             // txtDecimalHours
             // 
-            this.txtDecimalHours.Location = new System.Drawing.Point(250, 55);
+            this.txtDecimalHours.Location = new System.Drawing.Point(259, 56);
             this.txtDecimalHours.Name = "txtDecimalHours";
+            this.txtDecimalHours.ReadOnly = true;
             this.txtDecimalHours.Size = new System.Drawing.Size(100, 20);
             this.txtDecimalHours.TabIndex = 2;
             // 
             // txtMinutes
             // 
+            this.txtMinutes.AccessibleName = "Minute(s)";
             this.txtMinutes.Location = new System.Drawing.Point(116, 54);
             this.txtMinutes.Name = "txtMinutes";
             this.txtMinutes.Size = new System.Drawing.Size(78, 20);
             this.txtMinutes.TabIndex = 2;
+            this.txtMinutes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinutes_KeyPress);
             // 
             // txtHours
             // 
+            this.txtHours.AccessibleName = "Hour(s)";
             this.txtHours.Location = new System.Drawing.Point(10, 54);
             this.txtHours.Name = "txtHours";
             this.txtHours.Size = new System.Drawing.Size(78, 20);
             this.txtHours.TabIndex = 2;
+            this.txtHours.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHours_KeyPress);
             // 
             // lblMinutes
             // 
@@ -1873,8 +1874,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPaymentRecord.AutoGenerateColumns = false;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2046,6 +2047,13 @@
             this.netPayDataGridViewTextBoxColumn.DataPropertyName = "NetPay";
             this.netPayDataGridViewTextBoxColumn.HeaderText = "NetPay";
             this.netPayDataGridViewTextBoxColumn.Name = "netPayDataGridViewTextBoxColumn";
+            // 
+            // dtpSearchPayDate
+            // 
+            this.dtpSearchPayDate.Location = new System.Drawing.Point(185, 226);
+            this.dtpSearchPayDate.Name = "dtpSearchPayDate";
+            this.dtpSearchPayDate.Size = new System.Drawing.Size(128, 20);
+            this.dtpSearchPayDate.TabIndex = 2;
             // 
             // PayrollCalculator
             // 
@@ -2229,10 +2237,9 @@
         private System.Windows.Forms.Label lblMinutes;
         private System.Windows.Forms.Label lblColon;
         private System.Windows.Forms.Label lblHours;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTimeToDecimalConvertor;
         private System.Windows.Forms.Label lblSearchPayMonth;
         private System.Windows.Forms.Label lblSearchPayDate;
-        private System.Windows.Forms.TextBox txtSearchPayDate;
         private System.Windows.Forms.TextBox txtSearchNINumber;
         private System.Windows.Forms.TextBox txtSearchFullName;
         private System.Windows.Forms.TextBox txtSearchEmployeeID;
@@ -2274,5 +2281,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sLCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDeductionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn netPayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dtpSearchPayDate;
     }
 }

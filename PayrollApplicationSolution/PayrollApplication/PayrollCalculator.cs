@@ -326,13 +326,24 @@ namespace PayrollApplication
 
         private void ResetControls()
         {
+            #region Reset Employee Details Section
+
             txtEmployeeID.Text = String.Empty;
             txtFirstName.Text = String.Empty;
             txtLastName.Text = String.Empty;
             txtNINumber.Text = String.Empty;
             lblEmployeeFullName.Text = String.Empty;
+
+            #endregion
+
+            #region Reset Date Section
+
             listBoxPayPeriod.SelectedIndex = Constants.INDEX_ZERO;
             cmbPayMonth.SelectedIndex = Constants.INDEX_ZERO;
+
+            #endregion
+
+            #region Reset Timesheet Section
 
             nudMon1.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             nudTues1.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
@@ -366,25 +377,66 @@ namespace PayrollApplication
             nudSat4.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             nudSun4.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
 
-            txtContractualHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtContractualEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtOvertimeHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtOvertimeEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtContractualHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             nudHourlyRate.Text = Constants.HOURLY_RATE_INITIAL_VALUE_STRING_DOUBLE_DECIMAL;
+
+            #endregion
+
+            #region Reset Hours & Earnings Section
+
+            #region Reset Hours Sub-Section
+
+            txtContractualHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtOvertimeHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtOvertimeRate.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtTotalHoursWorked.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+
+            #endregion
+
+            #region Reset Earnings Sub-Section
+
+            txtContractualEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtOvertimeEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtTotalEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+
+            #endregion
+
+            #endregion
+
+            #region Reset Deductions Section
+
+            txtTaxCode.Text = Constants.TAX_CODE_2019_20;
+            txtTaxAmount.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtNIContribution.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtUnion.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtTaxAmount.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtSLC.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtTotalDeductions.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtTotalEarnings.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtTotalHoursWorked.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtNetPay.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtOvertimeRate.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+
+            #endregion
+
+            #region Reset Convert Time To Decimal Section
+
             txtHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtMinutes.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtDecimalHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
-            txtTaxCode.Text = Constants.TAX_CODE_2019_20;
+
+            #endregion
+
+            #region Reset Search Payment Section
+
+            ClearSearch();
+
+            #endregion
+
+            txtNetPay.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+        }
+
+        private void ClearSearch()
+        {
+            txtSearchPaymentID.Text = String.Empty;
+            txtSearchEmployeeID.Text = String.Empty;
+            txtSearchFullName.Text = String.Empty;
+            txtSearchNINumber.Text = String.Empty;
+            cmbSearchPayMonth.SelectedIndex = Constants.INDEX_ZERO;
         }
 
         private void SavePayment()
@@ -447,6 +499,32 @@ namespace PayrollApplication
             cvf.IsNumberOrBackspaceValidation(txtEmployeeID, e);
         }
 
+        private void btnTimeToDecimalConvertor_Click(object sender, EventArgs e)
+        {            
+            double result = Convert.ToDouble(txtHours.Text) + (Convert.ToDouble(txtMinutes.Text) / 60);
+            txtDecimalHours.Text = String.Format("{0:0.00}", result);
+        }
+
+        private void txtHours_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtHours, e);
+        }
+
+        private void txtMinutes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtMinutes, e);
+        }
+
+        private void txtSearchPaymentID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtSearchPaymentID, e);
+        }
+
+        private void txtSearchEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtSearchEmployeeID, e);
+        }
+
         private void btnComputePay_Click(object sender, EventArgs e)
         {
             if(ValidateControls())
@@ -483,7 +561,7 @@ namespace PayrollApplication
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Search cleared!!");
+            ClearSearch();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
