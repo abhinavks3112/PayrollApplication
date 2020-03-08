@@ -16,16 +16,31 @@ namespace PayrollApplication
 {
     public partial class EmployeeForm : Form
     {
-        // Global Variables
+        #region Global Variables
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
         Colors colors = new Colors();
         string gender;
         string maritalStatus;
         bool isMember;
+        #endregion
         public EmployeeForm()
         {
             InitializeComponent();
         }
+
+        #region User Defined Functions
+        
+        #region KeyPressEventValidation
+        private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtEmployeeID, e);
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cvf.IsNumberOrBackspaceValidation(txtPhoneNumber, e);
+        }
+        #endregion
 
         private bool IsControlsDataValid()
         {
@@ -114,21 +129,21 @@ namespace PayrollApplication
         private void CheckedItems()
         {
             // Check Employee Gender
-            if(rdbMale.Checked)
+            if (rdbMale.Checked)
             {
                 gender = Constants.GENDER_MALE;
             }
-            else if(rdbFemale.Checked)
+            else if (rdbFemale.Checked)
             {
                 gender = Constants.GENDER_FEMALE;
-            }            
+            }
 
             // Check Employee Marital Status
             if (rdbMarried.Checked)
             {
                 maritalStatus = Constants.MARITAL_STATUS_MARRIED;
             }
-            else if(rdbSingle.Checked)
+            else if (rdbSingle.Checked)
             {
                 maritalStatus = Constants.MARITAL_STATUS_SINGLE;
             }
@@ -138,7 +153,7 @@ namespace PayrollApplication
             {
                 isMember = true;
             }
-            else if(chkIsMember.Checked == false)
+            else if (chkIsMember.Checked == false)
             {
                 isMember = false;
             }
@@ -165,21 +180,7 @@ namespace PayrollApplication
             txtEmailAddress.Clear();
             txtNotes.Clear();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAddEmployee_Click(object sender, EventArgs e)
-        {
-            if (IsControlsDataValid())
-            {
-                CheckedItems();
-                AddEmployee();
-            }
-        }
-
+        
         private void AddEmployee()
         {
             // Fetch connection string
@@ -240,13 +241,13 @@ namespace PayrollApplication
                 sqlConnection.Open();
 
                 // Prepare Update Command
-                string UpdateCommand = "UPDATE tblEmployee SET FirstName = '" + this.txtFirstName.Text 
+                string UpdateCommand = "UPDATE tblEmployee SET FirstName = '" + this.txtFirstName.Text
                     + "', LastName = '" + this.txtLastName.Text + "', Gender = '" + this.gender + "', NINumber = '"
                     + this.txtNationalInsuranceNumber.Text + "', DateOfBirth = '" + this.dtpDateOfBirth.Value.ToString("MM/dd/yyyy")
-                    + "', MaritalStatus = '" + this.maritalStatus + "', IsMember = '" + this.isMember + "', Address = '" + this.txtAddress.Text 
-                    + "', City = '" + this.txtCity.Text + "', PostCode = '" + this.txtPostCode.Text 
-                    + "', Country = '" + this.cmbCountry.SelectedItem.ToString() + "', PhoneNumber = '"+ this.txtPhoneNumber.Text 
-                    + "', Email = '" + this.txtEmailAddress.Text + "', Notes = '" + this.txtNotes.Text 
+                    + "', MaritalStatus = '" + this.maritalStatus + "', IsMember = '" + this.isMember + "', Address = '" + this.txtAddress.Text
+                    + "', City = '" + this.txtCity.Text + "', PostCode = '" + this.txtPostCode.Text
+                    + "', Country = '" + this.cmbCountry.SelectedItem.ToString() + "', PhoneNumber = '" + this.txtPhoneNumber.Text
+                    + "', Email = '" + this.txtEmailAddress.Text + "', Notes = '" + this.txtNotes.Text
                     + "' WHERE EmployeeID = " + Convert.ToInt32(this.txtEmployeeID.Text) + "";
 
                 // Instantiate sql command object with command string and sql connection object
@@ -314,6 +315,22 @@ namespace PayrollApplication
             }
         }
 
+        #endregion
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            if (IsControlsDataValid())
+            {
+                CheckedItems();
+                AddEmployee();
+            }
+        }
+
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
             if (IsControlsDataValid())
@@ -359,57 +376,6 @@ namespace PayrollApplication
             // To Display the form
             previewForm.ShowDialog();
         }
-
-        #region KeyPressEventValidation
-        private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            cvf.IsNumberOrBackspaceValidation(txtEmployeeID, e);           
-        }
-
-        private static bool DataEntryErrorValidation(Control control, string Message)
-        {
-            if (string.IsNullOrEmpty(control.Text))
-            {
-                MessageBox.Show(Message, "Data Entry Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                control.Focus();
-                control.BackColor = Color.Silver;
-                return false;
-            }
-            else
-            {
-                control.BackColor = Color.White;
-            }
-            return true;
-        }
-
-        private static void IsNumberOrBackspace(object sender, KeyPressEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-            // Check for either a number or backspace. Backspace checked using its ASCII value  
-            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back))
-            {
-                MessageBox.Show("Please enter numbers only!", "Numbers only!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
-                if(textBox != null)
-                {
-                    textBox.Focus();
-                    textBox.BackColor = Color.Silver;
-                }               
-                e.Handled = true;
-                return;
-            }
-            if (textBox != null)
-            {
-                textBox.Focus();
-                textBox.BackColor = Color.White;
-            }
-        }
-
-        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            cvf.IsNumberOrBackspaceValidation(txtPhoneNumber, e);            
-        }
-        #endregion
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
