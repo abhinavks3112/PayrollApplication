@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PayrollSystemDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PayrollSystemDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollSystemDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +109,17 @@
     </None>
     <None Include="PayrollSystemDBDataSet.xss">
       <DependentUpon>PayrollSystemDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollSystemDBDataSet1.xsc">
+      <DependentUpon>PayrollSystemDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollSystemDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayrollSystemDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PayrollSystemDBDataSet1.xss">
+      <DependentUpon>PayrollSystemDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

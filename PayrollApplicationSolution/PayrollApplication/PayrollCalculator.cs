@@ -387,6 +387,60 @@ namespace PayrollApplication
             txtTaxCode.Text = Constants.TAX_CODE_2019_20;
         }
 
+        private void SavePayment()
+        {
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+
+            SqlConnection sqlConnection = new SqlConnection(cs);
+
+            string insertCommand = "INSERT INTO tblPayRecords" +
+                "(EmployeeID, FullName, NINumber, PayDate, PayPeriod, PayMonth, HourlyRate, ContractualHours, OvertimeHours, TotalHours, ContractualEarnings, " +
+                "OvertimeEarnings, TotalEarnings, TaxCode, TaxAmount, NIContribution, UnionFee, SLC, TotalDeductions, NetPay) " +
+                "VALUES(@EmployeeID, @FullName, @NINumber," +
+                "@PayDate, @PayPeriod, @PayMonth, @HourlyRate, @ContractualHours, @OvertimeHours, @TotalHours, @ContractualEarnings, " +
+                "@OvertimeEarnings, @TotalEarnings, @TaxCode, @TaxAmount, @NIContribution, @UnionFee, @SLC, @TotalDeductions, @NetPay)";
+
+            SqlCommand cmd = new SqlCommand(insertCommand, sqlConnection);
+            cmd.Parameters.AddWithValue("@EmployeeID", Convert.ToInt32(txtEmployeeID.Text));
+            cmd.Parameters.AddWithValue("@FullName", fullName);
+            cmd.Parameters.AddWithValue("@NINumber", txtNINumber.Text);
+            cmd.Parameters.AddWithValue("@PayDate", dtpCurrentDate.Value.ToString("MM/dd/yyyy"));
+            cmd.Parameters.AddWithValue("@PayPeriod", listBoxPayPeriod.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@PayMonth", cmbPayMonth.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@HourlyRate", nudHourlyRate.Value);
+            cmd.Parameters.AddWithValue("@ContractualHours", totalContractualHours);
+            cmd.Parameters.AddWithValue("@OvertimeHours", totalOvertimeHours);
+            cmd.Parameters.AddWithValue("@TotalHours", totalHoursWorked);
+            cmd.Parameters.AddWithValue("@ContractualEarnings", totalContractualAmount);
+            cmd.Parameters.AddWithValue("@OvertimeEarnings", totalOvertimeAmount);
+            cmd.Parameters.AddWithValue("@TotalEarnings", totalAmountEarned);
+            cmd.Parameters.AddWithValue("@TaxCode", txtTaxCode.Text);
+            cmd.Parameters.AddWithValue("@TaxAmount", tax);
+            cmd.Parameters.AddWithValue("@NIContribution", NIContribution);
+            cmd.Parameters.AddWithValue("@UnionFee", Union);
+            cmd.Parameters.AddWithValue("@SLC", SLC);
+            cmd.Parameters.AddWithValue("@TotalDeductions", totalDeductions);
+            cmd.Parameters.AddWithValue("@NetPay", netPay);
+
+            try
+            {
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show(Constants.MSG_EMPLOYEE_SALARY_ADD_SUCCESS, Constants.MSG_ADD_SUCCESS_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_SAVING_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            ResetControls();
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet1.tblPayRecords' table. You can move, or remove it, as needed.
+            this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
+        }
+
         #endregion
         private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -409,7 +463,7 @@ namespace PayrollApplication
 
         private void btnSavePay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Payment Saved!!");
+            SavePayment();
         }
 
         private void btnGeneratePayslip_Click(object sender, EventArgs e)
@@ -481,6 +535,8 @@ namespace PayrollApplication
 
         private void PayrollCalculator_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet1.tblPayRecords' table. You can move, or remove it, as needed.
+            this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
             ListOfMonths();
             ResetControls();
         }

@@ -12,13 +12,18 @@ namespace PayrollApplication
         public const string MSG_DATA_UPDATION_ERROR = "DATA UPDATION ERROR!!";
         public const string MSG_DATA_DELETION_ERROR = "DATA DELETION ERROR!!";
         public const string MSG_DATA_FETCHING_ERROR = "DATA FETCHING ERROR!! ";
+        public const string MSG_DATA_SAVING_ERROR = "DATA SAVING ERROR!! ";
         public const string MSG_INVALID_CHARACTERS_ERROR = "INVALID CHARACTERS ENTERED!!";
         public const string MSG_EMPTY_FIELD_ERROR = "FIELD IS EMPTY!!";
         public const string MSG_INVALID_DATA_FORMAT_ERROR = "INVALID DATA FORMAT!!";
         public const string MSG_NO_SELECTION_ERROR = "NO OPTION SELECTED!!";
         public const string MSG_NO_RECORDS_FOUND_ERROR = "NO RECORDS FOUND!! ";
         public const string MSG_NO_RECORDS_FOUND_WITH_EMPLOYEEID_ERROR = "NO RECORDS FOUND WITH EMPLOYEE ID: ";
+        public const string MSG_ERROR = "ERROR: ";
 
+        public const string MSG_ADD_SUCCESS_CAPTION = "ADD SUCCESS";
+        public const string MSG_ADD_UPDATE_CAPTION = "UPDATE SUCCESS";
+        public const string MSG_ADD_DELETE_CAPTION = "DELETE SUCCESS";
 
         public const string MSG_ENTER_NUMBERS_ONLY = "PLEASE ENTER NUMBERS ONLY!!";
         public const string MSG_SELECT_GENDER = "PLEASE SELECT YOUR GENDER!!";
@@ -28,13 +33,14 @@ namespace PayrollApplication
         public const string MSG_SELECT_COUNTRY = "PLEASE SELECT YOUR COUNTRY FROM THE DROP DOWN LIST!!";
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
-        public const string MSG_ERROR = "ERROR: ";
 
-        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";
+        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";        
         public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_SUCCESS = "EMPLOYEE RECORD HAS BEEN DELETED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS EMPLOYEE'S RECORD?";
         public const string MSG_CONFIRM_EMPLOYEE_DELETION = "CONFIRM EMPLOYEE DELETION";
+
+        public const string MSG_EMPLOYEE_SALARY_ADD_SUCCESS = "EMPLOYEE'S SALARY RECORD HAS BEEN ADDED SUCCESSFULLY!!";
 
         public const int INDEX_ZERO = 0;
         public const int INDEX_MINUS_ONE_OR_DEFAULT_INDEX = -1;
