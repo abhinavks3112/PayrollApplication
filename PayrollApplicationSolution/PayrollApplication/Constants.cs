@@ -23,6 +23,8 @@ namespace PayrollApplication
         public const string MSG_ENTER_NUMBERS_ONLY = "PLEASE ENTER NUMBERS ONLY!!";
         public const string MSG_SELECT_GENDER = "PLEASE SELECT YOUR GENDER!!";
         public const string MSG_SELECT_MARITAL_STATUS = "PLEASE SELECT YOUR MARITAL STATUS!!";
+        public const string MSG_SELECT_PAY_PERIOD = "PLEASE SELECT PAY PERIOD!!";
+        public const string MSG_SELECT_PAY_MONTH = "PLEASE SELECT PAY MONTH!!";
         public const string MSG_SELECT_COUNTRY = "PLEASE SELECT YOUR COUNTRY FROM THE DROP DOWN LIST!!";
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
@@ -43,6 +45,68 @@ namespace PayrollApplication
         public const string MARITAL_STATUS_SINGLE = "Single";
 
         public const int NOTES_FIELD_SIZE_CONSTRAINT = 30;
+
+        public const double ZERO_DOUBLE_DECIMAL = 0.00;
+        public const string ZERO_STRING_DOUBLE_DECIMAL = "0.00"; 
+
+        public const int WEEKS_IN_CONSIDERATION = 4;
+
+        // UK Tax slabs 2019-20
+        /*
+            Tax Rate(Band)      Taxable Income      Tax Rate
+            Personal allowance  Up to £12,500	    0%
+            Basic rate	        £12,501 to £50,000	20%
+            Higher rate	        £50,001 to £150,000	40%
+            Additional rate     Over £150,000	    45%
+        */
+        // UK Tax slabs 2019-20 Monthly Calculated Values 
+        public const double TAX_FREE_MONTHLY_INCOME_UPPER_LIMIT = 1041.67;
+        public const double TAX_BASIC_MONTHLY_INCOME_UPPER_LIMIT = 4166.67;
+        public const double TAX_RATE_BASIC_MONTHLY_INCOME_UPPER_LIMIT = 0.20;
+        public const double TAX_HIGHER_MONTHLY_INCOME_UPPER_LIMIT = 12500;
+        public const double TAX_RATE_HIGHER_MONTHLY_INCOME_UPPER_LIMIT = 0.40;
+        public const double TAX_RATE_ADDITIONAL_INCOME_UPPER_LIMIT = 0.45;
+
+        // UK NIC 2019-20        
+        /*£ per week	            2019 to 2020
+        Primary Threshold(PT)       £166
+        Upper Earnings Limit        £962
+        */
+        // UK NIC 2019-20 Monthly Calculated Values
+        public const double NIC_PRIMARY_THRESHOLD = 664;
+        public const double NI_RATE_AFTER_PRIMARY_THRESHOLD = 0.12;
+        public const double NIC_PRIMARY_UPPER_EARNING_LIMIT = 4166.67;
+        public const double NI_RATE_AFTER_PRIMARY_UPPER_EARNING_LIMIT = 0.02;
+
+        public const double NIC_RATE = 0.20;
+
+        // Hourly rate
+        public const string HOURLY_RATE_INITIAL_VALUE_STRING_DOUBLE_DECIMAL = "10.00";
+
+        // Rate for overtime
+        public const double OVERTIME_RATE_MULTIPLIER = 1.5;
+
+        // Specified Contractual weekly hours
+        public const int WEEKLY_CONTRACTUAL_HOURS = 36;
+
+        // Voluntary Deductions
+        public const double VOLUNTARY_DEDUCTION_UNION = 10;
+        public const double VOLUNTARY_DEDUCTION_SLC_RATE = .05;
+
+        // Months
+        public const string SELECT_A_MONTH = "Please select a month..";
+        public const string JANUARY = "January";
+        public const string FEBRUARY = "February";
+        public const string MARCH = "March";
+        public const string APRIL = "April";
+        public const string MAY = "May";
+        public const string JUNE = "June";
+        public const string JULY = "July";
+        public const string AUGUST = "August";
+        public const string SEPTEMBER = "September";
+        public const string OCTOBER = "October";
+        public const string NOVEMBER = "November";
+        public const string DECEMBER = "December";
 
         // EmployeeID: 
         // 0-9 any number and length should be between 3, 4 characters

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.nudSun2 = new System.Windows.Forms.NumericUpDown();
             this.nudSun3 = new System.Windows.Forms.NumericUpDown();
             this.nudSat3 = new System.Windows.Forms.NumericUpDown();
-            this.nudnudFri3 = new System.Windows.Forms.NumericUpDown();
+            this.nudFri3 = new System.Windows.Forms.NumericUpDown();
             this.nudThurs3 = new System.Windows.Forms.NumericUpDown();
             this.nudWed3 = new System.Windows.Forms.NumericUpDown();
             this.nudTues3 = new System.Windows.Forms.NumericUpDown();
@@ -135,11 +135,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTime = new System.Windows.Forms.Button();
             this.grpSearchPayments = new System.Windows.Forms.GroupBox();
+            this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblSearchPayMonth = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblSearchPayDate = new System.Windows.Forms.Label();
-            this.txtSearchPayMonth = new System.Windows.Forms.TextBox();
             this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.txtSearchNINumber = new System.Windows.Forms.TextBox();
             this.txtSearchFullName = new System.Windows.Forms.TextBox();
@@ -176,7 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSun2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSun3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSat3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudnudFri3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFri3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThurs3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWed3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTues3)).BeginInit();
@@ -380,6 +380,11 @@
             // listBoxPayPeriod
             // 
             this.listBoxPayPeriod.FormattingEnabled = true;
+            this.listBoxPayPeriod.Items.AddRange(new object[] {
+            "Select Pay Period....",
+            "17/12/2019 - 18/01/2020",
+            "17/01/2020 - 18/02/2020",
+            "17/02/2020 - 18/03/2020"});
             this.listBoxPayPeriod.Location = new System.Drawing.Point(14, 44);
             this.listBoxPayPeriod.Name = "listBoxPayPeriod";
             this.listBoxPayPeriod.Size = new System.Drawing.Size(135, 69);
@@ -456,7 +461,7 @@
             this.tableLayoutPanel1.Controls.Add(this.nudSun2, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.nudSun3, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.nudSat3, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.nudnudFri3, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.nudFri3, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.nudThurs3, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.nudWed3, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.nudTues3, 3, 2);
@@ -743,24 +748,24 @@
             this.nudSat3.TabIndex = 0;
             this.nudSat3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // nudnudFri3
+            // nudFri3
             // 
-            this.nudnudFri3.DecimalPlaces = 2;
-            this.nudnudFri3.Increment = new decimal(new int[] {
+            this.nudFri3.DecimalPlaces = 2;
+            this.nudFri3.Increment = new decimal(new int[] {
             5,
             0,
             0,
             131072});
-            this.nudnudFri3.Location = new System.Drawing.Point(426, 128);
-            this.nudnudFri3.Maximum = new decimal(new int[] {
+            this.nudFri3.Location = new System.Drawing.Point(426, 128);
+            this.nudFri3.Maximum = new decimal(new int[] {
             12,
             0,
             0,
             0});
-            this.nudnudFri3.Name = "nudnudFri3";
-            this.nudnudFri3.Size = new System.Drawing.Size(135, 20);
-            this.nudnudFri3.TabIndex = 0;
-            this.nudnudFri3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudFri3.Name = "nudFri3";
+            this.nudFri3.Size = new System.Drawing.Size(135, 20);
+            this.nudFri3.TabIndex = 0;
+            this.nudFri3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudThurs3
             // 
@@ -1530,6 +1535,7 @@
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(50, 20);
             this.txtEmployeeID.TabIndex = 2;
+            this.txtEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmployeeID_KeyPress);
             // 
             // lblEmployeeID
             // 
@@ -1592,11 +1598,11 @@
             // 
             // grpSearchPayments
             // 
+            this.grpSearchPayments.Controls.Add(this.cmbSearchPayMonth);
             this.grpSearchPayments.Controls.Add(this.btnSearch);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayMonth);
             this.grpSearchPayments.Controls.Add(this.btnClear);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayDate);
-            this.grpSearchPayments.Controls.Add(this.txtSearchPayMonth);
             this.grpSearchPayments.Controls.Add(this.txtSearchPayDate);
             this.grpSearchPayments.Controls.Add(this.txtSearchNINumber);
             this.grpSearchPayments.Controls.Add(this.txtSearchFullName);
@@ -1613,6 +1619,14 @@
             this.grpSearchPayments.TabStop = false;
             this.grpSearchPayments.Text = "Search Payments";
             // 
+            // cmbSearchPayMonth
+            // 
+            this.cmbSearchPayMonth.FormattingEnabled = true;
+            this.cmbSearchPayMonth.Location = new System.Drawing.Point(185, 264);
+            this.cmbSearchPayMonth.Name = "cmbSearchPayMonth";
+            this.cmbSearchPayMonth.Size = new System.Drawing.Size(128, 21);
+            this.cmbSearchPayMonth.TabIndex = 3;
+            // 
             // btnSearch
             // 
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1620,7 +1634,7 @@
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(191, 304);
+            this.btnSearch.Location = new System.Drawing.Point(224, 303);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(89, 35);
             this.btnSearch.TabIndex = 3;
@@ -1632,7 +1646,7 @@
             // lblSearchPayMonth
             // 
             this.lblSearchPayMonth.AutoSize = true;
-            this.lblSearchPayMonth.Location = new System.Drawing.Point(84, 265);
+            this.lblSearchPayMonth.Location = new System.Drawing.Point(78, 264);
             this.lblSearchPayMonth.Name = "lblSearchPayMonth";
             this.lblSearchPayMonth.Size = new System.Drawing.Size(58, 13);
             this.lblSearchPayMonth.TabIndex = 2;
@@ -1645,7 +1659,7 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(79, 304);
+            this.btnClear.Location = new System.Drawing.Point(73, 303);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(89, 35);
             this.btnClear.TabIndex = 3;
@@ -1657,58 +1671,51 @@
             // lblSearchPayDate
             // 
             this.lblSearchPayDate.AutoSize = true;
-            this.lblSearchPayDate.Location = new System.Drawing.Point(84, 227);
+            this.lblSearchPayDate.Location = new System.Drawing.Point(78, 226);
             this.lblSearchPayDate.Name = "lblSearchPayDate";
             this.lblSearchPayDate.Size = new System.Drawing.Size(51, 13);
             this.lblSearchPayDate.TabIndex = 4;
             this.lblSearchPayDate.Text = "Pay Date";
             // 
-            // txtSearchPayMonth
-            // 
-            this.txtSearchPayMonth.Location = new System.Drawing.Point(191, 262);
-            this.txtSearchPayMonth.Name = "txtSearchPayMonth";
-            this.txtSearchPayMonth.Size = new System.Drawing.Size(78, 20);
-            this.txtSearchPayMonth.TabIndex = 2;
-            // 
             // txtSearchPayDate
             // 
-            this.txtSearchPayDate.Location = new System.Drawing.Point(191, 224);
+            this.txtSearchPayDate.Location = new System.Drawing.Point(185, 223);
             this.txtSearchPayDate.Name = "txtSearchPayDate";
-            this.txtSearchPayDate.Size = new System.Drawing.Size(78, 20);
+            this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
             this.txtSearchPayDate.TabIndex = 2;
             // 
             // txtSearchNINumber
             // 
-            this.txtSearchNINumber.Location = new System.Drawing.Point(191, 183);
+            this.txtSearchNINumber.Location = new System.Drawing.Point(185, 182);
             this.txtSearchNINumber.Name = "txtSearchNINumber";
-            this.txtSearchNINumber.Size = new System.Drawing.Size(78, 20);
+            this.txtSearchNINumber.Size = new System.Drawing.Size(128, 20);
             this.txtSearchNINumber.TabIndex = 2;
             // 
             // txtSearchFullName
             // 
-            this.txtSearchFullName.Location = new System.Drawing.Point(191, 143);
+            this.txtSearchFullName.Location = new System.Drawing.Point(185, 142);
             this.txtSearchFullName.Name = "txtSearchFullName";
-            this.txtSearchFullName.Size = new System.Drawing.Size(78, 20);
+            this.txtSearchFullName.Size = new System.Drawing.Size(128, 20);
             this.txtSearchFullName.TabIndex = 2;
             // 
             // txtSearchEmployeeID
             // 
-            this.txtSearchEmployeeID.Location = new System.Drawing.Point(191, 105);
+            this.txtSearchEmployeeID.Location = new System.Drawing.Point(185, 104);
             this.txtSearchEmployeeID.Name = "txtSearchEmployeeID";
-            this.txtSearchEmployeeID.Size = new System.Drawing.Size(78, 20);
+            this.txtSearchEmployeeID.Size = new System.Drawing.Size(128, 20);
             this.txtSearchEmployeeID.TabIndex = 2;
             // 
             // txtSearchPaymentID
             // 
-            this.txtSearchPaymentID.Location = new System.Drawing.Point(191, 64);
+            this.txtSearchPaymentID.Location = new System.Drawing.Point(185, 63);
             this.txtSearchPaymentID.Name = "txtSearchPaymentID";
-            this.txtSearchPaymentID.Size = new System.Drawing.Size(78, 20);
+            this.txtSearchPaymentID.Size = new System.Drawing.Size(128, 20);
             this.txtSearchPaymentID.TabIndex = 2;
             // 
             // lblSearchNINumber
             // 
             this.lblSearchNINumber.AutoSize = true;
-            this.lblSearchNINumber.Location = new System.Drawing.Point(84, 186);
+            this.lblSearchNINumber.Location = new System.Drawing.Point(78, 185);
             this.lblSearchNINumber.Name = "lblSearchNINumber";
             this.lblSearchNINumber.Size = new System.Drawing.Size(58, 13);
             this.lblSearchNINumber.TabIndex = 0;
@@ -1717,7 +1724,7 @@
             // lblSearchEmployeeID
             // 
             this.lblSearchEmployeeID.AutoSize = true;
-            this.lblSearchEmployeeID.Location = new System.Drawing.Point(84, 108);
+            this.lblSearchEmployeeID.Location = new System.Drawing.Point(78, 107);
             this.lblSearchEmployeeID.Name = "lblSearchEmployeeID";
             this.lblSearchEmployeeID.Size = new System.Drawing.Size(67, 13);
             this.lblSearchEmployeeID.TabIndex = 0;
@@ -1726,7 +1733,7 @@
             // lblSearchFullName
             // 
             this.lblSearchFullName.AutoSize = true;
-            this.lblSearchFullName.Location = new System.Drawing.Point(84, 150);
+            this.lblSearchFullName.Location = new System.Drawing.Point(78, 149);
             this.lblSearchFullName.Name = "lblSearchFullName";
             this.lblSearchFullName.Size = new System.Drawing.Size(54, 13);
             this.lblSearchFullName.TabIndex = 0;
@@ -1735,7 +1742,7 @@
             // lblSearchPaymentID
             // 
             this.lblSearchPaymentID.AutoSize = true;
-            this.lblSearchPaymentID.Location = new System.Drawing.Point(84, 67);
+            this.lblSearchPaymentID.Location = new System.Drawing.Point(78, 66);
             this.lblSearchPaymentID.Name = "lblSearchPaymentID";
             this.lblSearchPaymentID.Size = new System.Drawing.Size(62, 13);
             this.lblSearchPaymentID.TabIndex = 0;
@@ -1835,8 +1842,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 849);
@@ -1857,6 +1864,7 @@
             this.Name = "PayrollCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PayrollCalculator";
+            this.Load += new System.EventHandler(this.PayrollCalculator_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grpDates.ResumeLayout(false);
@@ -1878,7 +1886,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSun2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSun3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSat3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudnudFri3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFri3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudThurs3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudWed3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTues3)).EndInit();
@@ -1940,7 +1948,7 @@
         private System.Windows.Forms.NumericUpDown nudSun2;
         private System.Windows.Forms.NumericUpDown nudSun3;
         private System.Windows.Forms.NumericUpDown nudSat3;
-        private System.Windows.Forms.NumericUpDown nudnudFri3;
+        private System.Windows.Forms.NumericUpDown nudFri3;
         private System.Windows.Forms.NumericUpDown nudThurs3;
         private System.Windows.Forms.NumericUpDown nudWed3;
         private System.Windows.Forms.NumericUpDown nudTues3;
@@ -2026,7 +2034,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblSearchPayMonth;
         private System.Windows.Forms.Label lblSearchPayDate;
-        private System.Windows.Forms.TextBox txtSearchPayMonth;
         private System.Windows.Forms.TextBox txtSearchPayDate;
         private System.Windows.Forms.TextBox txtSearchNINumber;
         private System.Windows.Forms.TextBox txtSearchFullName;
@@ -2044,5 +2051,6 @@
         private System.Windows.Forms.Button btnSavePay;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cmbSearchPayMonth;
     }
 }
