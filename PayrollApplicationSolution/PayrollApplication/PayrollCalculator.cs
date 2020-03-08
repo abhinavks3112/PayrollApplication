@@ -118,7 +118,28 @@ namespace PayrollApplication
 
         private void DisplaySalaryAndDeductions()
         {
-            throw new NotImplementedException();
+            // Hours
+            txtContractualHours.Text = Convert.ToString(totalContractualHours);            
+            txtOvertimeHours.Text = Convert.ToString(totalOvertimeHours);
+            txtOvertimeRate.Text = Convert.ToString(Constants.OVERTIME_RATE_MULTIPLIER);
+            txtTotalHoursWorked.Text = Convert.ToString(totalHoursWorked);
+
+            // Earnings
+            txtContractualEarnings.Text = Convert.ToString(totalContractualAmount);
+            txtOvertimeEarnings.Text = Convert.ToString(totalOvertimeAmount);
+            txtTotalEarnings.Text = Convert.ToString(totalAmountEarned);
+
+            //Deductions
+            txtTaxCode.Text = Constants.TAX_CODE_2019_20;
+            txtTaxAmount.Text = Convert.ToString(tax);
+            txtNIContribution.Text = Convert.ToString(NIContribution);
+            txtUnion.Text = Convert.ToString(Union);
+            txtSLC.Text = Convert.ToString(SLC);
+            txtTotalDeductions.Text = Convert.ToString(totalDeductions);
+
+            // Net Pay
+            txtNetPay.Text = Convert.ToString(netPay);
+
         }
 
         private void CalculateMonthlyWorkingAmountWithoutDeductions()
@@ -363,6 +384,7 @@ namespace PayrollApplication
             txtHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtMinutes.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
             txtDecimalHours.Text = Constants.ZERO_STRING_DOUBLE_DECIMAL;
+            txtTaxCode.Text = Constants.TAX_CODE_2019_20;
         }
 
         #endregion

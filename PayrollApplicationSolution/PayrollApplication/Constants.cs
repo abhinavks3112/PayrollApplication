@@ -51,6 +51,8 @@ namespace PayrollApplication
 
         public const int WEEKS_IN_CONSIDERATION = 4;
 
+        public const string TAX_CODE_2019_20 = "1250L";
+
         // UK Tax slabs 2019-20
         /*
             Tax Rate(Band)      Taxable Income      Tax Rate

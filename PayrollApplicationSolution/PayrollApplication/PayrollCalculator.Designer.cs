@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -1158,6 +1158,7 @@
             0,
             0});
             this.nudHourlyRate.Name = "nudHourlyRate";
+            this.nudHourlyRate.ReadOnly = true;
             this.nudHourlyRate.Size = new System.Drawing.Size(135, 20);
             this.nudHourlyRate.TabIndex = 0;
             this.nudHourlyRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1512,6 +1513,7 @@
             // 
             this.txtNINumber.Location = new System.Drawing.Point(282, 41);
             this.txtNINumber.Name = "txtNINumber";
+            this.txtNINumber.ReadOnly = true;
             this.txtNINumber.Size = new System.Drawing.Size(100, 20);
             this.txtNINumber.TabIndex = 2;
             // 
@@ -1519,6 +1521,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(282, 83);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 2;
             // 
@@ -1526,11 +1529,13 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(91, 83);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(108, 20);
             this.txtFirstName.TabIndex = 2;
             // 
             // txtEmployeeID
             // 
+            this.txtEmployeeID.AccessibleName = "Employee ID";
             this.txtEmployeeID.Location = new System.Drawing.Point(91, 44);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(50, 20);
@@ -1842,8 +1847,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 849);
