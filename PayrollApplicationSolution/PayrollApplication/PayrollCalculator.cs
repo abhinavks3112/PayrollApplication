@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using static PayrollApplication.Enums;
 
 namespace PayrollApplication
@@ -525,6 +526,17 @@ namespace PayrollApplication
             cvf.IsNumberOrBackspaceValidation(txtSearchEmployeeID, e);
         }
 
+        private void linkLabelWindowsCalculator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("calc.exe");
+        }
+
+        private void PayrollTimer_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            btnTime.Text = dt.ToString("HH:mm:ss");
+        }
+
         private void btnComputePay_Click(object sender, EventArgs e)
         {
             if(ValidateControls())
@@ -617,6 +629,7 @@ namespace PayrollApplication
             this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
             ListOfMonths();
             ResetControls();
+            PayrollTimer.Start();
         }
     }
 }
