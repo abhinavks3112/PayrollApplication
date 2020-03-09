@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollCalculator));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -137,7 +137,6 @@
             this.btnTime = new System.Windows.Forms.Button();
             this.grpSearchPayments = new System.Windows.Forms.GroupBox();
             this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
-            this.dtpSearchPayDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblSearchPayMonth = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -185,6 +184,7 @@
             this.payrollSystemDBDataSet1 = new PayrollApplication.PayrollSystemDBDataSet1();
             this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
             this.PayrollTimer = new System.Windows.Forms.Timer(this.components);
+            this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.grpDates.SuspendLayout();
             this.grpTimeSheet.SuspendLayout();
@@ -1632,11 +1632,11 @@
             // grpSearchPayments
             // 
             this.grpSearchPayments.Controls.Add(this.cmbSearchPayMonth);
-            this.grpSearchPayments.Controls.Add(this.dtpSearchPayDate);
             this.grpSearchPayments.Controls.Add(this.btnSearch);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayMonth);
             this.grpSearchPayments.Controls.Add(this.btnClear);
             this.grpSearchPayments.Controls.Add(this.lblSearchPayDate);
+            this.grpSearchPayments.Controls.Add(this.txtSearchPayDate);
             this.grpSearchPayments.Controls.Add(this.txtSearchNINumber);
             this.grpSearchPayments.Controls.Add(this.txtSearchFullName);
             this.grpSearchPayments.Controls.Add(this.txtSearchEmployeeID);
@@ -1659,13 +1659,6 @@
             this.cmbSearchPayMonth.Name = "cmbSearchPayMonth";
             this.cmbSearchPayMonth.Size = new System.Drawing.Size(128, 21);
             this.cmbSearchPayMonth.TabIndex = 3;
-            // 
-            // dtpSearchPayDate
-            // 
-            this.dtpSearchPayDate.Location = new System.Drawing.Point(185, 226);
-            this.dtpSearchPayDate.Name = "dtpSearchPayDate";
-            this.dtpSearchPayDate.Size = new System.Drawing.Size(128, 20);
-            this.dtpSearchPayDate.TabIndex = 2;
             // 
             // btnSearch
             // 
@@ -1883,8 +1876,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPaymentRecord.AutoGenerateColumns = false;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2061,6 +2054,13 @@
             // 
             this.PayrollTimer.Interval = 1000;
             this.PayrollTimer.Tick += new System.EventHandler(this.PayrollTimer_Tick);
+            // 
+            // txtSearchPayDate
+            // 
+            this.txtSearchPayDate.Location = new System.Drawing.Point(185, 223);
+            this.txtSearchPayDate.Name = "txtSearchPayDate";
+            this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
+            this.txtSearchPayDate.TabIndex = 2;
             // 
             // PayrollCalculator
             // 
@@ -2288,7 +2288,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sLCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDeductionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn netPayDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dtpSearchPayDate;
         private System.Windows.Forms.Timer PayrollTimer;
+        private System.Windows.Forms.TextBox txtSearchPayDate;
     }
 }

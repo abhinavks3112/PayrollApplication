@@ -13,6 +13,7 @@ namespace PayrollApplication
         public const string MSG_DATA_DELETION_ERROR = "DATA DELETION ERROR!!";
         public const string MSG_DATA_FETCHING_ERROR = "DATA FETCHING ERROR!! ";
         public const string MSG_DATA_SAVING_ERROR = "DATA SAVING ERROR!! ";
+        public const string MSG_DATA_SEARCH_ERROR = "DATA SEARCH ERROR!! ";
         public const string MSG_INVALID_CHARACTERS_ERROR = "INVALID CHARACTERS ENTERED!!";
         public const string MSG_EMPTY_FIELD_ERROR = "FIELD IS EMPTY!!";
         public const string MSG_INVALID_DATA_FORMAT_ERROR = "INVALID DATA FORMAT!!";

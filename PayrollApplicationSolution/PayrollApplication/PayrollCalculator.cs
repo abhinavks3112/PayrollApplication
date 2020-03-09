@@ -437,6 +437,7 @@ namespace PayrollApplication
             txtSearchEmployeeID.Text = String.Empty;
             txtSearchFullName.Text = String.Empty;
             txtSearchNINumber.Text = String.Empty;
+            txtSearchPayDate.Text = String.Empty;
             cmbSearchPayMonth.SelectedIndex = Constants.INDEX_ZERO;
         }
 
@@ -578,7 +579,68 @@ namespace PayrollApplication
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Searching...");
+            try
+            {
+                StringBuilder searchStatement = new StringBuilder();
+                // Payment ID
+                if(txtSearchPaymentID.Text.Length > 0)
+                {
+                    // Converting Int to String
+                    searchStatement.Append("Convert(PaymentID, 'System.String') like '%" + txtSearchPaymentID.Text + "%'");
+                }
+                // Employee ID
+                if (txtSearchEmployeeID.Text.Length > 0)
+                {
+                    if(searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and ");
+                    }
+                    // Converting Int to String
+                    searchStatement.Append("Convert(EmployeeID, 'System.String') like '%" + txtSearchEmployeeID.Text + "%'");
+                }
+                // Full Name
+                if (txtSearchFullName.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and ");
+                    }
+                    searchStatement.Append("FullName like '%" + txtSearchFullName.Text + "%'");
+                }
+                // NI Number
+                if (txtSearchNINumber.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and ");
+                    }
+                    searchStatement.Append("Convert(NINumber, 'System.String') like '%" + txtSearchNINumber.Text + "%'");
+                }
+                // Pay Date
+                if (txtSearchPayDate.Text.Length > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and ");
+                    }
+                    searchStatement.Append("Convert(PayDate, 'System.String') like '%" + txtSearchPayDate.Text + "%'");
+                }
+                // Pay Month
+                if (cmbSearchPayMonth.SelectedIndex > 0)
+                {
+                    if (searchStatement.Length > 0)
+                    {
+                        searchStatement.Append(" and ");
+                    }
+                    searchStatement.Append("PayMonth like '%" + cmbSearchPayMonth.SelectedItem.ToString() + "%'");
+                }
+                // Filter the data grid
+                tblPayRecordsBindingSource.Filter = searchStatement.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_SEARCH_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGet_Click(object sender, EventArgs e)
