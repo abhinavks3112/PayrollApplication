@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using static PayrollApplication.Enums;
+using System.Globalization;
 
 namespace PayrollApplication
 {
@@ -18,6 +19,7 @@ namespace PayrollApplication
     {
         #region Global Variables
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
+        Constants constants = new Constants();
 
         string fullName = String.Empty;
 
@@ -538,6 +540,180 @@ namespace PayrollApplication
             btnTime.Text = dt.ToString("HH:mm:ss");
         }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        { 
+
+            #region Drawing Company Logo and Name
+
+            // Drawing a straight horizontal line (from x=60 to x= 780 and from top y = -90) above logo and company name
+            e.Graphics.DrawLine(new Pen(Color.Aqua, 2), 60, 90, 780, 90);
+
+            // Locating logo image
+            Image logo = Image.FromFile(@"..\..\Icons\Logo.ico");
+            // Drawing the logo on page
+            e.Graphics.DrawImage(logo, 120, 100);
+            // Drawing company name beside logo on same line
+            e.Graphics.DrawString(Constants.COMPANY_TITLE, new Font(Constants.TITLE_FONT, Constants.TITLE_FONT_SIZE, Constants.TITLE_FONT_STYLE), constants.TITLE_FONT_COLOUR, new Point(200, 115));
+
+            // Drawing horizontal line just below logo and company name
+            e.Graphics.DrawLine(new Pen(Color.Aqua, 2), 60, 180, 780, 180);
+
+            #endregion
+
+            // Displaying pay date on right side
+            e.Graphics.DrawString(Constants.PAY_DATE + dtpCurrentDate.Value.ToString("MM/dd/yyyy"), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 620, 200);
+
+            #region Drawing Employee Details
+
+            // Drawing horizontal line just above Employee Details
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 1), 60, 230, 780, 230);
+
+            // Employee ID
+            e.Graphics.DrawString(Constants.EMPLOYEE_ID + txtEmployeeID.Text, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 60, 240);
+
+            // Employee Name
+            e.Graphics.DrawString(Constants.EMPLOYEE_NAME + fullName, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 320, 240);
+
+            // Employee NINO
+            e.Graphics.DrawString(Constants.EMPLOYEE_NINO + txtNINumber.Text, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 635, 240);
+
+            // Drawing horizontal line just below Employee Details
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 1), 60, 270, 780, 270);
+
+            #endregion
+
+            #region Drawing Work and Payment Details
+
+            #region Sub-Section Column Headings
+
+            // Heading: Earnings
+            e.Graphics.DrawString(Constants.HEADING_EARNINGS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 60, 340);
+
+            // Heading: Hours
+            e.Graphics.DrawString(Constants.HEADING_HOURS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 180, 340);
+
+            // Heading: Rates
+            e.Graphics.DrawString(Constants.HEADING_RATES, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 280, 340);
+
+            // Heading: Amounts
+            e.Graphics.DrawString(Constants.HEADING_AMOUNTS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 380, 340);
+
+            // Heading: Deductions
+            e.Graphics.DrawString(Constants.HEADING_DEDUCTIONS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 340);
+
+            // Heading: Amounts
+            e.Graphics.DrawString(Constants.HEADING_AMOUNTS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 670, 340);
+
+            #endregion
+
+            // Drawing horizontal line just below Column Headings
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 2), 60, 370, 780, 370);
+
+            #region Sub-Section First Row
+
+            // Sub-Heading: Basic Earnings
+            e.Graphics.DrawString(Constants.SUB_HEADING_BASIC, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 60, 390);
+
+            // Value: Hours
+            e.Graphics.DrawString(txtTotalHoursWorked.Text, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 180, 390);
+
+            // Value: Rates
+            e.Graphics.DrawString(Constants.HOURLY_RATE_INITIAL_VALUE_STRING_DOUBLE_DECIMAL, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 280, 390);
+
+            // Value: Amounts
+            e.Graphics.DrawString(totalContractualAmount.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 380, 390);
+
+            // Sub-Heading: Tax
+            e.Graphics.DrawString(Constants.SUB_HEADING_TAX_CODE, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 390);
+
+            // Value: Amounts
+            e.Graphics.DrawString(tax.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 390);
+
+            #endregion
+
+            #region Sub-Section Second Row
+            
+            // Sub-Heading: Overtime Earnings
+            e.Graphics.DrawString(Constants.SUB_HEADING_OVERTIME, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 60, 420);
+
+            // Value: Hours
+            e.Graphics.DrawString(txtOvertimeHours.Text, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 180, 420);
+
+            // Value: Rates
+            e.Graphics.DrawString(constants.OVERTIME_RATE_VALUE_STRING_DOUBLE_DECIMAL, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 280, 420);
+
+            // Value: Amounts
+            e.Graphics.DrawString(totalOvertimeAmount.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 380, 420);
+
+            // Sub-Heading: NIC
+            e.Graphics.DrawString(Constants.SUB_HEADING_NIC, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 420);
+
+            // Value: Amounts
+            e.Graphics.DrawString(NIContribution.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 420);
+
+            #endregion
+
+            #region Sub-Section Third Row
+
+            // Sub-Heading: Union
+            e.Graphics.DrawString(Constants.SUB_HEADING_UNION, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 450);
+
+            // Value: Amounts
+            e.Graphics.DrawString(Union.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 450);
+
+            #endregion
+
+            #region Sub-Section Fourth Row
+
+            // Sub-Heading: SLC
+            e.Graphics.DrawString(Constants.SUB_HEADING_SLC, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 480);
+
+            // Value: Amounts
+            e.Graphics.DrawString(SLC.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 480);
+
+            #endregion
+
+            // Drawing horizontal line just below sub section ending
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 1), 60, 520, 780, 520);
+
+            #region Sub-Section Fifth Row
+
+            // Sub-Heading: Total Earnings
+            e.Graphics.DrawString(Constants.SUB_HEADING_TOTAL_EARNINGS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 60, 540);
+
+            // Value: Amounts
+            e.Graphics.DrawString(totalAmountEarned.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 380, 540);
+
+            // Sub-Heading: Total Deductions
+            e.Graphics.DrawString(Constants.SUB_HEADING_TOTAL_DEDUCTIONS, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 540);
+
+            // Value: Amounts
+            e.Graphics.DrawString(totalDeductions.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 540);
+
+            #endregion
+
+            // Drawing horizontal line just below sub section ending
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 2), 60, 580, 780, 580);
+
+            #endregion
+
+            #region Net Pay
+
+            // Drawing horizontal line just below sub section ending
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 1), 60, 680, 780, 680);
+
+            // Sub-Heading: Total Deductions
+            e.Graphics.DrawString(Constants.HEADING_NETPAY, new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE, Constants.CONTENT_HEADINGS_FONT_STYLE), constants.CONTENT_FONT_COLOUR, 510, 710);
+
+            // Value: Amounts
+            e.Graphics.DrawString(netPay.ToString("C", new CultureInfo("en-GB")), new Font(Constants.CONTENT_FONT, Constants.CONTENT_FONT_SIZE), constants.CONTENT_FONT_COLOUR, 670, 710);
+
+            // Drawing horizontal line just below sub section ending
+            e.Graphics.DrawLine(new Pen(Color.RoyalBlue, 1), 60, 750, 780, 750);
+
+            #endregion
+        }
+
         private void btnComputePay_Click(object sender, EventArgs e)
         {
             if(ValidateControls())
@@ -559,7 +735,8 @@ namespace PayrollApplication
 
         private void btnGeneratePayslip_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Payslip Generated!!");
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
         }
 
         private void btnPrintPayslip_Click(object sender, EventArgs e)

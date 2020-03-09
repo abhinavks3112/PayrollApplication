@@ -134,5 +134,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Add.ico" />
+    <Content Include="Icons\Clear.ico" />
+    <Content Include="Icons\Compute.ico" />
+    <Content Include="Icons\Edit.ico" />
+    <Content Include="Icons\Exit.ico" />
+    <Content Include="Icons\Favicon.ico" />
+    <Content Include="Icons\Generate_File.ico" />
+    <Content Include="Icons\Logo.ico" />
+    <Content Include="Icons\PayrollCalculatorFavicon.ico" />
+    <Content Include="Icons\Preview.ico" />
+    <Content Include="Icons\Print.ico" />
+    <Content Include="Icons\Remove.ico" />
+    <Content Include="Icons\Reset.ico" />
+    <Content Include="Icons\Save.ico" />
+    <Content Include="Icons\Search.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

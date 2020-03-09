@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace PayrollApplication
 {
     public class Constants
     {
+        #region Error Messages and Captions
+
         public const string MSG_DATA_ENTRY_ERROR = "DATA ENTRY ERROR!!";
         public const string MSG_DATA_UPDATION_ERROR = "DATA UPDATION ERROR!!";
         public const string MSG_DATA_DELETION_ERROR = "DATA DELETION ERROR!!";
@@ -43,6 +46,12 @@ namespace PayrollApplication
 
         public const string MSG_EMPLOYEE_SALARY_ADD_SUCCESS = "EMPLOYEE'S SALARY RECORD HAS BEEN ADDED SUCCESSFULLY!!";
 
+        #endregion
+
+        #region Form Fields Values, constraints
+
+        public const string TRIPLE_SPACE = "   ";
+
         public const int INDEX_ZERO = 0;
         public const int INDEX_MINUS_ONE_OR_DEFAULT_INDEX = -1;
 
@@ -54,7 +63,26 @@ namespace PayrollApplication
         public const int NOTES_FIELD_SIZE_CONSTRAINT = 30;
 
         public const double ZERO_DOUBLE_DECIMAL = 0.00;
-        public const string ZERO_STRING_DOUBLE_DECIMAL = "0.00"; 
+        public const string ZERO_STRING_DOUBLE_DECIMAL = "0.00";
+
+        // Months
+        public const string SELECT_A_MONTH = "Please select a month..";
+        public const string JANUARY = "January";
+        public const string FEBRUARY = "February";
+        public const string MARCH = "March";
+        public const string APRIL = "April";
+        public const string MAY = "May";
+        public const string JUNE = "June";
+        public const string JULY = "July";
+        public const string AUGUST = "August";
+        public const string SEPTEMBER = "September";
+        public const string OCTOBER = "October";
+        public const string NOVEMBER = "November";
+        public const string DECEMBER = "December";
+
+        #endregion
+
+        #region Payroll Calculations, Taxes and NIC
 
         public const int WEEKS_IN_CONSIDERATION = 4;
 
@@ -86,7 +114,6 @@ namespace PayrollApplication
         public const double NI_RATE_AFTER_PRIMARY_THRESHOLD = 0.12;
         public const double NIC_PRIMARY_UPPER_EARNING_LIMIT = 4166.67;
         public const double NI_RATE_AFTER_PRIMARY_UPPER_EARNING_LIMIT = 0.02;
-
         public const double NIC_RATE = 0.20;
 
         // Hourly rate
@@ -94,6 +121,7 @@ namespace PayrollApplication
 
         // Rate for overtime
         public const double OVERTIME_RATE_MULTIPLIER = 1.5;
+        public readonly string OVERTIME_RATE_VALUE_STRING_DOUBLE_DECIMAL = (OVERTIME_RATE_MULTIPLIER * Convert.ToDouble(HOURLY_RATE_INITIAL_VALUE_STRING_DOUBLE_DECIMAL)).ToString("0.00");
 
         // Specified Contractual weekly hours
         public const int WEEKLY_CONTRACTUAL_HOURS = 36;
@@ -102,20 +130,9 @@ namespace PayrollApplication
         public const double VOLUNTARY_DEDUCTION_UNION = 10;
         public const double VOLUNTARY_DEDUCTION_SLC_RATE = .05;
 
-        // Months
-        public const string SELECT_A_MONTH = "Please select a month..";
-        public const string JANUARY = "January";
-        public const string FEBRUARY = "February";
-        public const string MARCH = "March";
-        public const string APRIL = "April";
-        public const string MAY = "May";
-        public const string JUNE = "June";
-        public const string JULY = "July";
-        public const string AUGUST = "August";
-        public const string SEPTEMBER = "September";
-        public const string OCTOBER = "October";
-        public const string NOVEMBER = "November";
-        public const string DECEMBER = "December";
+        #endregion 
+
+        #region Regex Pattern
 
         // EmployeeID: 
         // 0-9 any number and length should be between 3, 4 characters
@@ -140,5 +157,49 @@ namespace PayrollApplication
         // abc21@domain.com
         public const string REGEX_PATTERN_EMPLOYEE_EMAIL_ADDRESS= @"^[A-Za-z0-9]{1,30}@[A-Za-z0-9]{1,30}.[a-zA-Z]{2,3}$";
 
+        #endregion
+
+        #region Payroll Print configurations
+
+        // Title or Heading Config
+        public const string COMPANY_TITLE = "Payroll Application Demo Inc.";
+        public const string TITLE_FONT = "Arial";
+        public const int TITLE_FONT_SIZE = 24;
+        public readonly Brush TITLE_FONT_COLOUR = Brushes.LightBlue;
+        public const FontStyle TITLE_FONT_STYLE = FontStyle.Bold;
+
+        // Content Font color and Style
+        public const string CONTENT_FONT = "Times New Roman";
+        public const int CONTENT_FONT_SIZE = 12;
+        public const int CONTENT_HEADINGS_FONT_SIZE = 14;
+        public const FontStyle CONTENT_HEADINGS_FONT_STYLE = FontStyle.Bold;
+        public readonly Brush CONTENT_FONT_COLOUR = Brushes.Black;
+
+        // Pay date
+        public const string PAY_DATE = "Pay Date: ";
+
+        // Employee Details Section
+        public const string EMPLOYEE_ID = "Employee ID: ";
+        public const string EMPLOYEE_NAME = "Name: ";
+        public const string EMPLOYEE_NINO = "NINO: ";
+
+        // Salary Details Section
+        public const string HEADING_EARNINGS = "EARNINGS";
+        public const string HEADING_HOURS = "HOURS";
+        public const string HEADING_RATES = "RATES";
+        public const string HEADING_AMOUNTS = "AMOUNTS";
+        public const string HEADING_DEDUCTIONS = "DEDUCTIONS";
+
+        public const string SUB_HEADING_BASIC = "Basic";
+        public const string SUB_HEADING_OVERTIME = "Overtime";
+        public const string SUB_HEADING_TAX_CODE = "Tax(" + TAX_CODE_2019_20+ ")";
+        public const string SUB_HEADING_NIC = "NIC";
+        public const string SUB_HEADING_UNION = "Union";
+        public const string SUB_HEADING_SLC = "SLC";
+        public const string SUB_HEADING_TOTAL_EARNINGS = "TotalEarnings";
+        public const string SUB_HEADING_TOTAL_DEDUCTIONS = "TotalDeductions";
+
+        public const string HEADING_NETPAY = "NET PAY";
+        #endregion
     }
 }

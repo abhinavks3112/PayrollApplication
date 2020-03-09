@@ -185,6 +185,8 @@
             this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
             this.PayrollTimer = new System.Windows.Forms.Timer(this.components);
             this.txtSearchPayDate = new System.Windows.Forms.TextBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             this.grpDates.SuspendLayout();
             this.grpTimeSheet.SuspendLayout();
@@ -1905,7 +1907,9 @@
             this.dataGridViewPaymentRecord.DataSource = this.tblPayRecordsBindingSource;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 849);
+            this.dataGridViewPaymentRecord.MultiSelect = false;
             this.dataGridViewPaymentRecord.Name = "dataGridViewPaymentRecord";
+            this.dataGridViewPaymentRecord.ReadOnly = true;
             this.dataGridViewPaymentRecord.Size = new System.Drawing.Size(1350, 150);
             this.dataGridViewPaymentRecord.TabIndex = 2;
             // 
@@ -1921,120 +1925,140 @@
             this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeID";
             this.employeeIDDataGridViewTextBoxColumn.HeaderText = "EmployeeID";
             this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
+            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fullNameDataGridViewTextBoxColumn
             // 
             this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
             this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
             this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nINumberDataGridViewTextBoxColumn
             // 
             this.nINumberDataGridViewTextBoxColumn.DataPropertyName = "NINumber";
             this.nINumberDataGridViewTextBoxColumn.HeaderText = "NINumber";
             this.nINumberDataGridViewTextBoxColumn.Name = "nINumberDataGridViewTextBoxColumn";
+            this.nINumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // payDateDataGridViewTextBoxColumn
             // 
             this.payDateDataGridViewTextBoxColumn.DataPropertyName = "PayDate";
             this.payDateDataGridViewTextBoxColumn.HeaderText = "PayDate";
             this.payDateDataGridViewTextBoxColumn.Name = "payDateDataGridViewTextBoxColumn";
+            this.payDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // payPeriodDataGridViewTextBoxColumn
             // 
             this.payPeriodDataGridViewTextBoxColumn.DataPropertyName = "PayPeriod";
             this.payPeriodDataGridViewTextBoxColumn.HeaderText = "PayPeriod";
             this.payPeriodDataGridViewTextBoxColumn.Name = "payPeriodDataGridViewTextBoxColumn";
+            this.payPeriodDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // payMonthDataGridViewTextBoxColumn
             // 
             this.payMonthDataGridViewTextBoxColumn.DataPropertyName = "PayMonth";
             this.payMonthDataGridViewTextBoxColumn.HeaderText = "PayMonth";
             this.payMonthDataGridViewTextBoxColumn.Name = "payMonthDataGridViewTextBoxColumn";
+            this.payMonthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // hourlyRateDataGridViewTextBoxColumn
             // 
             this.hourlyRateDataGridViewTextBoxColumn.DataPropertyName = "HourlyRate";
             this.hourlyRateDataGridViewTextBoxColumn.HeaderText = "HourlyRate";
             this.hourlyRateDataGridViewTextBoxColumn.Name = "hourlyRateDataGridViewTextBoxColumn";
+            this.hourlyRateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contractualHoursDataGridViewTextBoxColumn
             // 
             this.contractualHoursDataGridViewTextBoxColumn.DataPropertyName = "ContractualHours";
             this.contractualHoursDataGridViewTextBoxColumn.HeaderText = "ContractualHours";
             this.contractualHoursDataGridViewTextBoxColumn.Name = "contractualHoursDataGridViewTextBoxColumn";
+            this.contractualHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // overtimeHoursDataGridViewTextBoxColumn
             // 
             this.overtimeHoursDataGridViewTextBoxColumn.DataPropertyName = "OvertimeHours";
             this.overtimeHoursDataGridViewTextBoxColumn.HeaderText = "OvertimeHours";
             this.overtimeHoursDataGridViewTextBoxColumn.Name = "overtimeHoursDataGridViewTextBoxColumn";
+            this.overtimeHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // totalHoursDataGridViewTextBoxColumn
             // 
             this.totalHoursDataGridViewTextBoxColumn.DataPropertyName = "TotalHours";
             this.totalHoursDataGridViewTextBoxColumn.HeaderText = "TotalHours";
             this.totalHoursDataGridViewTextBoxColumn.Name = "totalHoursDataGridViewTextBoxColumn";
+            this.totalHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contractualEarningsDataGridViewTextBoxColumn
             // 
             this.contractualEarningsDataGridViewTextBoxColumn.DataPropertyName = "ContractualEarnings";
             this.contractualEarningsDataGridViewTextBoxColumn.HeaderText = "ContractualEarnings";
             this.contractualEarningsDataGridViewTextBoxColumn.Name = "contractualEarningsDataGridViewTextBoxColumn";
+            this.contractualEarningsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // overtimeEarningsDataGridViewTextBoxColumn
             // 
             this.overtimeEarningsDataGridViewTextBoxColumn.DataPropertyName = "OvertimeEarnings";
             this.overtimeEarningsDataGridViewTextBoxColumn.HeaderText = "OvertimeEarnings";
             this.overtimeEarningsDataGridViewTextBoxColumn.Name = "overtimeEarningsDataGridViewTextBoxColumn";
+            this.overtimeEarningsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // totalEarningsDataGridViewTextBoxColumn
             // 
             this.totalEarningsDataGridViewTextBoxColumn.DataPropertyName = "TotalEarnings";
             this.totalEarningsDataGridViewTextBoxColumn.HeaderText = "TotalEarnings";
             this.totalEarningsDataGridViewTextBoxColumn.Name = "totalEarningsDataGridViewTextBoxColumn";
+            this.totalEarningsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // taxCodeDataGridViewTextBoxColumn
             // 
             this.taxCodeDataGridViewTextBoxColumn.DataPropertyName = "TaxCode";
             this.taxCodeDataGridViewTextBoxColumn.HeaderText = "TaxCode";
             this.taxCodeDataGridViewTextBoxColumn.Name = "taxCodeDataGridViewTextBoxColumn";
+            this.taxCodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // taxAmountDataGridViewTextBoxColumn
             // 
             this.taxAmountDataGridViewTextBoxColumn.DataPropertyName = "TaxAmount";
             this.taxAmountDataGridViewTextBoxColumn.HeaderText = "TaxAmount";
             this.taxAmountDataGridViewTextBoxColumn.Name = "taxAmountDataGridViewTextBoxColumn";
+            this.taxAmountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nIContributionDataGridViewTextBoxColumn
             // 
             this.nIContributionDataGridViewTextBoxColumn.DataPropertyName = "NIContribution";
             this.nIContributionDataGridViewTextBoxColumn.HeaderText = "NIContribution";
             this.nIContributionDataGridViewTextBoxColumn.Name = "nIContributionDataGridViewTextBoxColumn";
+            this.nIContributionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unionFeeDataGridViewTextBoxColumn
             // 
             this.unionFeeDataGridViewTextBoxColumn.DataPropertyName = "UnionFee";
             this.unionFeeDataGridViewTextBoxColumn.HeaderText = "UnionFee";
             this.unionFeeDataGridViewTextBoxColumn.Name = "unionFeeDataGridViewTextBoxColumn";
+            this.unionFeeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sLCDataGridViewTextBoxColumn
             // 
             this.sLCDataGridViewTextBoxColumn.DataPropertyName = "SLC";
             this.sLCDataGridViewTextBoxColumn.HeaderText = "SLC";
             this.sLCDataGridViewTextBoxColumn.Name = "sLCDataGridViewTextBoxColumn";
+            this.sLCDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // totalDeductionsDataGridViewTextBoxColumn
             // 
             this.totalDeductionsDataGridViewTextBoxColumn.DataPropertyName = "TotalDeductions";
             this.totalDeductionsDataGridViewTextBoxColumn.HeaderText = "TotalDeductions";
             this.totalDeductionsDataGridViewTextBoxColumn.Name = "totalDeductionsDataGridViewTextBoxColumn";
+            this.totalDeductionsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // netPayDataGridViewTextBoxColumn
             // 
             this.netPayDataGridViewTextBoxColumn.DataPropertyName = "NetPay";
             this.netPayDataGridViewTextBoxColumn.HeaderText = "NetPay";
             this.netPayDataGridViewTextBoxColumn.Name = "netPayDataGridViewTextBoxColumn";
+            this.netPayDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tblPayRecordsBindingSource
             // 
@@ -2062,6 +2086,20 @@
             this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
             this.txtSearchPayDate.TabIndex = 2;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // PayrollCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2072,6 +2110,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PayrollCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PayrollCalculator";
@@ -2290,5 +2329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn netPayDataGridViewTextBoxColumn;
         private System.Windows.Forms.Timer PayrollTimer;
         private System.Windows.Forms.TextBox txtSearchPayDate;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
