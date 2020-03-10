@@ -16,7 +16,7 @@ namespace PayrollApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PayrollCalculator());
+            Application.Run(new AboutPayrollSystem());
         }
     }
 }

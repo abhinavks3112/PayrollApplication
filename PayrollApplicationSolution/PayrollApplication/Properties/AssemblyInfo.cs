@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PayrollApplication")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Payroll Application")]
+[assembly: AssemblyDescription("A comprehensive solution for small sized companies, which offers an easy to use and inutiative interface as well as fast, accurate data computations and reporting facilities.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PayrollApplication")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("PAYROLL APPLICATION DEMO INC.")]
+[assembly: AssemblyProduct("Payroll Application Solution (PAS)")]
+[assembly: AssemblyCopyright("Copyright ©  PAS 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

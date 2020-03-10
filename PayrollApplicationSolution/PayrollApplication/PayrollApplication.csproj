@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPayrollSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutPayrollSystem.Designer.cs">
+      <DependentUpon>AboutPayrollSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colors.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="CustomValidationsFunctions.cs" />
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutPayrollSystem.resx">
+      <DependentUpon>AboutPayrollSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>

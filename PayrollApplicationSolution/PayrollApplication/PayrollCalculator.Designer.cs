@@ -141,6 +141,7 @@
             this.lblSearchPayMonth = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblSearchPayDate = new System.Windows.Forms.Label();
+            this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.txtSearchNINumber = new System.Windows.Forms.TextBox();
             this.txtSearchFullName = new System.Windows.Forms.TextBox();
             this.txtSearchEmployeeID = new System.Windows.Forms.TextBox();
@@ -184,7 +185,6 @@
             this.payrollSystemDBDataSet1 = new PayrollApplication.PayrollSystemDBDataSet1();
             this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
             this.PayrollTimer = new System.Windows.Forms.Timer(this.components);
-            this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
@@ -1712,6 +1712,13 @@
             this.lblSearchPayDate.TabIndex = 4;
             this.lblSearchPayDate.Text = "Pay Date";
             // 
+            // txtSearchPayDate
+            // 
+            this.txtSearchPayDate.Location = new System.Drawing.Point(185, 223);
+            this.txtSearchPayDate.Name = "txtSearchPayDate";
+            this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
+            this.txtSearchPayDate.TabIndex = 2;
+            // 
             // txtSearchNINumber
             // 
             this.txtSearchNINumber.Location = new System.Drawing.Point(185, 182);
@@ -2078,13 +2085,6 @@
             // 
             this.PayrollTimer.Interval = 1000;
             this.PayrollTimer.Tick += new System.EventHandler(this.PayrollTimer_Tick);
-            // 
-            // txtSearchPayDate
-            // 
-            this.txtSearchPayDate.Location = new System.Drawing.Point(185, 223);
-            this.txtSearchPayDate.Name = "txtSearchPayDate";
-            this.txtSearchPayDate.Size = new System.Drawing.Size(128, 20);
-            this.txtSearchPayDate.TabIndex = 2;
             // 
             // printPreviewDialog1
             // 
