@@ -69,6 +69,12 @@
     <Compile Include="PayrollCalculator.Designer.cs">
       <DependentUpon>PayrollCalculator.cs</DependentUpon>
     </Compile>
+    <Compile Include="PayrollMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollMDI.Designer.cs">
+      <DependentUpon>PayrollMDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayrollSystemDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollCalculator.resx">
       <DependentUpon>PayrollCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollMDI.resx">
+      <DependentUpon>PayrollMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreviewForm.resx">
       <DependentUpon>PreviewForm.cs</DependentUpon>
