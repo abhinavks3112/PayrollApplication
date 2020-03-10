@@ -941,6 +941,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>dd MMMM yyyy</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1179,6 +1180,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1196,6 +1198,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1213,6 +1216,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1230,6 +1234,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1247,6 +1252,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1264,6 +1270,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1281,6 +1288,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1298,6 +1306,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1315,6 +1324,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1332,6 +1342,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1349,6 +1360,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1366,6 +1378,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1383,6 +1396,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1400,6 +1414,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1417,6 +1432,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1434,6 +1450,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1451,6 +1468,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1468,6 +1486,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1485,6 +1504,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'£'#,0.00;('£'#,0.00)</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -1502,8 +1522,10 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-GB</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1551,7 +1573,7 @@
             <FilterExpression>=Month(Fields!PayDate.Value)</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>=Month(Today)</FilterValue>
+              <FilterValue>=Month(Today())</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>

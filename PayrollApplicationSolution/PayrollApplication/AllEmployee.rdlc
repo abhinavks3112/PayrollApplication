@@ -753,6 +753,7 @@
                               <Style>
                                 <FontStyle>Italic</FontStyle>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>dd MMMM yyyy</Format>
                                 <Color>White</Color>
                               </Style>
                             </TextRun>
@@ -772,6 +773,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
