@@ -71,8 +71,20 @@
     <Compile Include="AllEmployeeDetails.Designer.cs">
       <DependentUpon>AllEmployeeDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllPayments.Designer.cs">
+      <DependentUpon>AllPayments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colors.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="CurrentMonthPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentMonthPayments.Designer.cs">
+      <DependentUpon>CurrentMonthPayments.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomValidationsFunctions.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,14 @@
     <EmbeddedResource Include="AllEmployee.rdlc" />
     <EmbeddedResource Include="AllEmployeeDetails.resx">
       <DependentUpon>AllEmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllPayments.rdlc" />
+    <EmbeddedResource Include="AllPayments.resx">
+      <DependentUpon>AllPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentMonthPayments.rdlc" />
+    <EmbeddedResource Include="CurrentMonthPayments.resx">
+      <DependentUpon>CurrentMonthPayments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

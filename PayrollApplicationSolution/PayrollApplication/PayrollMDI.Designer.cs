@@ -48,6 +48,8 @@
             this.aboutPayrollApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allCurrentMonthPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,7 +193,9 @@
             // reportingToolStripMenuItem
             // 
             this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allEmployeeToolStripMenuItem});
+            this.allEmployeeToolStripMenuItem,
+            this.allPaymentsToolStripMenuItem,
+            this.allCurrentMonthPaymentsToolStripMenuItem});
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
             this.reportingToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.reportingToolStripMenuItem.Text = "&Reporting";
@@ -199,9 +203,23 @@
             // allEmployeeToolStripMenuItem
             // 
             this.allEmployeeToolStripMenuItem.Name = "allEmployeeToolStripMenuItem";
-            this.allEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allEmployeeToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.allEmployeeToolStripMenuItem.Text = "All Employee";
             this.allEmployeeToolStripMenuItem.Click += new System.EventHandler(this.allEmployeeToolStripMenuItem_Click);
+            // 
+            // allCurrentMonthPaymentsToolStripMenuItem
+            // 
+            this.allCurrentMonthPaymentsToolStripMenuItem.Name = "allCurrentMonthPaymentsToolStripMenuItem";
+            this.allCurrentMonthPaymentsToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.allCurrentMonthPaymentsToolStripMenuItem.Text = "All Current Month Payments";
+            this.allCurrentMonthPaymentsToolStripMenuItem.Click += new System.EventHandler(this.allCurrentMonthPaymentsToolStripMenuItem_Click);
+            // 
+            // allPaymentsToolStripMenuItem
+            // 
+            this.allPaymentsToolStripMenuItem.Name = "allPaymentsToolStripMenuItem";
+            this.allPaymentsToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.allPaymentsToolStripMenuItem.Text = "All Payments";
+            this.allPaymentsToolStripMenuItem.Click += new System.EventHandler(this.allPaymentsToolStripMenuItem_Click);
             // 
             // PayrollMDI
             // 
@@ -248,5 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutPayrollApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allCurrentMonthPaymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allPaymentsToolStripMenuItem;
     }
 }

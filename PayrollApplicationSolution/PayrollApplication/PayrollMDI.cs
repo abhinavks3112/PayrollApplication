@@ -19,6 +19,8 @@ namespace PayrollApplication
         PayrollCalculator payroll = null;
         AboutPayrollSystem aboutPayroll = null;
         AllEmployeeDetails allEmployee = null;
+        AllPayments allPayments = null;
+        CurrentMonthPayments monthPayments = null;
 
         #endregion
         public PayrollMDI()
@@ -115,6 +117,47 @@ namespace PayrollApplication
         {
             allEmployee = null;
         }
+        private void ShowReportAllPayments()
+        {
+            if (allPayments == null)
+            {
+                allPayments = new AllPayments();
+                allPayments.MdiParent = this;
+                allPayments.FormClosed += AllPayments_FormClosed;
+                allPayments.Show();
+            }
+            else
+            {
+                allPayments.Activate();
+            }
+        }
+
+        // Set form instance to null on form close
+        private void AllPayments_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            allPayments = null;
+        }
+
+        private void ShowReportAllCurrentMonthPayments()
+        {
+            if (monthPayments == null)
+            {
+                monthPayments = new CurrentMonthPayments();
+                monthPayments.MdiParent = this;
+                monthPayments.FormClosed += MonthPayments_FormClosed;
+                monthPayments.Show();
+            }
+            else
+            {
+                monthPayments.Activate();
+            }
+        }
+
+        // Set form instance to null on form close
+        private void MonthPayments_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            monthPayments = null;
+        }
 
         #endregion
 
@@ -158,21 +201,25 @@ namespace PayrollApplication
 
         private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Setting Layout
             this.LayoutMdi(MdiLayout.TileHorizontal);
         }
 
         private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Setting Layout
             this.LayoutMdi(MdiLayout.TileVertical);
         }
 
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Setting Layout
             this.LayoutMdi(MdiLayout.Cascade);
         }
 
         private void arrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Setting Layout
             this.LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
@@ -185,6 +232,16 @@ namespace PayrollApplication
         private void allEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowReportAllEmployee();
+        }
+
+        private void allCurrentMonthPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowReportAllCurrentMonthPayments();
+        }
+
+        private void allPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowReportAllPayments();
         }
     }
 }
