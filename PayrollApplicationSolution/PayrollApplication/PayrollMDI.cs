@@ -12,14 +12,21 @@ namespace PayrollApplication
 {
     public partial class PayrollMDI : Form
     {
+        #region Global Variables
+
         // Initialize Form Instances to null
         EmployeeForm employeeForm = null;
         PayrollCalculator payroll = null;
         AboutPayrollSystem aboutPayroll = null;
+        AllEmployeeDetails allEmployee = null;
+
+        #endregion
         public PayrollMDI()
         {
             InitializeComponent();
         }
+
+        #region User Defined Functions
 
         private void ShowEmployeeForm()
         {
@@ -89,6 +96,28 @@ namespace PayrollApplication
             aboutPayroll = null;
         }
 
+        private void ShowReportAllEmployee()
+        {
+            if (allEmployee == null)
+            {
+                allEmployee = new AllEmployeeDetails();
+                allEmployee.MdiParent = this;
+                allEmployee.FormClosed += AllEmployee_FormClosed;
+                allEmployee.Show();
+            }
+            else
+            {
+                allEmployee.Activate();
+            }
+        }
+        // Set form instance to null on form close
+        private void AllEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            allEmployee = null;
+        }
+
+        #endregion
+
         private void manageEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowEmployeeForm();
@@ -151,6 +180,11 @@ namespace PayrollApplication
         {
             // Set the background color of mdi client
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.MediumAquamarine;
+        }
+
+        private void allEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowReportAllEmployee();
         }
     }
 }
