@@ -23,6 +23,7 @@ namespace PayrollApplication
         public const string MSG_NO_SELECTION_ERROR = "NO OPTION SELECTED!!";
         public const string MSG_NO_RECORDS_FOUND_ERROR = "NO RECORDS FOUND!! ";
         public const string MSG_NO_RECORDS_FOUND_WITH_EMPLOYEEID_ERROR = "NO RECORDS FOUND WITH EMPLOYEE ID: ";
+        public const string MSG_PASSWORD_MATCH_ERROR = "PASSWORDS DO NOT MATCH!!";
         public const string MSG_ERROR = "ERROR: ";
 
         public const string MSG_ADD_SUCCESS_CAPTION = "ADD SUCCESS";
@@ -37,6 +38,7 @@ namespace PayrollApplication
         public const string MSG_SELECT_COUNTRY = "PLEASE SELECT YOUR COUNTRY FROM THE DROP DOWN LIST!!";
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
+        public const string MSG_PLEASE_ENTER_VALID_PASSWORD = "PLEASE ENTER VALID PASSWORD";
 
         public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";        
         public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
@@ -61,6 +63,16 @@ namespace PayrollApplication
         public const string MARITAL_STATUS_SINGLE = "Single";
 
         public const int NOTES_FIELD_SIZE_CONSTRAINT = 30;
+        public const int USER_PASSWORD_MIN_CHARACTERS_CONSTRAINT = 8;
+        public const int USER_PASSWORD_MIN_UPPERCASE_CHARACTERS_CONSTRAINT = 1;
+        public const int USER_PASSWORD_MIN_LOWERCASE_CHARACTERS_CONSTRAINT = 1;
+        public const int USER_PASSWORD_MIN_DIGIT_CHARACTERS_CONSTRAINT = 1;
+
+        // Password Pattern Constraint Message
+        public readonly string USER_PASSWORD_MIN_CHARACTERS_MSG= "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_CHARACTERS_CONSTRAINT + " CHARACTER(S)";
+        public readonly string USER_PASSWORD_MIN_UPPERCASE_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_UPPERCASE_CHARACTERS_CONSTRAINT + " UPPERCASE CHARACTER(S)";
+        public readonly string USER_PASSWORD_MIN_LOWERCASE_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_LOWERCASE_CHARACTERS_CONSTRAINT + " LOWERCASE CHARACTER(S)";
+        public readonly string USER_PASSWORD_MIN_DIGIT_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_DIGIT_CHARACTERS_CONSTRAINT + " NUMERIC DIGIT(S)";
 
         public const double ZERO_DOUBLE_DECIMAL = 0.00;
         public const string ZERO_STRING_DOUBLE_DECIMAL = "0.00";
@@ -156,6 +168,9 @@ namespace PayrollApplication
         // Email Id
         // abc21@domain.com
         public const string REGEX_PATTERN_EMPLOYEE_EMAIL_ADDRESS= @"^[A-Za-z0-9]{1,30}@[A-Za-z0-9]{1,30}.[a-zA-Z]{2,3}$";
+
+        // Password
+        public const string REGEX_PATTERN_USER_PASSWORD = @"^[A-Z]{1}*";
 
         #endregion
 

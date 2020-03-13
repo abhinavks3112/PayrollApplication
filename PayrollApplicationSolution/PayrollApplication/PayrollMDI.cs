@@ -21,7 +21,7 @@ namespace PayrollApplication
         AllEmployeeDetails allEmployee = null;
         AllPayments allPayments = null;
         CurrentMonthPayments monthPayments = null;
-
+        Register register = null;
         #endregion
         public PayrollMDI()
         {
@@ -159,6 +159,26 @@ namespace PayrollApplication
             monthPayments = null;
         }
 
+        private void RegisterUser()
+        {
+            if (register == null)
+            {
+                register = new Register();
+                register.MdiParent = this;
+                register.FormClosed += Register_FormClosed;
+                register.Show();
+            }
+            else
+            {
+                monthPayments.Activate();
+            }
+        }
+        // Set form instance to null on form close
+        private void Register_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            register = null;
+        }
+
         #endregion
 
         private void manageEmployeesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -242,6 +262,11 @@ namespace PayrollApplication
         private void allPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowReportAllPayments();
+        }
+
+        private void registerUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterUser();
         }
     }
 }

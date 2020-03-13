@@ -31,12 +31,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.RoleDescription = new System.Windows.Forms.TextBox();
+            this.txtRoleDescription = new System.Windows.Forms.TextBox();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -61,7 +61,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1082, 585);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox3
             // 
@@ -74,59 +73,61 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btnDelete);
+            this.groupBox4.Controls.Add(this.btnReset);
+            this.groupBox4.Controls.Add(this.btnUpdate);
+            this.groupBox4.Controls.Add(this.btnRegister);
             this.groupBox4.Location = new System.Drawing.Point(45, 446);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(996, 100);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(588, 35);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 38);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "&Delete User";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(588, 35);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(101, 38);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "&Delete User";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnReset
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(820, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 38);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "&Reset";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Location = new System.Drawing.Point(820, 35);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(101, 38);
+            this.btnReset.TabIndex = 2;
+            this.btnReset.Text = "&Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(317, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "&Update User";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(317, 35);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(101, 38);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "&Update User";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(59, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "&Register User";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Location = new System.Drawing.Point(59, 35);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(101, 38);
+            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Text = "&Register User";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.RoleDescription);
+            this.groupBox2.Controls.Add(this.txtRoleDescription);
             this.groupBox2.Controls.Add(this.txtRole);
             this.groupBox2.Controls.Add(this.txtConfirmPassword);
             this.groupBox2.Controls.Add(this.txtPassword);
@@ -143,38 +144,47 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Register User";
             // 
-            // RoleDescription
+            // txtRoleDescription
             // 
-            this.RoleDescription.Location = new System.Drawing.Point(202, 299);
-            this.RoleDescription.Multiline = true;
-            this.RoleDescription.Name = "RoleDescription";
-            this.RoleDescription.Size = new System.Drawing.Size(149, 73);
-            this.RoleDescription.TabIndex = 1;
+            this.txtRoleDescription.AccessibleName = "Role Description";
+            this.txtRoleDescription.Location = new System.Drawing.Point(216, 285);
+            this.txtRoleDescription.Multiline = true;
+            this.txtRoleDescription.Name = "txtRoleDescription";
+            this.txtRoleDescription.Size = new System.Drawing.Size(149, 73);
+            this.txtRoleDescription.TabIndex = 1;
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(202, 236);
+            this.txtRole.AccessibleName = "Role";
+            this.txtRole.Location = new System.Drawing.Point(216, 222);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(149, 20);
             this.txtRole.TabIndex = 1;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(202, 181);
+            this.txtConfirmPassword.AccessibleName = "Confirm Password";
+            this.txtConfirmPassword.Location = new System.Drawing.Point(216, 167);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(149, 20);
             this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(202, 122);
+            this.txtPassword.AccessibleName = "Password";
+            this.txtPassword.Location = new System.Drawing.Point(216, 108);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(149, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(202, 63);
+            this.txtUserName.AccessibleName = "User Name";
+            this.txtUserName.Location = new System.Drawing.Point(216, 49);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(149, 20);
             this.txtUserName.TabIndex = 1;
@@ -182,7 +192,7 @@
             // lblRoleDescription
             // 
             this.lblRoleDescription.AutoSize = true;
-            this.lblRoleDescription.Location = new System.Drawing.Point(56, 302);
+            this.lblRoleDescription.Location = new System.Drawing.Point(70, 288);
             this.lblRoleDescription.Name = "lblRoleDescription";
             this.lblRoleDescription.Size = new System.Drawing.Size(85, 13);
             this.lblRoleDescription.TabIndex = 0;
@@ -191,7 +201,7 @@
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(56, 243);
+            this.lblRole.Location = new System.Drawing.Point(70, 229);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(29, 13);
             this.lblRole.TabIndex = 0;
@@ -200,7 +210,7 @@
             // lblConfirmPassword
             // 
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(56, 184);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(70, 170);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lblConfirmPassword.TabIndex = 0;
@@ -209,7 +219,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(56, 125);
+            this.lblPassword.Location = new System.Drawing.Point(70, 111);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 0;
@@ -218,7 +228,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(56, 66);
+            this.lblUserName.Location = new System.Drawing.Point(70, 52);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(60, 13);
             this.lblUserName.TabIndex = 0;
@@ -231,7 +241,10 @@
             this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(1166, 629);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -246,12 +259,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox RoleDescription;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtRoleDescription;
         private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.TextBox txtPassword;
