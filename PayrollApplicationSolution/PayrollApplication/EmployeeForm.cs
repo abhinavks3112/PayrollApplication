@@ -184,7 +184,7 @@ namespace PayrollApplication
         private void AddEmployee()
         {
             // Fetch connection string
-            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
 
             //Instantiate the sql connection object with connection string
             SqlConnection sqlConnection = new SqlConnection(cs);
@@ -231,7 +231,7 @@ namespace PayrollApplication
         private void UpdateEmployee()
         {
             // Fetch connection string
-            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
 
             //Instantiate the sql connection object with connection string
             SqlConnection sqlConnection = new SqlConnection(cs);
@@ -278,7 +278,7 @@ namespace PayrollApplication
         private void DeleteEmployee()
         {
             // Fetch connection string
-            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
 
             //Instantiate the sql connection object with connection string
             SqlConnection sqlConnection = new SqlConnection(cs);

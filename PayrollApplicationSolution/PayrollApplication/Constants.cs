@@ -46,6 +46,10 @@ namespace PayrollApplication
         public const string MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS EMPLOYEE'S RECORD?";
         public const string MSG_CONFIRM_EMPLOYEE_DELETION = "CONFIRM EMPLOYEE DELETION";
 
+        public const string MSG_USER_ADD_SUCCESS = "USER'S RECORD HAS BEEN ADDED SUCCESSFULLY!!";
+        public const string MSG_USER_UPDATE_SUCCESS = "USER'S RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
+        public const string MSG_USER_DELETE_SUCCESS = "USER'S RECORD HAS BEEN DELETED SUCCESSFULLY!!";
+
         public const string MSG_EMPLOYEE_SALARY_ADD_SUCCESS = "EMPLOYEE'S SALARY RECORD HAS BEEN ADDED SUCCESSFULLY!!";
 
         #endregion
@@ -216,5 +220,7 @@ namespace PayrollApplication
 
         public const string HEADING_NETPAY = "NET PAY";
         #endregion
+
+        public const string CONNECTION_STRING = "PayrollSystemDBConnectionString";
     }
 }

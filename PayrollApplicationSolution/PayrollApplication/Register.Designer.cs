@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -39,16 +40,28 @@
             this.txtRoleDescription = new System.Windows.Forms.TextBox();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblRoleDescription = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersDataSet = new PayrollApplication.UsersDataSet();
+            this.tblUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblUsersTableAdapter = new PayrollApplication.UsersDataSetTableAdapters.tblUsersTableAdapter();
+            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblUsersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,15 +71,16 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(36, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1082, 585);
+            this.groupBox1.Size = new System.Drawing.Size(1000, 585);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(512, 41);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(529, 391);
+            this.groupBox3.Size = new System.Drawing.Size(444, 391);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Registered User";
@@ -79,14 +93,14 @@
             this.groupBox4.Controls.Add(this.btnRegister);
             this.groupBox4.Location = new System.Drawing.Point(45, 446);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(996, 100);
+            this.groupBox4.Size = new System.Drawing.Size(911, 100);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             // 
             // btnDelete
             // 
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(588, 35);
+            this.btnDelete.Location = new System.Drawing.Point(503, 35);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 38);
             this.btnDelete.TabIndex = 3;
@@ -96,7 +110,7 @@
             // btnReset
             // 
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Location = new System.Drawing.Point(820, 35);
+            this.btnReset.Location = new System.Drawing.Point(725, 35);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(101, 38);
             this.btnReset.TabIndex = 2;
@@ -107,7 +121,7 @@
             // btnUpdate
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(317, 35);
+            this.btnUpdate.Location = new System.Drawing.Point(281, 35);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(101, 38);
             this.btnUpdate.TabIndex = 1;
@@ -171,16 +185,6 @@
             this.txtConfirmPassword.TabIndex = 1;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.AccessibleName = "Password";
-            this.txtPassword.Location = new System.Drawing.Point(216, 108);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(149, 20);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
             // txtUserName
             // 
             this.txtUserName.AccessibleName = "User Name";
@@ -234,22 +238,92 @@
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "User Name";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.AccessibleName = "Password";
+            this.txtPassword.Location = new System.Drawing.Point(216, 108);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(149, 20);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userIdDataGridViewTextBoxColumn,
+            this.userNameDataGridViewTextBoxColumn,
+            this.rolesDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tblUsersBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(438, 372);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // usersDataSet
+            // 
+            this.usersDataSet.DataSetName = "UsersDataSet";
+            this.usersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblUsersBindingSource
+            // 
+            this.tblUsersBindingSource.DataMember = "tblUsers";
+            this.tblUsersBindingSource.DataSource = this.usersDataSet;
+            // 
+            // tblUsersTableAdapter
+            // 
+            this.tblUsersTableAdapter.ClearBeforeFill = true;
+            // 
+            // userIdDataGridViewTextBoxColumn
+            // 
+            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
+            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            // 
+            // rolesDataGridViewTextBoxColumn
+            // 
+            this.rolesDataGridViewTextBoxColumn.DataPropertyName = "Roles";
+            this.rolesDataGridViewTextBoxColumn.HeaderText = "Roles";
+            this.rolesDataGridViewTextBoxColumn.Name = "rolesDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1166, 629);
+            this.ClientSize = new System.Drawing.Size(1075, 629);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblUsersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,12 +341,20 @@
         private System.Windows.Forms.TextBox txtRoleDescription;
         private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.TextBox txtConfirmPassword;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblRoleDescription;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private UsersDataSet usersDataSet;
+        private System.Windows.Forms.BindingSource tblUsersBindingSource;
+        private UsersDataSetTableAdapters.tblUsersTableAdapter tblUsersTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rolesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }

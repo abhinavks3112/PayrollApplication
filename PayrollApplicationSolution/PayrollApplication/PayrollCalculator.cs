@@ -445,7 +445,7 @@ namespace PayrollApplication
 
         private void SavePayment()
         {
-            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
 
             SqlConnection sqlConnection = new SqlConnection(cs);
 
@@ -823,7 +823,7 @@ namespace PayrollApplication
         private void btnGet_Click(object sender, EventArgs e)
         {
             // Fetch connection string
-            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
 
             //Instantiate the sql connection object with connection string
             SqlConnection sqlConnection = new SqlConnection(cs);

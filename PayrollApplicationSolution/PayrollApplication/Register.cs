@@ -16,6 +16,7 @@ namespace PayrollApplication
         #region Global Variables
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
         Constants constants = new Constants();
+        Users user;
         #endregion
 
         #region User Defined Functions
@@ -113,6 +114,15 @@ namespace PayrollApplication
             }
             return true;
         }
+        
+        private void UserData()
+        {
+            user.UserName = txtUserName.Text;
+            user.Password = txtPassword.Text;
+            user.Role = txtRole.Text;
+            user.RoleDescription = txtRoleDescription.Text;
+        }
+        
         #endregion
 
         public Register()
@@ -127,7 +137,30 @@ namespace PayrollApplication
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            AreRegisterControlsValid();
+            try
+            {
+                if (user == null)
+                {
+                    user = new Users();
+                }
+                if (AreRegisterControlsValid())
+                {
+                    UserData();
+                    user.AddUser();
+                }
+                this.tblUsersTableAdapter.Fill(this.usersDataSet.tblUsers);
+                ClearControls();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'usersDataSet.tblUsers' table. You can move, or remove it, as needed.
+            this.tblUsersTableAdapter.Fill(this.usersDataSet.tblUsers);
         }
     }
 }
