@@ -28,6 +28,15 @@ namespace PayrollApplication
             txtConfirmPassword.Text = String.Empty;
             txtRole.Text = String.Empty;
             txtRoleDescription.Text = String.Empty;
+
+            if (txtPassword.Enabled == false || txtConfirmPassword.Enabled == false)
+            {
+                // Enable the password field
+                txtPassword.Enabled = true;
+                txtPassword.BackColor = Color.White;
+                txtConfirmPassword.Enabled = true;
+                txtConfirmPassword.BackColor = Color.White;
+            }
         }
 
         private int CheckNumeric(string text)
@@ -68,19 +77,26 @@ namespace PayrollApplication
             }
             return numOfUpperCaseChar;
         }
-        private bool AreRegisterControlsValid()
+        private bool AreRegisterControlsValid(DataOperationMode mode)
         {
             Dictionary<Control, TextBoxEntryCheck> ControlsList = new Dictionary<Control, TextBoxEntryCheck>();
+
+            if(mode ==  DataOperationMode.INSERT)
+            {
+                ControlsList.Add(txtPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
+                ControlsList.Add(txtConfirmPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
+            }
+
             ControlsList.Add(txtUserName, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
-            ControlsList.Add(txtPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
-            ControlsList.Add(txtConfirmPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
+           
             ControlsList.Add(txtRole, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
 
             if (cvf.IsFormControlNullOrEmptyValidation(ControlsList) == false)
             {
                 return false;
             }
-            else
+
+            if(mode == DataOperationMode.INSERT)
             {
                 #region Password pattern requirement
                 // The password must be a minimum of 8 characters long
@@ -115,10 +131,19 @@ namespace PayrollApplication
             return true;
         }
         
-        private void UserData()
+        private void UserData(DataOperationMode mode)
         {
+            
+            if (mode == DataOperationMode.INSERT)
+            {
+                user.Password = txtPassword.Text;
+            }
+            if(mode == DataOperationMode.UPDATE)
+            {
+                // User Id only in case of update and we get it from selected row/cell in datagridview
+                user.UserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            }
             user.UserName = txtUserName.Text;
-            user.Password = txtPassword.Text;
             user.Role = txtRole.Text;
             user.RoleDescription = txtRoleDescription.Text;
         }
@@ -143,9 +168,16 @@ namespace PayrollApplication
                 {
                     user = new Users();
                 }
-                if (AreRegisterControlsValid())
+                // If user already present and trying to register then give error or if password field is disabled, which is in case of selecting an already registered user from data grid then also give error
+                if (user.UserId > Constants.INDEX_ZERO || txtPassword.Enabled == false)
                 {
-                    UserData();
+                    MessageBox.Show(Constants.MSG_USER_ALREADY_EXISTS_ERROR, Constants.MSG_REGISTRATION_FAILED_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                // If new user then validate user information
+                else if (AreRegisterControlsValid(DataOperationMode.INSERT))
+                {
+                    UserData(DataOperationMode.INSERT);
                     user.AddUser();
                 }
                 this.tblUsersTableAdapter.Fill(this.usersDataSet.tblUsers);
@@ -161,6 +193,49 @@ namespace PayrollApplication
         {
             // TODO: This line of code loads data into the 'usersDataSet.tblUsers' table. You can move, or remove it, as needed.
             this.tblUsersTableAdapter.Fill(this.usersDataSet.tblUsers);
+
+            ClearControls();
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Clear previous entries in textbox
+            ClearControls();
+
+            // Disable the password field
+            txtPassword.Enabled = false;
+            txtPassword.BackColor = Color.Silver;
+            txtConfirmPassword.Enabled = false;
+            txtConfirmPassword.BackColor = Color.Silver;
+
+            // Fill the textboxes with the current selected row's values
+            DataGridViewCellCollection cells = dataGridView1.CurrentRow.Cells;
+            txtUserName.Text = cells[1].Value.ToString();
+            txtRole.Text = cells[2].Value.ToString();
+            txtRoleDescription.Text = cells[3].Value.ToString();
+           
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (user == null)
+                {
+                    user = new Users();
+                }
+                if (AreRegisterControlsValid(DataOperationMode.UPDATE))
+                {
+                    UserData(DataOperationMode.UPDATE);
+                    user.UpdateUser();
+                }
+                this.tblUsersTableAdapter.Fill(this.usersDataSet.tblUsers);
+                ClearControls();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

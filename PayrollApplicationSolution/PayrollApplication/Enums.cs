@@ -21,5 +21,11 @@ namespace PayrollApplication
             EMPLOYEE_NINO = 2,
             EMPLOYEE_EMAIL_ADDRESS
         }
+
+        public enum DataOperationMode
+        {
+            INSERT = 0,
+            UPDATE = 1
+        }
     }
 }

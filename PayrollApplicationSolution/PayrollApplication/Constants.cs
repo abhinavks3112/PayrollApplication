@@ -24,6 +24,8 @@ namespace PayrollApplication
         public const string MSG_NO_RECORDS_FOUND_ERROR = "NO RECORDS FOUND!! ";
         public const string MSG_NO_RECORDS_FOUND_WITH_EMPLOYEEID_ERROR = "NO RECORDS FOUND WITH EMPLOYEE ID: ";
         public const string MSG_PASSWORD_MATCH_ERROR = "PASSWORDS DO NOT MATCH!!";
+        public const string MSG_REGISTRATION_FAILED_ERROR = "REGISTERATION FAILED!!";
+        public const string MSG_USER_ALREADY_EXISTS_ERROR = "USER IS ALREADY REGISTERED WITH THIS ID, KINDLY TRY THE UPDATE USER OPTION";
         public const string MSG_ERROR = "ERROR: ";
 
         public const string MSG_ADD_SUCCESS_CAPTION = "ADD SUCCESS";
