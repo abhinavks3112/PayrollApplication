@@ -72,7 +72,25 @@ namespace PayrollApplication
 
         public void DeleteUser()
         {
-
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("spDeleteUser", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+            try
+            {
+                sqlConnection.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show(Constants.MSG_USER_DELETE_SUCCESS, Constants.MSG_ADD_DELETE_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_DELETION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         public bool AuthorizeUser()
