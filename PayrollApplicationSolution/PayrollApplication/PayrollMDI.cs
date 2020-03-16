@@ -268,5 +268,20 @@ namespace PayrollApplication
         {
             RegisterUser();
         }
+
+        private void PayrollMDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(Constants.MSG_APPLICATION_EXIT_CONFIRM_QUESTION, Constants.MSG_FORM_CLOSING, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else if(result == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                LogIn logIn = new LogIn();
+                logIn.Show();
+            }
+        }
     }
 }
