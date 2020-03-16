@@ -112,7 +112,7 @@ namespace PayrollApplication
             // Country Validation
             if (cmbCountry.SelectedIndex == Constants.INDEX_ZERO || cmbCountry.SelectedIndex == Constants.INDEX_MINUS_ONE_OR_DEFAULT_INDEX)
             {
-                MessageBox.Show(Constants.MSG_SELECT_COUNTRY, Constants.MSG_NO_SELECTION_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Constants.MSG_PLEASE_SELECT_ROLE, Constants.MSG_PLEASE_SELECT_ROLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmbCountry.Focus();
                 cmbCountry.BackColor = colors.VALIDATION_ERROR;
                 isValid = false;

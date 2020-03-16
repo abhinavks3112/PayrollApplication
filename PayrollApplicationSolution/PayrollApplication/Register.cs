@@ -16,6 +16,7 @@ namespace PayrollApplication
         #region Global Variables
         CustomValidationsFunctions cvf = new CustomValidationsFunctions();
         Constants constants = new Constants();
+        Colors colors = new Colors();
         Users user;
         #endregion
 
@@ -24,7 +25,7 @@ namespace PayrollApplication
         private void ClearControls()
         {
             SetFieldsToEmptyString();
-            SetFieldsBackColorToWhite();
+            SetFieldsBackColorToNormal();
 
             if (txtPassword.Enabled == false || txtConfirmPassword.Enabled == false)
             {
@@ -41,9 +42,17 @@ namespace PayrollApplication
         {
             // Enable the password field
             txtPassword.Enabled = true;
-            txtPassword.BackColor = Color.White;
+            txtPassword.BackColor = colors.NORMAL_COLOR;
             txtConfirmPassword.Enabled = true;
-            txtConfirmPassword.BackColor = Color.White;
+            txtConfirmPassword.BackColor = colors.NORMAL_COLOR;
+        }
+        private void DisablePasswordFields()
+        {
+            // Disable the password field
+            txtPassword.Enabled = false;
+            txtPassword.BackColor = colors.CONTROL_DISABLED;
+            txtConfirmPassword.Enabled = false;
+            txtConfirmPassword.BackColor = colors.CONTROL_DISABLED;
         }
 
         private void SetFieldsToEmptyString()
@@ -54,13 +63,13 @@ namespace PayrollApplication
             txtRole.Text = String.Empty;
             txtRoleDescription.Text = String.Empty;
         }
-        private void SetFieldsBackColorToWhite()
+        private void SetFieldsBackColorToNormal()
         {
-            txtUserName.BackColor = Color.White;
-            txtPassword.BackColor = Color.White;
-            txtConfirmPassword.BackColor = Color.White;
-            txtRole.BackColor = Color.White;
-            txtRoleDescription.BackColor = Color.White;
+            txtUserName.BackColor = colors.NORMAL_COLOR; 
+            txtPassword.BackColor = colors.NORMAL_COLOR;
+            txtConfirmPassword.BackColor = colors.NORMAL_COLOR;
+            txtRole.BackColor = colors.NORMAL_COLOR;
+            txtRoleDescription.BackColor = colors.NORMAL_COLOR;
         }
 
         private int CheckNumeric(string text)
@@ -196,11 +205,7 @@ namespace PayrollApplication
 
         private void OnUserSelect()
         {
-            // Disable the password field
-            txtPassword.Enabled = false;
-            txtPassword.BackColor = Color.Silver;
-            txtConfirmPassword.Enabled = false;
-            txtConfirmPassword.BackColor = Color.Silver;
+            DisablePasswordFields();
 
             // Fill the textboxes with the current selected row's values
             DataGridViewCellCollection cells = dataGridView1.CurrentRow.Cells;
@@ -319,7 +324,7 @@ namespace PayrollApplication
                 {
                     dataGridView1_CellMouseClick(sender, e as DataGridViewCellMouseEventArgs);
                     UserData(DataOperationMode.DELETE);
-                    DialogResult result = MessageBox.Show(String.Format(Constants.MSG_USER_DELETE_CONFIRM_QUESTION,user.UserId), Constants.MSG_DELETION_FAILED_ERROR, MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    DialogResult result = MessageBox.Show(String.Format(Constants.MSG_USER_DELETE_CONFIRM_QUESTION,user.UserId), Constants.MSG_CONFIRM_USER_DELETION, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         user.DeleteUser();

@@ -21,6 +21,7 @@ namespace PayrollApplication
         public const string MSG_EMPTY_FIELD_ERROR = "FIELD IS EMPTY!!";
         public const string MSG_INVALID_DATA_FORMAT_ERROR = "INVALID DATA FORMAT!!";
         public const string MSG_NO_SELECTION_ERROR = "NO OPTION SELECTED!!";
+        public const string MSG_NO_ROLE_SELECTED_ERROR = "NO ROLE SELECTED!!";
         public const string MSG_NO_RECORDS_FOUND_ERROR = "NO RECORDS FOUND!! ";
         public const string MSG_NO_RECORDS_FOUND_WITH_EMPLOYEEID_ERROR = "NO RECORDS FOUND WITH EMPLOYEE ID: ";
         public const string MSG_PASSWORD_MATCH_ERROR = "PASSWORDS DO NOT MATCH!!";
@@ -29,6 +30,8 @@ namespace PayrollApplication
         public const string MSG_DELETION_FAILED_ERROR = "DELETION FAILED!!";
         public const string MSG_USER_NOT_SELECTED_ERROR = "NO USER SELECTED, PLEASE SELECT A USER RECORD!!";
         public const string MSG_UPDATION_FAILED_ERROR = "UPDATION FAILED!!";
+        public const string MSG_LOG_IN_FAILED_ERROR = "LOGIN FAILED!!";
+        public const string MSG_UNAUTHORIZED_USER_ERROR = "UNAUTHORIZED CREDENTIALS PROVIDED!!";
         public const string MSG_ERROR = "ERROR: ";
 
         public const string MSG_ADD_SUCCESS_CAPTION = "ADD SUCCESS";
@@ -44,17 +47,19 @@ namespace PayrollApplication
         public const string MSG_PLEASE_ENTER = "PLEASE ENTER ";
         public const string MSG_PLEASE_ENTER_VALID = "PLEASE ENTER VALID ";
         public const string MSG_PLEASE_ENTER_VALID_PASSWORD = "PLEASE ENTER VALID PASSWORD";
+        public const string MSG_PLEASE_SELECT_ROLE = "PLEASE SELECT YOUR USER'S ROLE!!";
 
         public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";        
         public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_SUCCESS = "EMPLOYEE RECORD HAS BEEN DELETED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS EMPLOYEE'S RECORD?";
-        public const string MSG_CONFIRM_EMPLOYEE_DELETION = "CONFIRM EMPLOYEE DELETION";
+        public const string MSG_CONFIRM_EMPLOYEE_DELETION = "CONFIRM EMPLOYEE RECORD DELETION";
 
         public const string MSG_USER_ADD_SUCCESS = "USER'S RECORD HAS BEEN ADDED SUCCESSFULLY!!";
         public const string MSG_USER_UPDATE_SUCCESS = "USER'S RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
         public const string MSG_USER_DELETE_SUCCESS = "USER'S RECORD HAS BEEN DELETED SUCCESSFULLY!!";
         public const string MSG_USER_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS USER'S RECORD WITH ID: {0}";
+        public const string MSG_CONFIRM_USER_DELETION = "CONFIRM USER RECORD DELETION";
 
         public const string MSG_EMPLOYEE_SALARY_ADD_SUCCESS = "EMPLOYEE'S SALARY RECORD HAS BEEN ADDED SUCCESSFULLY!!";
 

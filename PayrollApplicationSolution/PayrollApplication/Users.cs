@@ -93,9 +93,30 @@ namespace PayrollApplication
             }
         }
 
-        public bool AuthorizeUser()
+        public bool AuthenticateUser()
         {
-            return true;
+            bool isUserAuthorized = false;
+            string cs = ConfigurationManager.ConnectionStrings[Constants.CONNECTION_STRING].ConnectionString;
+            SqlConnection sqlConnection = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("spIsUserDetailsValid", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserName", UserName);
+            cmd.Parameters.AddWithValue("@Password", Password);
+            cmd.Parameters.AddWithValue("@Role", Role);
+            try
+            {
+                sqlConnection.Open();
+                isUserAuthorized = Convert.ToBoolean(cmd.ExecuteScalar());                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_LOG_IN_FAILED_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return isUserAuthorized;
         }
     }
 }

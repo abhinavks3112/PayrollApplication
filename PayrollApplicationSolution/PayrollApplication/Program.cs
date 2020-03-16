@@ -16,7 +16,7 @@ namespace PayrollApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PayrollMDI());
+            Application.Run(new LogIn());
         }
     }
 }
