@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using static PayrollApplication.Enums;
 
 namespace PayrollApplication
@@ -29,7 +22,7 @@ namespace PayrollApplication
         }
 
         #region User Defined Functions
-        
+
         #region KeyPressEventValidation
         private void txtEmployeeID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -180,7 +173,7 @@ namespace PayrollApplication
             txtEmailAddress.Clear();
             txtNotes.Clear();
         }
-        
+
         private void AddEmployee()
         {
             // Fetch connection string
@@ -343,7 +336,7 @@ namespace PayrollApplication
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(Constants.MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION, Constants.MSG_CONFIRM_EMPLOYEE_DELETION, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(dialogResult == DialogResult.Yes)
+            if (dialogResult == DialogResult.Yes)
             {
                 CheckedItems();
                 DeleteEmployee();

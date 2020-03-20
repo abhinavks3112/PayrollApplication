@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PayrollApplication
@@ -276,7 +271,7 @@ namespace PayrollApplication
             {
                 e.Cancel = true;
             }
-            else if(result == DialogResult.Yes)
+            else if (result == DialogResult.Yes)
             {
                 e.Cancel = false;
                 LogIn logIn = new LogIn();

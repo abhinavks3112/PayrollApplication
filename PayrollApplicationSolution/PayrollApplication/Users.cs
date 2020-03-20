@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -34,7 +30,7 @@ namespace PayrollApplication
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(Constants.MSG_USER_ADD_SUCCESS, Constants.MSG_ADD_SUCCESS_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -106,7 +102,7 @@ namespace PayrollApplication
             try
             {
                 sqlConnection.Open();
-                isUserAuthorized = Convert.ToBoolean(cmd.ExecuteScalar());                
+                isUserAuthorized = Convert.ToBoolean(cmd.ExecuteScalar());
             }
             catch (Exception ex)
             {

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayrollApplication
 {
@@ -49,7 +45,7 @@ namespace PayrollApplication
         public const string MSG_PLEASE_ENTER_VALID_PASSWORD = "PLEASE ENTER VALID PASSWORD";
         public const string MSG_PLEASE_SELECT_ROLE = "PLEASE SELECT YOUR USER'S ROLE!!";
 
-        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";        
+        public const string MSG_EMPLOYEE_ADD_SUCCESS = "EMPLOYEE RECORD HAS BEEN ADDED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_UPDATE_SUCCESS = "EMPLOYEE RECORD HAS BEEN UPDATED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_SUCCESS = "EMPLOYEE RECORD HAS BEEN DELETED SUCCESSFULLY!!";
         public const string MSG_EMPLOYEE_DELETE_CONFIRM_QUESTION = "ARE YOU SURE YOU WANT TO PERMANENTLY DELETE THIS EMPLOYEE'S RECORD?";
@@ -87,7 +83,7 @@ namespace PayrollApplication
         public const int USER_PASSWORD_MIN_DIGIT_CHARACTERS_CONSTRAINT = 1;
 
         // Password Pattern Constraint Message
-        public readonly string USER_PASSWORD_MIN_CHARACTERS_MSG= "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_CHARACTERS_CONSTRAINT + " CHARACTER(S)";
+        public readonly string USER_PASSWORD_MIN_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_CHARACTERS_CONSTRAINT + " CHARACTER(S)";
         public readonly string USER_PASSWORD_MIN_UPPERCASE_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_UPPERCASE_CHARACTERS_CONSTRAINT + " UPPERCASE CHARACTER(S)";
         public readonly string USER_PASSWORD_MIN_LOWERCASE_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_LOWERCASE_CHARACTERS_CONSTRAINT + " LOWERCASE CHARACTER(S)";
         public readonly string USER_PASSWORD_MIN_DIGIT_CHARACTERS_MSG = "PASSWORD MUST CONTAIN ATLEAST  " + USER_PASSWORD_MIN_DIGIT_CHARACTERS_CONSTRAINT + " NUMERIC DIGIT(S)";
@@ -185,7 +181,7 @@ namespace PayrollApplication
 
         // Email Id
         // abc21@domain.com
-        public const string REGEX_PATTERN_EMPLOYEE_EMAIL_ADDRESS= @"^[A-Za-z0-9]{1,30}@[A-Za-z0-9]{1,30}.[a-zA-Z]{2,3}$";
+        public const string REGEX_PATTERN_EMPLOYEE_EMAIL_ADDRESS = @"^[A-Za-z0-9]{1,30}@[A-Za-z0-9]{1,30}.[a-zA-Z]{2,3}$";
 
         // Password
         public const string REGEX_PATTERN_USER_PASSWORD = @"^[A-Z]{1}*";
@@ -225,7 +221,7 @@ namespace PayrollApplication
 
         public const string SUB_HEADING_BASIC = "Basic";
         public const string SUB_HEADING_OVERTIME = "Overtime";
-        public const string SUB_HEADING_TAX_CODE = "Tax(" + TAX_CODE_2019_20+ ")";
+        public const string SUB_HEADING_TAX_CODE = "Tax(" + TAX_CODE_2019_20 + ")";
         public const string SUB_HEADING_NIC = "NIC";
         public const string SUB_HEADING_UNION = "Union";
         public const string SUB_HEADING_SLC = "SLC";

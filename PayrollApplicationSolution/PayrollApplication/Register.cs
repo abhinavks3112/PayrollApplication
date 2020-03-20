@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PayrollApplication.Enums;
 
@@ -65,7 +59,7 @@ namespace PayrollApplication
         }
         private void SetFieldsBackColorToNormal()
         {
-            txtUserName.BackColor = colors.NORMAL_COLOR; 
+            txtUserName.BackColor = colors.NORMAL_COLOR;
             txtPassword.BackColor = colors.NORMAL_COLOR;
             txtConfirmPassword.BackColor = colors.NORMAL_COLOR;
             txtRole.BackColor = colors.NORMAL_COLOR;
@@ -113,7 +107,7 @@ namespace PayrollApplication
         private bool AreRegisterControlsValid(DataOperationMode mode)
         {
             Dictionary<Control, TextBoxEntryCheck> ControlsList = new Dictionary<Control, TextBoxEntryCheck>();
-            
+
             ControlsList.Add(txtUserName, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
 
             // Check if username is not null or empty
@@ -123,12 +117,12 @@ namespace PayrollApplication
                 return false;
             }
 
-           
+
             if (mode == DataOperationMode.INSERT)
             {
                 ControlsList.Add(txtPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
                 ControlsList.Add(txtConfirmPassword, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
-                
+
                 // Check if password is not null or empty
                 if (cvf.IsFormControlNullOrEmptyValidation(ControlsList) == false)
                 {
@@ -170,7 +164,7 @@ namespace PayrollApplication
                     }
                 }
             }
-            
+
             ControlsList.Add(txtRole, TextBoxEntryCheck.CHECK_IF_ANY_TEXT_ENTERED);
 
             if (cvf.IsFormControlNullOrEmptyValidation(ControlsList) == false)
@@ -182,15 +176,15 @@ namespace PayrollApplication
             ControlsList.Clear();
             return true;
         }
-        
+
         private void UserData(DataOperationMode mode)
         {
-            
+
             if (mode == DataOperationMode.INSERT)
             {
                 user.Password = txtPassword.Text;
             }
-            if(mode == DataOperationMode.UPDATE || mode == DataOperationMode.DELETE)
+            if (mode == DataOperationMode.UPDATE || mode == DataOperationMode.DELETE)
             {
                 // User Id only in case of update and we get it from selected row/cell in datagridview
                 user.UserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -253,7 +247,7 @@ namespace PayrollApplication
                 }
                 // If new user then validate user information
                 else if (AreRegisterControlsValid(DataOperationMode.INSERT))
-                {  
+                {
                     user.AddUser();
                     ClearControls();
                 }
@@ -261,7 +255,7 @@ namespace PayrollApplication
                 // Deselect the datagridview
                 dataGridView1.ClearSelection();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(Constants.MSG_ERROR + ex.Message, Constants.MSG_DATA_ENTRY_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -312,7 +306,7 @@ namespace PayrollApplication
                 {
                     user = new Users();
                 }
-               
+
                 // If no user has been selected then give error
                 if (user.UserId <= Constants.INDEX_ZERO)
                 {
@@ -320,11 +314,11 @@ namespace PayrollApplication
                     ClearControls();
                     return;
                 }
-                else 
+                else
                 {
                     dataGridView1_CellMouseClick(sender, e as DataGridViewCellMouseEventArgs);
                     UserData(DataOperationMode.DELETE);
-                    DialogResult result = MessageBox.Show(String.Format(Constants.MSG_USER_DELETE_CONFIRM_QUESTION,user.UserId), Constants.MSG_CONFIRM_USER_DELETION, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult result = MessageBox.Show(String.Format(Constants.MSG_USER_DELETE_CONFIRM_QUESTION, user.UserId), Constants.MSG_CONFIRM_USER_DELETION, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
                         user.DeleteUser();

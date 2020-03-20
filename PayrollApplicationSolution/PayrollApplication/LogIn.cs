@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using static PayrollApplication.Enums;
 
 namespace PayrollApplication
@@ -98,7 +93,7 @@ namespace PayrollApplication
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(user == null)
+            if (user == null)
             {
                 user = new Users();
             }
@@ -117,7 +112,7 @@ namespace PayrollApplication
                     {
                         MessageBox.Show(Constants.MSG_UNAUTHORIZED_USER_ERROR, Constants.MSG_LOG_IN_FAILED_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                }                
+                }
             }
             catch (Exception ex)
             {

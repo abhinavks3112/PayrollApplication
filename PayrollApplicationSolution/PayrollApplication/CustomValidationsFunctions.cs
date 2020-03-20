@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PayrollApplication.Enums;
 
@@ -27,12 +23,12 @@ namespace PayrollApplication
             {
                 MessageBox.Show(ErrorMessageBody, ErrorMessageHeading, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 control.Focus();
-                control.BackColor = color.VALIDATION_ERROR;             
+                control.BackColor = color.VALIDATION_ERROR;
             }
             else
             {
                 control.BackColor = color.NORMAL_COLOR;
-            }            
+            }
         }
 
         /// <summary>
@@ -69,7 +65,7 @@ namespace PayrollApplication
 
                     default: return true;
                 }
-                
+
                 // Highlight control with validation error, if any
                 HighlightDataEntryErrorValidation(control, !isControlValid, Constants.MSG_PLEASE_ENTER + control.AccessibleName, Constants.MSG_EMPTY_FIELD_ERROR);
 
@@ -78,29 +74,29 @@ namespace PayrollApplication
 
                 if (areAllControlsValid == false)
                     return false;
-                
+
             }
             return areAllControlsValid;
         }
-        
+
         /// <summary>
         /// Validate form control so that it only accepts numbers or backspace
         /// </summary>
         /// <param name="control"></param>
         /// <param name="e"></param>
         public void IsNumberOrBackspaceValidation(Control control, KeyPressEventArgs e)
-        {            
+        {
             // Check for either a number or backspace. Backspace checked using its ASCII value  
             if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back))
             {
                 HighlightDataEntryErrorValidation(control, true, Constants.MSG_ENTER_NUMBERS_ONLY, Constants.MSG_INVALID_CHARACTERS_ERROR);
-                
+
                 e.Handled = true;
                 return;
             }
             HighlightDataEntryErrorValidation(control, false, String.Empty, String.Empty);
         }
-    
+
         /// <summary>
         /// Check employee form details against specific regular expression or patterns
         /// </summary>
@@ -119,7 +115,7 @@ namespace PayrollApplication
                 switch (FormControl.Value)
                 {
                     case FieldsToValidateForRegex.EMPLOYEE_ID:
-                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_ID);                        
+                        regex = new Regex(Constants.REGEX_PATTERN_EMPLOYEE_ID);
                         break;
 
                     case FieldsToValidateForRegex.EMPLOYEE_FIRST_LAST_NAME:
@@ -165,6 +161,6 @@ namespace PayrollApplication
             }
             return areAllControlsValid;
         }
-    
+
     }
 }
